@@ -1,0 +1,249 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:4216:b0:4d:c8b7:537c with SMTP id r22csp3217238laa;
+        Wed, 7 Feb 2024 16:04:19 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IFqSrSBs2ZmtDZWyGUk+uoW81EVVZKhhpkeMpArJ6EsPbWWhC5shQnQecWfZF1ZpkLoGzNH
+X-Received: by 2002:a05:6808:1719:b0:3be:d897:2880 with SMTP id
+ bc25-20020a056808171900b003bed8972880mr7952326oib.52.1707350659004;       
+ Wed, 07 Feb 2024 16:04:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707350658; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rnPfZyS3f+QnO4SEsPIjr2bfQg6+DmCqqkVnIqmOyta+xN2ZvkkIuao0RPgFbBAppg
+         KdLyx51DVsqlucA9WweTWFesGN6I8aLjBM21l1NJ/29YuJOdkgz0Jrt5wvNnTomSD4yw
+         kLfT3c7n1V9x13FxrJU9F7M/Tjic4TVCX8nVI7Bq27MNO+dUAWoXY7sF4ZogqPUqg2zZ
+         f8kbyiqhHm2IMlLVM/ZNPfQESquhlCgbrGnjNYvBzQZXvEBcGlIPNPOV7OKXTqVd4zLb
+         p9KSzj1Zw10y70EZVKu5FIi+rhRvwFJNqztmgj6o2sqPkBwRNGktjX/Qft6NdkZnWdTt
+         qSRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=cc:to:subject:message-id:date:from:in-reply-to:references        
+ :mime-version:delivered-to;       
+ bh=HJmkmcJgpJidXR/ahd5idMPQvD5YnSZSm6EaGTmfyh0=;       
+ fh=0wvM0mP/0gbMRl3IRg/IUM+VZ5BoCCOCiCfqodYDh0k=;       
+ b=Ygb04BvYH6nyNjx8akgGKcyo7e684oVk+Zl09/s6PJ2XfXelSB+/iziC73Fl255D9S        
+ T3fOpStkizzoE9mb7BhtDmcaITn0EiKzateF5wkAqR3De7E5BwPAZo67TVBn8MPBRwka        
+ 5KDMloY5iaynn6ls+ZcOoBr3Oh6p4zFixXIdlvY7Z1JnC6Hy7e/9rxSPyXpncIDLQfgY        
+ JnUdkgmq0hhMbSXxuLW0+tbyFxUDyzgAzdhFxYgUCZeudPTJiEFily50EjN/YMzixVUp        
+ 7AVlBfcdjqZgEDdtaDhrd4vegIKZrr4eK2an4Cwy2TRJL8pEPpQWBHLiZE/gcjAMo3XP        
+ /dlQ==;        darn=students.ocps.net
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.216.69 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-190.gaggle.net. [162.216.127.190])
+        by mx.google.com with ESMTPS id
+ j7-20020a056808034700b003bfe1ef4655si1005883oie.5.2024.02.07.16.04.18       
+ for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Wed, 07 Feb 2024
+ 16:04:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.216.69 as permitted sender) client-ip=209.85.216.69;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.216.69 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx39.lax.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex03.lax.gaggle.net (Postfix) with ESMTP id 5086A2000BA
+	for <4804241180@students.ocps.net>; Wed,  7 Feb 2024 16:04:18 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx39.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Wed, 07 Feb 2024 16:04:17 -0800
+Received: from mx66.lax.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx08.lax.gaggle.net (Postfix) with ESMTP id 4CD3B12003E
+	for <4804241180@students.ocps.net>; Wed,  7 Feb 2024 16:04:17 -0800 (PST)
+Received: from [209.85.216.69] (HELO mail-pj1-f69.google.com) (209.85.216.69)
+    by mx66.gaggle.net (qpsmtpd/0.83) with ESMTP; Wed, 07 Feb 2024 16:04:16
+ -0800
+Received: by mail-pj1-f69.google.com with SMTP id
+ 98e67ed59e1d1-2909c95e737so1044574a91.1        for
+ <4804241180@students.ocps.net>; Wed, 07 Feb 2024 16:04:16 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707350654; x=1707955454;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=HJmkmcJgpJidXR/ahd5idMPQvD5YnSZSm6EaGTmfyh0=;
+        b=n8IFIAG8pHuAiZVb2xhV4FnCDQCOzFg4sNjhltA8MTxIAbpohr5yN0zy9BeyxCx341
+         AlId2predLLB7HBbTrmtO48ZlyHs68WavHnSvRh1CDoRtKQlTh1BDzZ1b3OIWyZaxNm3
+         aCRAl2Dqc7dILZ2CDwk0N764/zXKy8wMFqgqnOS1a54KtVyzNvR/WtYh+Id8odr5xnf0
+         sWBkKfRYPwc+nyoJwGBMQdzmsatsxiB3dcCGsmhIqMrfkmLWSW4ZBa0wucj0ILqxyVzx
+         jIal3lkhk3xajA3yknUrBu9g26312RbJzKxbhb8HNEwRErR1QtFY+2Qwq/jHV4bQy7I+
+         dPUQ==
+X-Gm-Message-State: AOJu0Yx/PVfZaXvVEmnhWTXP2tK6hhRNWYqLrT7vfTcpZMtuvKhtS40q
+	XysUHtOeH40H3I/5SetNBRNWzpCAjBg64EuIgXgFJRFE0M85pVivWdmLtcYXyLQpVkIBpsvxX/R
+	0Zr5RsObiKhZJ7v/9szBm57YUD6aDnAOc+LyvRtGAl31/iD3fRXI9uPv8Q8eBfE6dReIympB5vY
+	nQEoDj5PEwvz7uGE9oqJUUGw1jVkA/VX1jwiJQbGeE2RxCwG1BRSFbekaE3II=
+X-Received: by 2002:a17:90a:f991:b0:295:d7d1:c10e with SMTP id
+ cq17-20020a17090af99100b00295d7d1c10emr3613168pjb.3.1707350653977;       
+ Wed, 07 Feb 2024 16:04:13 -0800 (PST)
+X-Received: by 2002:a17:90a:f991:b0:295:d7d1:c10e with SMTP id
+ cq17-20020a17090af99100b00295d7d1c10emr3613155pjb.3.1707350653668; Wed, 07
+ Feb 2024 16:04:13 -0800 (PST)
+MIME-Version: 1.0
+References:
+ <CAGZ_XgBitP7_w2PXiePRTojy77_tE3ctPGNCg4av6m7LQp=qvg@mail.gmail.com>
+ <CAJ+nes_aS2FgCdVppJEMCQOofRHFuPT-xmftP0TrMRYKN7NPdA@mail.gmail.com>
+ <CAGZ_XgCJ0No1_wv9jXYh2xeyGgh5M6gXTk8tx4iGtxDaz_FDNg@mail.gmail.com>
+ <CANuu65ErPN-XdWFPHy61EsBxrQQSAA1GAE2s+o5PWhA=ASMORw@mail.gmail.com>
+ <CAGZ_XgCUFb1yiN8fKanP4=MeVzySbhWK8xyMqiVSfmz_Om56_w@mail.gmail.com>
+ <CANuu65G0U6K+ZpvnQ3ghrL+e0DzyX7h-s0a5ZMZGU3V1PxP+dw@mail.gmail.com>
+ <CAMjpK4UveUcmzauVUHytvfrrr5rr2FLLqSEthiMcZCWZufY38Q@mail.gmail.com>
+ <CANuu65FcpP=9TJvC7=NVbAe7RVibuuSBd_-4KSdA7OVLZkLvvw@mail.gmail.com>
+In-Reply-To:
+ <CANuu65FcpP=9TJvC7=NVbAe7RVibuuSBd_-4KSdA7OVLZkLvvw@mail.gmail.com>
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Wed, 7 Feb 2024 19:04:01 -0500
+Message-ID:
+ <CAGZ_XgB6w117Esd4Cr7SzyDAQ+i+X3L_CZmkyDZRhat1BxtZnQ@mail.gmail.com>
+Subject: Re: sonnet
+To: Brandon Nova <4804241180@students.ocps.net>
+Cc: Olivia Yip <4804085190@students.ocps.net>,
+ Gianna Kim <4804135863@students.ocps.net>,
+ 	Lauren Willman <4804089800@students.ocps.net>,
+ Pari Vyas <4804150017@students.ocps.net>,
+ 	Tyler Szydlo <4804136151@students.ocps.net>
+Content-Type: multipart/alternative; boundary="0000000000003827ef0610d38dae"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx66.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdab05c803ccef?=
+ =?utf-8?q?180fbd3e3bcf5129ce2e2d40935c39bfbb76065e82d193755e329557145ab72ad?=
+ =?utf-8?q?95be977891810c7ea72693d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 210086574
+X-Virus-Checked: Checked by ClamAV on mx39.gaggle.net
+
+--0000000000003827ef0610d38dae
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+CAUSE WHERE I AM GOING IS RIGHT WHERE I AM
+
+On Wed, Feb 7, 2024 at 6:58=E2=80=AFPM Brandon Nova <4804241180@students.oc=
+ps.net>
+wrote:
+
+> It=E2=80=99s the lyrics to a song (Inertia)
+>
+> On Wednesday, February 7, 2024, Olivia Yip <4804085190@students.ocps.net>
+> wrote:
+>
+>> you should give us a hint :)
+>>
+>> On Wed, Feb 7, 2024 at 5:45=E2=80=AFPM Brandon Nova <4804241180@students=
+.ocps.net>
+>> wrote:
+>>
+>>> DONT ASK WHERE IM GOING
+>>>
+>>> On Wednesday, February 7, 2024, Natalie Miesak <
+>>> 4804135947@students.ocps.net> wrote:
+>>>
+>>>> IIIIIMMM ANNNN OBJECT IN MOTION
+>>>> IVE LOST ALL EMOTION
+>>>> MY TWO LEGS ARE BROKEN
+>>>> BUT LOOK AT ME DANCE
+>>>>
+>>>> On Wed, Feb 7, 2024 at 3:09=E2=80=AFPM Brandon Nova <
+>>>> 4804241180@students.ocps.net> wrote:
+>>>>
+>>>>> confined lose more time,
+>>>>> bound, and again I'm
+>>>>>
+>>>>> I'm stuck in this life, and I'm stuck in these pants
+>>>>>
+>>>>> On Wed, Feb 7, 2024 at 10:10=E2=80=AFAM Natalie Miesak <
+>>>>> 4804135947@students.ocps.net> wrote:
+>>>>>
+>>>>>> Thank you for understanding.
+>>>>>>
+>>>>>> On Wed, Feb 7, 2024 at 10:09=E2=80=AFAM Pari Vyas <
+>>>>>> 4804150017@students.ocps.net> wrote:
+>>>>>>
+>>>>>>> I'm sorry to hear that.
+>>>>>>>
+>>>>>>> On Wed, Feb 7, 2024 at 10:08=E2=80=AFAM Natalie Miesak <
+>>>>>>> 4804135947@students.ocps.net> wrote:
+>>>>>>>
+>>>>>>>> confined in a desk
+>>>>>>>> confined in a room
+>>>>>>>> confined in a building
+>>>>>>>> tied to the school
+>>>>>>>>
+>>>>>>>> bound to the soil
+>>>>>>>> bound to the town
+>>>>>>>> bound to the earth
+>>>>>>>> just spinning around
+>>>>>>>>
+>>>>>>>> i should do my work
+>>>>>>>> but i dont want to
+>>>>>>>>
+>>>>>>>
+
+--0000000000003827ef0610d38dae
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">CAUSE WHERE I AM GOING IS RIGHT WHERE I AM</div><br><div c=
+lass=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Feb 7, 2=
+024 at 6:58=E2=80=AFPM Brandon Nova &lt;<a href=3D"mailto:4804241180@studen=
+ts.ocps.net">4804241180@students.ocps.net</a>&gt; wrote:<br></div><blockquo=
+te class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px =
+solid rgb(204,204,204);padding-left:1ex">It=E2=80=99s the lyrics to a song =
+(Inertia)<br><br>On Wednesday, February 7, 2024, Olivia Yip &lt;<a href=3D"=
+mailto:4804085190@students.ocps.net" target=3D"_blank">4804085190@students.=
+ocps.net</a>&gt; wrote:<br><blockquote class=3D"gmail_quote" style=3D"margi=
+n:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex=
+"><div dir=3D"ltr">you should give us a hint :)</div><br><div class=3D"gmai=
+l_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Feb 7, 2024 at 5:45=
+=E2=80=AFPM Brandon Nova &lt;<a href=3D"mailto:4804241180@students.ocps.net=
+" target=3D"_blank">4804241180@students.ocps.net</a>&gt; wrote:<br></div><b=
+lockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-le=
+ft:1px solid rgb(204,204,204);padding-left:1ex">DONT ASK WHERE IM GOING<br>=
+<br>On Wednesday, February 7, 2024, Natalie Miesak &lt;<a href=3D"mailto:48=
+04135947@students.ocps.net" target=3D"_blank">4804135947@students.ocps.net<=
+/a>&gt; wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px=
+ 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div di=
+r=3D"auto">IIIIIMMM ANNNN OBJECT IN MOTION=C2=A0</div><div dir=3D"auto">IVE=
+ LOST ALL EMOTION=C2=A0</div><div dir=3D"auto">MY TWO LEGS ARE BROKEN=C2=A0=
+</div><div dir=3D"auto">BUT LOOK AT ME DANCE</div><div><br><div class=3D"gm=
+ail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Feb 7, 2024 at 3:0=
+9=E2=80=AFPM Brandon Nova &lt;<a href=3D"mailto:4804241180@students.ocps.ne=
+t" target=3D"_blank">4804241180@students.ocps.net</a>&gt; wrote:<br></div><=
+blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-l=
+eft:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">confined =
+lose more time,=C2=A0<div>bound, and again I&#39;m</div><div><br></div><div=
+>I&#39;m stuck in this life, and I&#39;m stuck in these pants<br></div></di=
+v><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On W=
+ed, Feb 7, 2024 at 10:10=E2=80=AFAM Natalie Miesak &lt;<a href=3D"mailto:48=
+04135947@students.ocps.net" target=3D"_blank">4804135947@students.ocps.net<=
+/a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0=
+px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><=
+div dir=3D"ltr">Thank you for understanding.=C2=A0<br></div><br><div class=
+=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Feb 7, 2024 =
+at 10:09=E2=80=AFAM Pari Vyas &lt;<a href=3D"mailto:4804150017@students.ocp=
+s.net" target=3D"_blank">4804150017@students.ocps.net</a>&gt; wrote:<br></d=
+iv><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;bord=
+er-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">I&#39=
+;m sorry to hear that.=C2=A0<br></div><br><div class=3D"gmail_quote"><div d=
+ir=3D"ltr" class=3D"gmail_attr">On Wed, Feb 7, 2024 at 10:08=E2=80=AFAM Nat=
+alie Miesak &lt;<a href=3D"mailto:4804135947@students.ocps.net" target=3D"_=
+blank">4804135947@students.ocps.net</a>&gt; wrote:<br></div><blockquote cla=
+ss=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid =
+rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">confined in a desk<div>=
+confined in a room</div><div>confined in a building</div><div>tied to the s=
+chool</div><div><br></div><div>bound to the soil</div><div>bound to the tow=
+n</div><div>bound to the earth</div><div>just spinning around</div><div><br=
+></div><div>i should do my work<br></div><div>but i dont want to</div></div=
+>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div></div>
+</blockquote>
+</blockquote></div>
+</blockquote>
+</blockquote></div>
+
+--0000000000003827ef0610d38dae--

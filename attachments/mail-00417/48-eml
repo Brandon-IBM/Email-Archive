@@ -1,0 +1,141 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:422b:b0:4c:f15:70be with SMTP id r43csp2067802laa;
+        Wed, 20 Dec 2023 06:19:03 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IEB0Wj30iWl3HFweQ4w04FjDyNK+47sBVoUutfS+WSihxSrMj2/ZUFHPDUvlUEA9r6A1Y3T
+X-Received: by 2002:a81:d352:0:b0:5d7:1941:357e with SMTP id
+ d18-20020a81d352000000b005d71941357emr13703975ywl.101.1703081943358;       
+ Wed, 20 Dec 2023 06:19:03 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703081943; cv=none;
+        d=google.com; s=arc-20160816;
+        b=XIE5FfARJwdoKQHvkhYMOhoB2jWpxdD49LsmIfemqIx3SYpiXG/4QPHEQZmB2hgcTm
+         R4hHzCY2CMxUTMCSV6S3ow0aYHlQYkEH4qlOnH8K+DY0EMl8CX7iIl3NLSv8eC78bTYi
+         1FgXqGojBId3i6Hb+6TN7tJRfeUrDbD7/cdcVKdqM2J8i8tQ64mO0jnb4FTbAXKKLiaI
+         +0hv0rTGpOOaiNnYr2SO7MXWhcjYURlndINcyZTr9c8hFi12Tru1ylDJMB+oDW74F7uM
+         WBBn2Tf8NZUoOLIUIL+qKufimNHhrSXzKpbTHzz3NkEEY7xi3JdvoRRh7oJIoQB3LzMs
+         jsTg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :delivered-to;       
+ bh=xHwaHPCEMQoEvkYoNIvM9qIW/p0zEa2PMuN2w2ZM3D8=;       
+ fh=z0mgbEvBr+ZzBA+sOjDyNqwbQVDJkOfLKjxH8z6WtxY=;       
+ b=dpcBY9eNbN0FBF13h6UPnb4h5b88Si07lcshu9HEkUjG0SPNGP+s0IkZYpRJvvXt24        
+ 2UvqQ/ffDxsKXcpeUQcbIunV3U0sicr4ljQ3ljRe5yn+6Agms7J4366h2LoJNhJrb/Zc        
+ vk2Yoyfah92GPHErUSBDxDbEdMKqYWLP3pnw6EvEo7bmv04AumYaS7IqjjDOfTmrRb4f        
+ xpSWzPRgiSJ+4qLMAiQ09W8Af1daI5s5/2v9tCRyXnXq6lZNIM1Sk5R5l9akfK+Gw1Vb        
+ PSYrqX+aSyzsvEYkGD6/mF4vwvqLQhatUCX9h4rX0moSxOAzdlEI7flKO7GreWLgpv1U        
+ yTfw==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.216.70 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-182.gaggle.net. [162.216.127.182])
+        by mx.google.com with ESMTPS id
+ a9-20020a67f7c9000000b0046690a52e38si1083925vsp.370.2023.12.20.06.19.03
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Wed, 20 Dec 2023
+ 06:19:03 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.216.70 as permitted sender) client-ip=209.85.216.70;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.216.70 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx06.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex02.lax.gaggle.net (Postfix) with ESMTP id 929742C00CC
+	for <4804241180@students.ocps.net>; Wed, 20 Dec 2023 06:19:02 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx06.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Wed, 20 Dec 2023 06:19:01 -0800
+Received: from mx22.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx2.gaggle.net (Postfix) with ESMTP id 532F12E004F
+	for <4804241180@students.ocps.net>; Wed, 20 Dec 2023 06:19:01 -0800 (PST)
+Received: from [209.85.216.70] (HELO mail-pj1-f70.google.com) (209.85.216.70)
+    by mx22.gaggle.net (qpsmtpd/0.83) with ESMTP; Wed, 20 Dec 2023 06:19:00
+ -0800
+Received: by mail-pj1-f70.google.com with SMTP id
+ 98e67ed59e1d1-28b7eeba1c9so1935746a91.3        for
+ <4804241180@students.ocps.net>; Wed, 20 Dec 2023 06:19:00 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1703081940; x=1703686740;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=xHwaHPCEMQoEvkYoNIvM9qIW/p0zEa2PMuN2w2ZM3D8=;
+        b=IOHMkWpvuQQHU9k8HRckfYvTm2tAxICjNYXs1iGV1RGZVesti71uvWDqrsD1fkzmhS
+         zrC3FXK6XN67Ktg9joBLxpkHnmKooKvZk0CHQ84no4vDitwFyGovyQprzplf1bjCVCUB
+         GgZxHxtK/OZQYljQbRYHsVR4CHD2B4UnPFIybt9ARtC9lCgbEkZRWEJ/gzS7OpbVnsTB
+         UsvQ0G3lLfQ2PamKJuV5uTEOiC1S4TGI9A1HTmnqbOStGU7LW/phbBeuk1RWlxvsvvDJ
+         wIPQ6UGAW7dt74ZOy4TWsZWbwEh/4Doedzp33Xp9lKClu2WAPVQKbjfhy3LifomKbUIH
+         QeFg==
+X-Gm-Message-State: AOJu0YybrjdDfUQmoWT9TQk16wO+TbVOjjzdjaJlLFHByr/rQwfEKmMv
+	u/yVHLXVkXSMTMyW3ustKY3pS78iyaj1oPAOdYeClw9fuwCDJgikBez0QMS0vr4be9IqIdMJ1bm
+	rJSUP4Raqo2vmO8x//E84fj36QRSGOt9/t+fjFzlMHLAt2hQEbPXgWg8ErdiCWA==
+X-Received: by 2002:a17:90b:1e06:b0:28b:77db:f84 with SMTP id
+ pg6-20020a17090b1e0600b0028b77db0f84mr2690783pjb.94.1703081940236;       
+ Wed, 20 Dec 2023 06:19:00 -0800 (PST)
+X-Received: by 2002:a17:90b:1e06:b0:28b:77db:f84 with SMTP id
+ pg6-20020a17090b1e0600b0028b77db0f84mr2690770pjb.94.1703081939842; Wed, 20
+ Dec 2023 06:18:59 -0800 (PST)
+MIME-Version: 1.0
+References:
+ <CANuu65H0GFtbHA2DLhoSzw3svZqXkRJZwnizocJRTN-pAO9V8A@mail.gmail.com>
+In-Reply-To:
+ <CANuu65H0GFtbHA2DLhoSzw3svZqXkRJZwnizocJRTN-pAO9V8A@mail.gmail.com>
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Wed, 20 Dec 2023 09:18:48 -0500
+Message-ID:
+ <CAGZ_XgActUzQPfhUkjrQJw86LN34d_f9HvVDimE9ZYZacACyJQ@mail.gmail.com>
+Subject: Re: Most likely to Google form idk if it sent :/
+To: Brandon Nova <4804241180@students.ocps.net>
+Content-Type: multipart/alternative; boundary="0000000000000c501d060cf1aa6b"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx22.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdabd821aa4d0b?=
+ =?utf-8?q?b1f16e6edf930be0b9bdb7d925bdd22d3d579122afaac9d40193e46f745fd2967?=
+ =?utf-8?q?d8eedfaeb0ec12d14eb5a3d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 167399360
+X-Virus-Checked: Checked by ClamAV on mx06.gaggle.net
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fd=252Fe=252F1FAIpQLSf4Pm6rb0F81F6qz3hoHa?=
+ =?utf-8?q?CABX5spBwrbO4DYs3oIyO=5Flt4p5Q=252Fviewform=253Fusp=253Dsf=5Flink?=
+  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?http=3A//docs=2Egoogle=2Ecom?=
+ =?utf-8?q?=252Fforms=252Fd=252Fe=252F1FAIpQLSf4Pm6rb0F81F6qz3hoHaCABX5spBwr?=
+ =?utf-8?q?bO4DYs3oIyO=5Flt4p5Q=252Fviewform?=  false 0 0
+
+--0000000000000c501d060cf1aa6b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+complete =F0=9F=92=83=F0=9F=95=BA
+
+On Wed, Dec 20, 2023 at 9:03=E2=80=AFAM Brandon Nova <4804241180@students.o=
+cps.net>
+wrote:
+
+>
+> https://docs.google.com/forms/d/e/1FAIpQLSf4Pm6rb0F81F6qz3hoHaCABX5spBwrb=
+O4DYs3oIyO_lt4p5Q/viewform?usp=3Dsf_link
+>
+
+--0000000000000c501d060cf1aa6b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">complete=C2=A0=F0=9F=92=83=F0=9F=95=BA</div><br><div class=
+=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Dec 20, 2023=
+ at 9:03=E2=80=AFAM Brandon Nova &lt;<a href=3D"mailto:4804241180@students.=
+ocps.net">4804241180@students.ocps.net</a>&gt; wrote:<br></div><blockquote =
+class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px sol=
+id rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr"><a href=3D"https://d=
+ocs.google.com/forms/d/e/1FAIpQLSf4Pm6rb0F81F6qz3hoHaCABX5spBwrbO4DYs3oIyO_=
+lt4p5Q/viewform?usp=3Dsf_link" target=3D"_blank">https://docs.google.com/fo=
+rms/d/e/1FAIpQLSf4Pm6rb0F81F6qz3hoHaCABX5spBwrbO4DYs3oIyO_lt4p5Q/viewform?u=
+sp=3Dsf_link</a><br></div>
+</blockquote></div>
+
+--0000000000000c501d060cf1aa6b--

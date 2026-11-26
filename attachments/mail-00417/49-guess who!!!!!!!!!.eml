@@ -1,0 +1,199 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:422b:b0:4c:f15:70be with SMTP id r43csp1415795laa;
+        Tue, 19 Dec 2023 07:14:43 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IHBuv28cEhRDHJ5R5D5RnY74Y6+aarjI9NhxgVLRNrYdlcmdIo5hd7uiLIIeN5MwaD0SVqK
+X-Received: by 2002:ac5:cfef:0:b0:4b6:bdba:8460 with SMTP id
+ m47-20020ac5cfef000000b004b6bdba8460mr2086553vkf.9.1702998883437;        Tue,
+ 19 Dec 2023 07:14:43 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1702998883; cv=none;
+        d=google.com; s=arc-20160816;
+        b=U3hkZwHWfV6p7c2cfGslEDkDJjtPXgcn7sd9v1wzXYo1LJhX/+3aPCxxIVVaLIzgE2
+         UeUZs0G135l1oHBZnKrHDAf1/FL1P8jC7A81aqXEKVqTlARhJ3+GUeMlUYBbPzU246YX
+         z45Zs+i/kDk10e246XImXP3PjV9z7GrCj0dEkUWYUmOG6gQfjaW2bIF/9QqtrK3ZmAmj
+         ZO8bnejKMS0OBQwaR/NXwmixOu4OdMnMssNbPTg9cAOzZT4TljZLb87K2Ok5pOC96dBk
+         qNoMsByi0SadZL/I/hL4AQvIHcv83E4ko2jyE3iDC9mtw4l01+qV8pDTNAchBqmx1wTU
+         eETA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version        
+ :delivered-to;        bh=mUMAU0oHbMOuE4acqlcNchOiAgTS6ajHx5e9DWsY/10=;
+        fh=9d+nZJUVr8hD3ScTKsIdo25yDwVsu4+cBMvGPHNXIlU=;       
+ b=wMRLnMLktNyvq8CGZcCt+8gBnAVgP7Bnz+iR4NVXxXNK0gT8nICtHUjxcHbwAwJb/4        
+ Cn2WbpP7d9l5JBxx+Rx5Kslnke0NubpmjvA6r2e/SSGQAtOUB+dYCPrVQafkiSjcZyRR        
+ WRjjb4rTvU+HsD22RwVG8azfDHgIHM/xM+lLzZ0akg9m1h6iNBvDqbueH6pKHesbfu2j        
+ br9NCVHHgS22W2IRT+WdCT6AkR+1p5HhqRKBBXpAM8Luth7inVWi6J9BOCt1KqFd1rBq        
+ iXEC4PiuQUJKbN1d2L3tJ8jz+VeXaG6s/y6zHyy3E5fPwj0ch8xO1B+GYCziZZEm7yvv        
+ AVUw==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.128.197 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-166.gaggle.net. [162.216.127.166])
+        by mx.google.com with ESMTPS id
+ 81-20020a1f1454000000b004b2f2e3b2b3si4554275vku.3.2023.12.19.07.14.43       
+ for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Tue, 19 Dec 2023
+ 07:14:43 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.128.197 as permitted sender) client-ip=209.85.128.197;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.128.197 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx26.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex01.lax.gaggle.net (Postfix) with ESMTP id 9373D1C009A
+	for <4804241180@students.ocps.net>; Tue, 19 Dec 2023 07:14:42 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx26.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Tue, 19 Dec 2023 07:14:41 -0800
+Received: from mx21.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx09.lax.gaggle.net (Postfix) with ESMTP id AB511260054
+	for <4804241180@students.ocps.net>; Tue, 19 Dec 2023 07:14:41 -0800 (PST)
+Received: from [209.85.128.197] (HELO mail-yw1-f197.google.com)
+ (209.85.128.197)    by mx21.gaggle.net (qpsmtpd/0.83) with ESMTP; Tue, 19 Dec
+ 2023 07:14:40 -0800
+Received: by mail-yw1-f197.google.com with SMTP id
+ 00721157ae682-5ca2a6f07b6so59679207b3.2        for
+ <4804241180@students.ocps.net>; Tue, 19 Dec 2023 07:14:40 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1702998880; x=1703603680;
+        h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=mUMAU0oHbMOuE4acqlcNchOiAgTS6ajHx5e9DWsY/10=;
+        b=XmZkUkwV2xaIM2Urz8BF+SQH526YTKyW1je6rSPA9xVC1VVjmBewpHrMTfMFnlpk4S
+         lfhGBgUrUiO74+s5IpId6inBq7GFxqdWC88YbNmC1NoizLsdxxDJHGo7JOnJGCIDnMMo
+         mJvaeD2z1A20XnNjamyqrq05TkWvTGU7PV02/KTPkQordGvXU3QhBDW/rqfZVjLfg2dv
+         dwS2In3PsHjFSM/uCl1O5OQ64cyLUvA+Ktst0ypVhldNRtso1aOaq8Scl25wqQDNLnF9
+         f92omeebzhjrdJKC0pccNyR0A1gm6DSgNBreBVYREB91vYVZMPb04IfrbY8FIXUDUx9s
+         n5pA==
+X-Gm-Message-State: AOJu0YwJC7tnJYBALHfWjYHGuyGqIvypeySLxMIO79ZD1KkQ2umTPaF5
+	8D0raIEkhqo0v3FKfbeqtNSiHLCb+UpuOr4M+MvyKPzXPsoFVtX2+Lwd8p1+aCsgYx3p+Czr54r
+	17gjD9SMwJvhX6u/7s/RNa/gLopKZ8qHitrhFqK4OTnGqb69NgqnsJVvJgl9kQZE=
+X-Received: by 2002:a0d:cc82:0:b0:5e7:f343:2032 with SMTP id
+ o124-20020a0dcc82000000b005e7f3432032mr623131ywd.4.1702998880505;        Tue,
+ 19 Dec 2023 07:14:40 -0800 (PST)
+MIME-Version: 1.0
+X-Received: by 2002:a0d:cc82:0:b0:5e7:f343:2032 with SMTP id
+ o124-20020a0dcc82000000b005e7f3432032mr623121ywd.4.1702998880261; Tue, 19 Dec
+ 2023 07:14:40 -0800 (PST)
+Reply-To: 4804135947@students.ocps.net
+X-No-Auto-Attachment: 1
+Feedback-ID: MailTypeSendForm:GoogleForms
+X-GoogleForms-FormId:
+ e/1FAIpQLSexoq04gOjw3JoegQa_2_v38hl5w0-8LuUdvMFpuoNNgCsQeQ
+X-GoogleForms-CustomerDisplayName: Orange County Public Schools
+Message-ID: <autogen-java-cc48243a-267e-4dae-882b-70df4bf2dfd0@google.com>
+Date: Tue, 19 Dec 2023 15:14:40 +0000
+Subject: guess who!!!!!!!!!
+From: 4804135947@students.ocps.net
+To: 4804241180@students.ocps.net
+Content-Type: multipart/alternative; boundary="0000000000004fad50060cde534c"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx21.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d6560c5706d4742ba916b92a63?=
+ =?utf-8?q?066a1520ae03718ea10a1f6832086e04ccc0bbd81778e00aa3ebe46b18939e65d?=
+ =?utf-8?q?f250ebc8bd457726ea68f02d487ea06101c75?=
+X-Gaggle-Message-Info: 166394492
+X-Virus-Checked: Checked by ClamAV on mx26.gaggle.net
+X-Gaggle-APS-Scores: false 0.0010150671005249023 0 0 5 =?utf-8?q?https=253A?=
+ =?utf-8?q?=252F=252Fwww=2Egstatic=2Ecom=252Fdocs=252Fforms=252Fgoogle=5Ffor?=
+ =?utf-8?q?ms=5Flogo=5Flockup=5Fblack=5F2x=2Epng?=  false 200 0
+X-Gaggle-APS-Scores: false 8.660247112857178E-5 0 0 2
+ http://schema.org%2FViewAction  false 200 56101
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fd=252Fe=252F1FAIpQLSexoq04gOjw3JoegQa=5F?=
+ =?utf-8?q?2=5Fv38hl5w0-8LuUdvMFpuoNNgCsQeQ=252Fviewform=253Fvc=253D0=2526am?=
+ =?utf-8?q?p=253Bc=253D0=2526amp=253Bw=253D1=2526amp=253Bflr=253D0=2526amp?=
+ =?utf-8?q?=253Busp=253Dmail=5Fform=5Flink?=  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fd=252Fe=252F1FAIpQLSexoq04gOjw3JoegQa=5F?=
+ =?utf-8?q?2=5Fv38hl5w0-8LuUdvMFpuoNNgCsQeQ=252Fviewform=253Fvc=253D0=2526am?=
+ =?utf-8?q?p=253Bc=253D0=2526amp=253Bw=253D1=2526amp=253Bflr=253D0=2526amp?=
+ =?utf-8?q?=253Busp=253Dmail=5Fgoto=5Fform?=  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9
+ https%3A%2F%2Fdocs.google.com%2Fforms%3Fusp%3Dmail_form_link  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9
+ http://docs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSexoq04gOjw3JoegQa_2_v38hl5w0
+  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 http://docs.google.com%2Fforms  false 0 0
+
+--0000000000004fad50060cde534c
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+I've invited you to fill out the following form:
+guess who!!!!!!!!!
+
+To fill it out, visit:
+https://docs.google.com/forms/d/e/1FAIpQLSexoq04gOjw3JoegQa_2_v38hl5w0-8LuUdvMFpuoNNgCsQeQ/viewform?vc=0&amp;c=0&amp;w=1&amp;flr=0&amp;usp=mail_form_link
+
+fun prompts!!!
+
+Google Forms: Create and analyze surveys.
+
+--0000000000004fad50060cde534c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; margin=
+: 0; padding: 0; height: 100%; width: 100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"background-color:rgb(193,185,113);" widt=
+h=3D"100%" role=3D"presentation"><tbody><tr height=3D"64px"><td style=3D"pa=
+dding: 0 24px;"><img alt=3D"Google Forms" height=3D"26px" style=3D"display:=
+ inline-block; margin: 0; vertical-align: middle;" width=3D"143px" src=3D"h=
+ttps://www.gstatic.com/docs/forms/google_forms_logo_lockup_black_2x.png"></=
+td></tr></tbody></table><div style=3D"padding: 24px; background-color:rgb(2=
+46,245,234)"><div align=3D"center" style=3D"background-color: #fff; border-=
+bottom: 1px solid #e0e0e0;margin: 0 auto; max-width: 624px; min-width: 154p=
+x;padding: 0 24px;"><table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"background-color: #fff;" width=3D"100%" role=3D"presentatio=
+n"><tbody><tr height=3D"24px"><td></td></tr><tr><td><span style=3D"display:=
+ table-cell; vertical-align: top; font-size: 13px; line-height: 18px; color=
+: #424242;" dir=3D"auto">fun prompts!!!</span></td></tr><tr height=3D"20px"=
+><td></tr><tr style=3D"font-size: 20px; line-height: 24px;"><td dir=3D"auto=
+"><a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSexoq04gOjw3JoegQa_2_=
+v38hl5w0-8LuUdvMFpuoNNgCsQeQ/viewform?vc=3D0&amp;c=3D0&amp;w=3D1&amp;flr=3D=
+0&amp;usp=3Dmail_form_link" style=3D"color: rgb(193,185,113); text-decorati=
+on: none; vertical-align: middle; font-weight: 500">guess who!!!!!!!!!</a><=
+div itemprop=3D"action" itemscope itemtype=3D"http://schema.org/ViewAction"=
+><meta itemprop=3D"url" content=3D"https://docs.google.com/forms/d/e/1FAIpQ=
+LSexoq04gOjw3JoegQa_2_v38hl5w0-8LuUdvMFpuoNNgCsQeQ/viewform?vc=3D0&amp;c=3D=
+0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_goto_form"><meta itemprop=3D"name" c=
+ontent=3D"Fill out form"></div></td></tr><tr height=3D"16px"></tr><tr><td s=
+tyle=3D"display: table-cell; vertical-align: top; font-size: 13px; line-hei=
+ght: 18px; color: #424242;" dir=3D"auto">Here's a new game for you all (ins=
+pired by ideas brought forth by your very own olive and gia)<div><br></div>=
+<div>This is PART 1 of the game. There are 6 prompts for you to respond to,=
+ and for each one you will respond as the person listed in the prompt. (e.g=
+. How would Lauren respond to this? Then you will write a response as Laure=
+n). You will also respond as yourself for whichever prompt that is.</div><d=
+iv><br></div><div>In PART 2, you will see the responses, and you will have =
+to pick which one was written by the person in the prompt. (e.g. you will s=
+ee everyone's responses for Lauren, and try to pick the one that Lauren act=
+ually wrote)</div><div><br></div><div>The point system will be as follows:<=
+/div><div><ul><li>+3 for choosing the correct person who wrote the response=
+</li><li>+2 if someone chooses your response as the one you wrote as yourse=
+lf</li><li>+1 if someone chooses your response that you impersonated someon=
+e else with</li></ul><div>Also since this is a longer form i'll have email =
+tracking thing turned on and it <i>should</i> save your responses so you ca=
+n stop and continue later if needed</div></div></td></tr><tr height=3D"24px=
+"></tr><tr><td><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%"><tbody><tr><td><a href=3D"https://docs.google.com/forms/d/e/1FAI=
+pQLSexoq04gOjw3JoegQa_2_v38hl5w0-8LuUdvMFpuoNNgCsQeQ/viewform?vc=3D0&amp;c=
+=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_form_link" style=3D"border-radius=
+: 3px; box-sizing: border-box; display: inline-block; font-size: 13px; font=
+-weight: 700; height: 40px; line-height: 40px; padding: 0 24px; text-align:=
+ center; text-decoration: none; text-transform: uppercase; vertical-align: =
+middle; color: #000; background-color: rgb(193,185,113);" target=3D"_blank"=
+ rel=3D"noopener">Fill out form</a></td></tr></tbody></table></td></tr><tr =
+height=3D"24px"></tr></tbody></table></div><table align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0" style=3D"max-width: 672px; min-width: 154px; bo=
+rder-collapse: separate; border-spacing: 0 0.2em;" width=3D"100%" role=3D"p=
+resentation"><tbody><tr height=3D"24px"><td></td></tr><tr><td><a href=3D"ht=
+tps://docs.google.com/forms?usp=3Dmail_form_link" style=3D"color: #424242; =
+font-size: 13px;">Create your own Google Form</a></td></tr></tbody></table>=
+</div></body></html>
+--0000000000004fad50060cde534c--

@@ -1,0 +1,900 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:422b:b0:4c:f15:70be with SMTP id r43csp663951laa;
+        Mon, 18 Dec 2023 05:37:38 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IHDDGUGoOmuGuF9T377ez1zVjbwfl+2Qbx+0SMvc2oX409FpcknLhPdLpFJwro67gNDHGC7
+X-Received: by 2002:a05:6122:21ab:b0:4b6:d6f4:ceb6 with SMTP id
+ j43-20020a05612221ab00b004b6d6f4ceb6mr434293vkd.32.1702906657956;        Mon,
+ 18 Dec 2023 05:37:37 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1702906657; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0D8mL129YKQUOyLwAkQ01OvtKwsI+DjsDw6QsBKnMSbdLsvOpA/bC9G9njz/AgoBsW
+         Jkr6KN4yah9Jn29/4tk5VQiFzEo26ifuZ8Inr2ovgCkNDQWfy9Jpa3wdkOqvUutT8Xz8
+         l7BqeD/22hqnsNf9rL2XBClKP7br2LUEsITC/dJQff+bFT9ShtCWRjgLAmCUgIbUxLD2
+         Z9tSAsUDPl2FxAnz771nuSd0SCKd1PoT1e2JlcJ5DAKIY62nkIUYrD6i1OqCXQor33Ys
+         urCzyt2LAB61AnuTcvM4DUdPC8TkpyxGbru3M96voBqv2061/proIvWJbkrT8YB5waBz
+         4+Cg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version        
+ :delivered-to;        bh=pItWPGVlU9ZVFP31U5eFqUX1VSVl8EmoWmqUK+/KAE0=;
+        fh=9d+nZJUVr8hD3ScTKsIdo25yDwVsu4+cBMvGPHNXIlU=;       
+ b=l/ZtdCKQrXZXAwRhz5kd9morVzcUQICyedg1EkKOt6wALga44mfpcN2SlhUqp+uDTv        
+ LFptP/pVzoKqITpXGISEgioD+M9f7TQSMCJA2iRqxbi56mvZrFP9Kypv7irArroJQcKS        
+ FXC1Mw2UySLw14IrvMl8UzOzugKTnjD8eKwUZ8bgOsYpGaqKHK6YiaY1man0QWeXqS42        
+ N/X1oVoAXYmIkeYuFzIpICpr5tA1cVx63KvSsnraQCWDoOFsRtB3WPrwL19xA7fvOHks        
+ 3Z0FSBDfoUAAuncBNeSVlsjFg5zNtn6UlZV0k9dRqULw0BTKrScUTy8W7T2fMRXxcWoO        
+ pnaA==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804089800@students.ocps.net designates 209.85.128.199 as permitted
+ sender) smtp.mailfrom=4804089800@students.ocps.net
+Return-Path: <4804089800@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-181.gaggle.net. [162.216.127.181])
+        by mx.google.com with ESMTPS id
+ q125-20020a1fd983000000b004b6d783de47si99654vkg.252.2023.12.18.05.37.37
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Mon, 18 Dec 2023
+ 05:37:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804089800@students.ocps.net
+ designates 209.85.128.199 as permitted sender) client-ip=209.85.128.199;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804089800@students.ocps.net designates 209.85.128.199 as permitted sender)
+ smtp.mailfrom=4804089800@students.ocps.net
+Received: from mx06.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex02.lax.gaggle.net (Postfix) with ESMTP id 052AE2C0804
+	for <4804241180@students.ocps.net>; Mon, 18 Dec 2023 05:37:37 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx06.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Mon, 18 Dec 2023 05:37:35 -0800
+Received: from mx64.lax.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx07.lax.gaggle.net (Postfix) with ESMTP id 50662120056
+	for <4804241180@students.ocps.net>; Mon, 18 Dec 2023 05:37:35 -0800 (PST)
+Received: from [209.85.128.199] (HELO mail-yw1-f199.google.com)
+ (209.85.128.199)    by mx64.gaggle.net (qpsmtpd/0.83) with ESMTP; Mon, 18 Dec
+ 2023 05:37:34 -0800
+Received: by mail-yw1-f199.google.com with SMTP id
+ 00721157ae682-5cb6271b225so38315857b3.1        for
+ <4804241180@students.ocps.net>; Mon, 18 Dec 2023 05:37:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1702906654; x=1703511454;
+        h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=pItWPGVlU9ZVFP31U5eFqUX1VSVl8EmoWmqUK+/KAE0=;
+        b=u5M/23fePwzcwcGgDN2hC7EgC9+8u003Anrs9Jghx7ubbANv1yQ7VwOxoiZMVR0MNZ
+         GgGzhiq8acd1cDQLy3n737YZ/I7TwRWfi3211oRaSNKXQE/+43Ifzp+HOIpCOBeoC03k
+         1mWTYIaKKnccsKPLt5P+9fGR1o1STpF2AqPNXiFa5VWIKA16CSFFJpOr0XgMC4FOwXi+
+         ED4m6YoJcvLSHC/+54QUpUW+dh/cLR+5WXvWBc0XcWl25KFhoFs9nMcSaw6D2Ytp63dt
+         mmkAZAPH8dKvqi88Ke4+DRtq0VRG410BA+svzEpfQ/wAaO9nFEcdLnhcCK2fuD1itLM2
+         PNtQ==
+X-Gm-Message-State: AOJu0YzCKtxfiA54EN5oXtMDa5oKNAIXkaXgXXXkwnVP9MvEU+0wlnqB
+	QjA+i5Mu9/vY52Og+gvpzqJwYM8B26Px8+ilTEJ1KOKKyaGEphQclSQR+DIxAzZsBSbyNRNwjpY
+	TeE54epl8VWdWSdt3aoM/JqY8tc/pnlG8nMK6dozZN+x3+dz578Xk4sSat2avU0+E/Hlg
+X-Received: by 2002:a81:69c5:0:b0:5e5:7b36:4ea9 with SMTP id
+ e188-20020a8169c5000000b005e57b364ea9mr2172039ywc.36.1702906653913;       
+ Mon, 18 Dec 2023 05:37:33 -0800 (PST)
+MIME-Version: 1.0
+X-Received: by 2002:a81:69c5:0:b0:5e5:7b36:4ea9 with SMTP id
+ e188-20020a8169c5000000b005e57b364ea9mr2172033ywc.36.1702906653705; Mon, 18
+ Dec 2023 05:37:33 -0800 (PST)
+Reply-To: 4804089800@students.ocps.net
+X-No-Auto-Attachment: 1
+Feedback-ID: MailTypeSendForm:GoogleForms
+X-GoogleForms-FormId:
+ e/1FAIpQLSdJnv7bwC26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA
+X-GoogleForms-CustomerDisplayName: Orange County Public Schools
+Message-ID: <autogen-java-c8b2cefd-be7d-414d-9213-1df7d3ab11a1@google.com>
+Date: Mon, 18 Dec 2023 13:37:33 +0000
+Subject: Who's Most Likely To... Part Two
+From: 4804089800@students.ocps.net
+To: 4804241180@students.ocps.net
+Content-Type: multipart/alternative; boundary="0000000000002e268a060cc8da92"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx64.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?a531ae093a8bdb49d6560c5706d4742ba916b92a63?=
+ =?utf-8?q?066a1509d95f10086ef701ad6949cf3513a4a31e561d6bf951d6699a312fa0ad7?=
+ =?utf-8?q?b0f68950cba08b986116a02d487ea06101c75?=
+X-Gaggle-Message-Info: 161600158
+X-Virus-Checked: Checked by ClamAV on mx06.gaggle.net
+X-Gaggle-APS-Scores: false 3.205239772796631E-4 0 0 5 =?utf-8?q?https=253A?=
+ =?utf-8?q?=252F=252Fwww=2Egstatic=2Ecom=252Fdocs=252Fforms=252Fgoogle=5Ffor?=
+ =?utf-8?q?ms=5Flogo=5Flockup=5Fwhite=5F2x=2Epng?=  false 200 0
+X-Gaggle-APS-Scores: false 1.1294358409941196E-4 0 0 7 =?utf-8?q?https=253A?=
+ =?utf-8?q?=252F=252Fwww=2Egoogle=2Ecom=252Fforms=252Fabout=252F=253Futm=5Fs?=
+ =?utf-8?q?ource=253Dproduct=2526amp=253Butm=5Fmedium=253Dforms=5Flogo=2526a?=
+ =?utf-8?q?mp=253Butm=5Fcampaign=253Dforms?=  false 200 96912
+X-Gaggle-APS-Scores: false 1.1294358409941196E-4 0 0 7
+ http://www.google.com%2Fforms%2Fabout%2F  false 200 96912
+X-Gaggle-APS-Scores: false 8.660247112857178E-5 0 0 2
+ http://schema.org%2FViewAction  false 200 56101
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fd=252Fe=252F1FAIpQLSdJnv7bwC26u9hPLWiWR0?=
+ =?utf-8?q?5vH8Gu-Ys5yFqnETLlHDG0RQnMoA=252Fviewform=253Fvc=253D0=2526amp=25?=
+ =?utf-8?q?3Bc=253D0=2526amp=253Bw=253D1=2526amp=253Bflr=253D0=2526amp=253Bu?=
+ =?utf-8?q?sp=253Dmail=5Fform=5Flink?=  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fd=252Fe=252F1FAIpQLSdJnv7bwC26u9hPLWiWR0?=
+ =?utf-8?q?5vH8Gu-Ys5yFqnETLlHDG0RQnMoA=252Fviewform=253Fvc=253D0=2526amp=25?=
+ =?utf-8?q?3Bc=253D0=2526amp=253Bw=253D1=2526amp=253Bflr=253D0=2526amp=253Bu?=
+ =?utf-8?q?sp=253Dmail=5Fgoto=5Fform?=  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fu=252F0=252Fd=252Fe=252F1FAIpQLSdJnv7bwC?=
+ =?utf-8?q?26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA=252FformResponse?=  false
+ 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fu=252F0=252Fd=252Fe=252F1FAIpQLSdJnv7bwC?=
+ =?utf-8?q?26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA=252Freportabuse=253Fsour?=
+ =?utf-8?q?ce=253Dhttps=253A=252F=252Fdocs=2Egoogle=2Ecom=252Fforms=252Fd=25?=
+ =?utf-8?q?2Fe=252F1FAIpQLSdJnv7bwC26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA?=
+ =?utf-8?q?=252Fviewform=253Fsid=25253D1ad3a7d30b00d742=252526vc=25253D0=252?=
+ =?utf-8?q?526c=25253D0=252526w=25253D1=252526flr=25253D0=252526token=25253D?=
+ =?utf-8?q?YjNOfYwBAAA=2E56Cf8fTlCvQvQy5wgoi9Lg=2EaFdzrPvCSisxnFfmz8p10A?= 
+ false 0 0
+X-Gaggle-APS-Scores:
+ false 0.0 0 0 9 http://www.google.com%2Faccounts%2FTOS  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9
+ https%3A%2F%2Fdocs.google.com%2Fforms%3Fusp%3Dmail_form_link  false 0 0
+
+--0000000000002e268a060cc8da92
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+I've invited you to fill out the following form:
+Who&#39;s Most Likely To... Part Two
+
+To fill it out, visit:
+https://docs.google.com/forms/d/e/1FAIpQLSdJnv7bwC26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA/viewform?vc=0&amp;c=0&amp;w=1&amp;flr=0&amp;usp=mail_form_link
+
+I&#39;ve invited you to fill out a form:
+
+Google Forms: Create and analyze surveys.
+
+--0000000000002e268a060cc8da92
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; margin=
+: 0; padding: 0; height: 100%; width: 100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"background-color:rgb(103,58,183);" width=
+=3D"100%" role=3D"presentation"><tbody><tr height=3D"64px"><td style=3D"pad=
+ding: 0 24px;"><img alt=3D"Google Forms" height=3D"26px" style=3D"display: =
+inline-block; margin: 0; vertical-align: middle;" width=3D"143px" src=3D"ht=
+tps://www.gstatic.com/docs/forms/google_forms_logo_lockup_white_2x.png"></t=
+d></tr></tbody></table><div style=3D"padding: 24px; background-color:rgb(23=
+7,231,246)"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"max-width: 672px; min-width: 154px; border-collapse: sep=
+arate; border-spacing: 0 0.2em;" width=3D"100%" role=3D"presentation"><tbod=
+y><tr><td style=3D"font-size: 13px; line-height: 18px; color: #424242; font=
+-weight: 700">Having trouble viewing or submitting this form?</td></tr><tr =
+height=3D"8px"><td></td></tr><tr><td><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%"><tbody><tr><td><a href=3D"https://docs.goo=
+gle.com/forms/d/e/1FAIpQLSdJnv7bwC26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA/=
+viewform?vc=3D0&amp;c=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_form_link" s=
+tyle=3D"border-radius: 3px; box-sizing: border-box; display: inline-block; =
+font-size: 13px; font-weight: 700; height: 40px; line-height: 40px; padding=
+: 0 24px; text-align: center; text-decoration: none; text-transform: upperc=
+ase; vertical-align: middle; color: #fff; background-color: rgb(103,58,183)=
+;" target=3D"_blank" rel=3D"noopener">Fill out in Google Forms</a></td></tr=
+></tbody></table></td></tr><tr height=3D"24px"><td></td></tr></tbody></tabl=
+e><div align=3D"center" style=3D"background-color: #fff; border-bottom: 1px=
+ solid #e0e0e0;margin: 0 auto; max-width: 624px; min-width: 154px;padding: =
+0 24px;"><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"background-color: #fff;" width=3D"100%" role=3D"presentation"><tbody><t=
+r height=3D"24px"><td></td></tr><tr><td><span style=3D"display: table-cell;=
+ vertical-align: top; font-size: 13px; line-height: 18px; color: #424242;" =
+dir=3D"auto">I&#39;ve invited you to fill out a form:</span></td></tr><tr h=
+eight=3D"20px"><td></tr><tr style=3D"font-size: 20px; line-height: 24px;"><=
+td dir=3D"auto"><a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSdJnv7b=
+wC26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA/viewform?vc=3D0&amp;c=3D0&amp;w=
+=3D1&amp;flr=3D0&amp;usp=3Dmail_form_link" style=3D"color: rgb(103,58,183);=
+ text-decoration: none; vertical-align: middle; font-weight: 500">Who&#39;s=
+ Most Likely To... Part Two</a><div itemprop=3D"action" itemscope itemtype=
+=3D"http://schema.org/ViewAction"><meta itemprop=3D"url" content=3D"https:/=
+/docs.google.com/forms/d/e/1FAIpQLSdJnv7bwC26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHD=
+G0RQnMoA/viewform?vc=3D0&amp;c=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_got=
+o_form"><meta itemprop=3D"name" content=3D"Fill out form"></div></td></tr><=
+tr height=3D"16px"></tr><tr><td style=3D"display: table-cell; vertical-alig=
+n: top; font-size: 13px; line-height: 18px; color: #424242;" dir=3D"auto">P=
+lease answer who you think would do each of the items below</td></tr><tr he=
+ight=3D"24px"></tr><tr><td><div class=3D"ss-form" style=3D""><form action=
+=3D"https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJnv7bwC26u9hPLWiWR05vH8G=
+u-Ys5yFqnETLlHDG0RQnMoA/formResponse" method=3D"POST" id=3D"ss-form" target=
+=3D"_self" style=3D""><ol role=3D"list" class=3D"ss-question-list" style=3D=
+"padding-left: 0;list-style-type:none;">
+
+<div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_975645895" style=3D""><div class=3D"ss-q-title" style=3D"di=
+splay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is =
+most likely to be on the news for being involved with a scam?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to be on the news for being involved with a scam?  " style=3D"list-style=
+:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"mar=
+gin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1201660938" value=3D"Natalie" id=3D"group_1201660938_1" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1201660938" value=3D"Olivia" id=3D"group_1201660938_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1201660938" value=3D"Gianna" id=3D"group_1201660938_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1201660938" value=3D"Lauren" id=3D"group_1201660938_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1201660938" value=3D"Brandon" id=3D"group_1201660938_5" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1201660938" value=3D"Tyler" id=3D"group_1201660938_6" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_188242583" style=3D""><div class=3D"ss-q-title" style=3D"di=
+splay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is =
+most likely to send their food back at a restaurant?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to send their food back at a restaurant?  " style=3D"list-style:none;pad=
+ding:0;margin:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;lin=
+e-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+338037085" value=3D"Natalie" id=3D"group_338037085_1" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+338037085" value=3D"Olivia" id=3D"group_338037085_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+338037085" value=3D"Gianna" id=3D"group_338037085_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+338037085" value=3D"Lauren" id=3D"group_338037085_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+338037085" value=3D"Brandon" id=3D"group_338037085_5" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+338037085" value=3D"Tyler" id=3D"group_338037085_6" role=3D"radio" class=3D=
+"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_186243054" style=3D""><div class=3D"ss-q-title" style=3D"di=
+splay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is =
+most likely to wear socks with sandals?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to wear socks with sandals?  " style=3D"list-style:none;padding:0;margin=
+:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3e=
+m;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+663649768" value=3D"Natalie" id=3D"group_663649768_1" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+663649768" value=3D"Olivia" id=3D"group_663649768_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+663649768" value=3D"Gianna" id=3D"group_663649768_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+663649768" value=3D"Lauren" id=3D"group_663649768_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+663649768" value=3D"Brandon" id=3D"group_663649768_5" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+663649768" value=3D"Tyler" id=3D"group_663649768_6" role=3D"radio" class=3D=
+"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_1894382724" style=3D""><div class=3D"ss-q-title" style=3D"d=
+isplay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is=
+ most likely to join a cult?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to join a cult?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;">=
+<li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bo=
+ttom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+258105275" value=3D"Natalie" id=3D"group_258105275_1" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+258105275" value=3D"Gianna" id=3D"group_258105275_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+258105275" value=3D"Olivia" id=3D"group_258105275_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+258105275" value=3D"Lauren" id=3D"group_258105275_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+258105275" value=3D"Brandon" id=3D"group_258105275_5" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+258105275" value=3D"Tyler" id=3D"group_258105275_6" role=3D"radio" class=3D=
+"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_51648304" style=3D""><div class=3D"ss-q-title" style=3D"dis=
+play:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Most lik=
+ely to run a bird sanctuary?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Most likely to r=
+un a bird sanctuary?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;=
+"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-=
+bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1809653808" value=3D"Natalie" id=3D"group_1809653808_1" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1809653808" value=3D"Gianna" id=3D"group_1809653808_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1809653808" value=3D"Olivia" id=3D"group_1809653808_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1809653808" value=3D"Lauren" id=3D"group_1809653808_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1809653808" value=3D"Brandon" id=3D"group_1809653808_5" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1809653808" value=3D"Tyler" id=3D"group_1809653808_6" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_19390512" style=3D""><div class=3D"ss-q-title" style=3D"dis=
+play:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is m=
+ost likely to have their own talk show?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to have their own talk show?  " style=3D"list-style:none;padding:0;margi=
+n:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3=
+em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+24272300" value=3D"Natalie" id=3D"group_24272300_1" role=3D"radio" class=3D=
+"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+24272300" value=3D"Gianna" id=3D"group_24272300_2" role=3D"radio" class=3D"=
+ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+24272300" value=3D"Olivia" id=3D"group_24272300_3" role=3D"radio" class=3D"=
+ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+24272300" value=3D"Lauren" id=3D"group_24272300_4" role=3D"radio" class=3D"=
+ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+24272300" value=3D"Brandon" id=3D"group_24272300_5" role=3D"radio" class=3D=
+"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+24272300" value=3D"Tyler" id=3D"group_24272300_6" role=3D"radio" class=3D"s=
+s-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_413879707" style=3D""><div class=3D"ss-q-title" style=3D"di=
+splay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;"><div>Wh=
+o is most likely to lock the bathroom door when they=E2=80=99re going to th=
+e bathroom?<br></div>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to lock the bathroom door when they=E2=80=99re going to the bathroom?  "=
+ style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-choic=
+e-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2108830398" value=3D"Natalie" id=3D"group_2108830398_1" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2108830398" value=3D"Gianna" id=3D"group_2108830398_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2108830398" value=3D"Olivia" id=3D"group_2108830398_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2108830398" value=3D"Lauren" id=3D"group_2108830398_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2108830398" value=3D"Brandon" id=3D"group_2108830398_5" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2108830398" value=3D"Tyler" id=3D"group_2108830398_6" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_806710074" style=3D""><div class=3D"ss-q-title" style=3D"di=
+splay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is =
+most likely to become the next James Bond?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to become the next James Bond?  " style=3D"list-style:none;padding:0;mar=
+gin:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1=
+.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1035809215" value=3D"Natalie" id=3D"group_1035809215_1" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1035809215" value=3D"Gianna" id=3D"group_1035809215_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1035809215" value=3D"Olivia" id=3D"group_1035809215_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1035809215" value=3D"Lauren" id=3D"group_1035809215_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1035809215" value=3D"Brandon" id=3D"group_1035809215_5" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1035809215" value=3D"Tyler" id=3D"group_1035809215_6" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_1271200506" style=3D""><div class=3D"ss-q-title" style=3D"d=
+isplay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is=
+ most likely to have over 5,000 unread emails?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to have over 5,000 unread emails?  " style=3D"list-style:none;padding:0;=
+margin:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-heigh=
+t:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1258056380" value=3D"Natalie" id=3D"group_1258056380_1" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1258056380" value=3D"Gianna" id=3D"group_1258056380_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1258056380" value=3D"Olivia" id=3D"group_1258056380_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1258056380" value=3D"Lauren" id=3D"group_1258056380_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1258056380" value=3D"Brandon" id=3D"group_1258056380_5" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1258056380" value=3D"Tyler" id=3D"group_1258056380_6" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_1659716304" style=3D""><div class=3D"ss-q-title" style=3D"d=
+isplay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is=
+ most likely to own their own farm?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to own their own farm?  " style=3D"list-style:none;padding:0;margin:.5em=
+ 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;pad=
+ding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+807069631" value=3D"Natalie" id=3D"group_807069631_1" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+807069631" value=3D"Gianna" id=3D"group_807069631_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+807069631" value=3D"Olivia" id=3D"group_807069631_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+807069631" value=3D"Lauren" id=3D"group_807069631_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+807069631" value=3D"Brandon" id=3D"group_807069631_5" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+807069631" value=3D"Tyler" id=3D"group_807069631_6" role=3D"radio" class=3D=
+"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;"><label class=3D"ss-q-item-labe=
+l" for=3D"entry_2122425576" style=3D""><div class=3D"ss-q-title" style=3D"d=
+isplay:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;">Who is=
+ most likely to cancel on plans last minute?<br>
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who is most like=
+ly to cancel on plans last minute?  " style=3D"list-style:none;padding:0;ma=
+rgin:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:=
+1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1139807268" value=3D"Natalie" id=3D"group_1139807268_1" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Natalie" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Natalie</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1139807268" value=3D"Gianna" id=3D"group_1139807268_2" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Gianna" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Gianna</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1139807268" value=3D"Olivia" id=3D"group_1139807268_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Olivia" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Olivia</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1139807268" value=3D"Lauren" id=3D"group_1139807268_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Lauren" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Lauren</span></label></li> <li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1139807268" value=3D"Brandon" id=3D"group_1139807268_5" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Brandon" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span></label></li> <li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1139807268" value=3D"Tyler" id=3D"group_1139807268_6" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Tyler" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Tyler</span></label></li></ul>
+
+</div></div></div>
+<input type=3D"hidden" name=3D"partialResponse" value=3D"[null,null,&quot;6=
+781235597447216733&quot;]" style=3D"">
+<input type=3D"hidden" name=3D"pageHistory" value=3D"0" style=3D"">
+
+<input type=3D"hidden" name=3D"usp" value=3D"mail_form_submit" style=3D"">
+
+
+<input type=3D"hidden" name=3D"fbzx" value=3D"6781235597447216733" style=3D=
+"">
+
+<div class=3D"ss-item ss-navigate" style=3D"margin:12px 0;"><table id=3D"na=
+vigation-table" style=3D""><tbody><tr><td class=3D"ss-form-entry goog-inlin=
+e-block" id=3D"navigation-buttons" dir=3D"ltr" style=3D"margin-bottom:1.5em=
+;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%;position:r=
+elative;display:inline-block;">
+<input type=3D"submit" name=3D"submit" value=3D"Submit" id=3D"ss-submit" cl=
+ass=3D"jfk-button jfk-button-action " style=3D"">
+</td>
+</tr></tbody></table></div></ol></form></div>
+<div class=3D"ss-footer" style=3D""><div class=3D"ss-attribution" style=3D"=
+"></div>
+<div class=3D"ss-legal" style=3D""><div class=3D"disclaimer-separator" styl=
+e=3D""></div>
+<div class=3D"disclaimer" dir=3D"ltr" style=3D""><div class=3D"powered-by-l=
+ogo" style=3D"margin-top:2em;"><span class=3D"powered-by-text" style=3D"">P=
+owered by</span>
+<a href=3D"https://www.google.com/forms/about/?utm_source=3Dproduct&amp;utm=
+_medium=3Dforms_logo&amp;utm_campaign=3Dforms" style=3D""><div class=3D"ss-=
+logo-container" style=3D""><img src=3D"https://ssl.gstatic.com/docs/forms/f=
+orms_logo_2_small_dark_2x.png" height=3D"21px" width=3D"108px" alt=3D"Googl=
+e Forms" style=3D""></div></a></div>
+<div class=3D"ss-terms" style=3D"color:#777;font-size:11px;margin-top:1.5em=
+;"><span class=3D"disclaimer-msg" style=3D"">This form was created inside o=
+f Orange County Public Schools.</span>
+<br>
+<a href=3D"https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJnv7bwC26u9hPLWiW=
+R05vH8Gu-Ys5yFqnETLlHDG0RQnMoA/reportabuse?source=3Dhttps://docs.google.com=
+/forms/d/e/1FAIpQLSdJnv7bwC26u9hPLWiWR05vH8Gu-Ys5yFqnETLlHDG0RQnMoA/viewfor=
+m?sid%3D1ad3a7d30b00d742%26vc%3D0%26c%3D0%26w%3D1%26flr%3D0%26token%3DYjNOf=
+YwBAAA.56Cf8fTlCvQvQy5wgoi9Lg.aFdzrPvCSisxnFfmz8p10A" style=3D"">Report Abu=
+se</a>
+-
+<a href=3D"http://www.google.com/accounts/TOS" style=3D"">Terms of Service<=
+/a>
+-
+<a href=3D"http://www.google.com/google-d-s/terms.html" style=3D"">Addition=
+al Terms</a></div></div></div></div>
+</td></tr><tr height=3D"24px"></tr></tbody></table></div><table align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 672px; min-wi=
+dth: 154px; border-collapse: separate; border-spacing: 0 0.2em;" width=3D"1=
+00%" role=3D"presentation"><tbody><tr height=3D"24px"><td></td></tr><tr><td=
+><a href=3D"https://docs.google.com/forms?usp=3Dmail_form_link" style=3D"co=
+lor: #424242; font-size: 13px;">Create your own Google Form</a></td></tr></=
+tbody></table></div></body></html>
+--0000000000002e268a060cc8da92--

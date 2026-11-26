@@ -1,0 +1,267 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:b1a2:b0:4c:f15:70be with SMTP id bb34csp314604lab;
+        Thu, 21 Dec 2023 06:00:04 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IEuHo34IlK9wbxjfyY7cgoZjscdiuLYgI689BXdPoFqVVD4odoi7Y5dYrfcvWwvxcSkphIu
+X-Received: by 2002:a05:6122:32ce:b0:4b6:ce73:5e1 with SMTP id
+ ck14-20020a05612232ce00b004b6ce7305e1mr925908vkb.3.1703167204524;        Thu,
+ 21 Dec 2023 06:00:04 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703167204; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YNdvfZaJwBW54ReJyiSfSzavzwIb9ATpn2wuaYABu4YW+TuVORW0lI5c7cFYQLUyek
+         mLUgBykmc4zef2oRyfUbM6OnsNNnQG98BSG+eihNpTNYWMKDCJ/KUEvIzHB354VFzDGZ
+         +Lb1vi+aMZPXkm1LK6j3nV/DceZu3EPaP2tnVGnIRaza6Enysg96Vr5+PfNxfOMDsczX
+         /GtNUJbqtTvMOM0cIVMyzgWEcq/PVx6nvG8Exc3ZuJYdsbywsGk5DRfZPcOKMH4cIlRv
+         CVI8qoFtzqA+YjzygZc7wxljO5auNeQR7udhdPace5a5aoSbvmollIqlX5hgfyxUOHhQ
+         Ydhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :delivered-to;       
+ bh=q82tKyH2Ws2uYRBUpLULuzHOYynUhNh++8JsokPWjoM=;       
+ fh=z0mgbEvBr+ZzBA+sOjDyNqwbQVDJkOfLKjxH8z6WtxY=;       
+ b=x9XjvG522xXWOiahhm/QnnbXxw7jkdNB6+0wg6XZwqOs1VR78PMBd7xUlhnZ+Uy7/S        
+ Q7JuGMrmnbcKZG/sV8MXB0+1pSd3HbsCTnMWpUsRKiCEyfLu8tr0/tHfJExS85jXY8AQ        
+ SrAIDaqMWFJHLloeW1SgsL+AoijLmLt3l1omZhIFvjwpe0WhbFw2GBD4Kul1l0nZi5V2        
+ ZfkfgY0xwGSpwGfHxQFewMQC3g2pn7aTyauhv1zaKS8qsCqVn3wrwcv7GS5RvFtLlLTJ        
+ Nt3cSEDr+lFB0TnPz8p8yvijepWs6Fnv/YutluFNRZuevGBG0D0UaY7HHRq0QHfvWp/2        
+ ayRQ==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.210.197 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-171.gaggle.net. [162.216.127.171])
+        by mx.google.com with ESMTPS id
+ ch39-20020a05612231a700b0049d2be551d9si396204vkb.154.2023.12.21.06.00.03
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 21 Dec 2023
+ 06:00:04 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.210.197 as permitted sender) client-ip=209.85.210.197;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.210.197 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx55.lax.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex04.lax.gaggle.net (Postfix) with ESMTP id 7CBDA80078
+	for <4804241180@students.ocps.net>; Thu, 21 Dec 2023 06:00:03 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx55.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Thu, 21 Dec 2023 06:00:02 -0800
+Received: from async3.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx3.gaggle.net (Postfix) with ESMTP id 5347C220341
+	for <4804241180@students.ocps.net>; Thu, 21 Dec 2023 06:00:00 -0800 (PST)
+Received: from [209.85.210.197] (HELO mail-pf1-f197.google.com)
+ (209.85.210.197)    by mx49.gaggle.net (qpsmtpd/0.83) with ESMTP; Thu, 21 Dec
+ 2023 05:59:58 -0800
+Received: by mail-pf1-f197.google.com with SMTP id
+ d2e1a72fcca58-6d7e5d28468so478150b3a.1        for
+ <4804241180@students.ocps.net>; Thu, 21 Dec 2023 05:59:58 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1703167197; x=1703771997;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=q82tKyH2Ws2uYRBUpLULuzHOYynUhNh++8JsokPWjoM=;
+        b=Zc0soZzt6rB9accY8SkwhrXsj4OccpghpYJyFR48o/JPlComNmokATNvL9mctf2IY/
+         extPZbBaO/Y4UPZkF+mmBuv8Af15dsfFfbZNmL4m8Z69j/OtBeblhYqWDKN45u5jjLcO
+         t3aemKIWBi5v/RRkstvw9+rG84+3eWqmQR96PSwpNYBQEkiraHipPk7ntd/yXFDHWJiA
+         mnFQ8GME574Sw0BR1kgG9qtXtt9T5Jy+hLY/8IHaoauADPVavWRtxmPOyIyg0UEKsG35
+         QR//Qdk0n0Su8YYMPNd6+iwOiUz1JnHXxHwlODeEMgSAeifoXoTfnJC/V63Mvve2gs43
+         oHnA==
+X-Gm-Message-State: AOJu0YyCyqLAlvMbyKXqF01SyaxNh/QJTcATX72zWW5BQGxbdigsL/HF
+	i3mJzBaPcBEvRwIpMnY1Gen870E3t51gJhWReWJDswhiV1MQnfA5fKmS4ImBcWa2PAxGfTjeO3e
+	lK7tUbv2gN5tLXAhjEM5x7xjz87IMuS3ozhxbs1XHCMABnznpLHvtBK6aJ7FI+g==
+X-Received: by 2002:aa7:8543:0:b0:6d7:d890:2838 with SMTP id
+ y3-20020aa78543000000b006d7d8902838mr4142654pfn.67.1703167197562;        Thu,
+ 21 Dec 2023 05:59:57 -0800 (PST)
+X-Received: by 2002:aa7:8543:0:b0:6d7:d890:2838 with SMTP id
+ y3-20020aa78543000000b006d7d8902838mr4142646pfn.67.1703167197143; Thu, 21 Dec
+ 2023 05:59:57 -0800 (PST)
+MIME-Version: 1.0
+References: <2034f7f3-cef7-4793-9df8-dd640fcdd80b@docs-share.google.com>
+ <autogen-java-9460d647-1fcc-4648-a0ce-3e4c6d41bf57@google.com>
+ <CANuu65GYmk3Yf2N7SzYj8Y4Snp8ii5MYD0+rrmuN=WBsU3dfLQ@mail.gmail.com>
+In-Reply-To:
+ <CANuu65GYmk3Yf2N7SzYj8Y4Snp8ii5MYD0+rrmuN=WBsU3dfLQ@mail.gmail.com>
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Thu, 21 Dec 2023 08:59:46 -0500
+Message-ID:
+ <CAGZ_XgCywxxZBGPWqCKFgzcPpm=JfeJUJywyceG3OXTjD81ivw@mail.gmail.com>
+Subject: Re: Form shared with you: "detectives pt2"
+To: Brandon Nova <4804241180@students.ocps.net>
+Content-Type: multipart/alternative; boundary="000000000000c7816a060d0583d3"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx49.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdabacf8cb7b5d?=
+ =?utf-8?q?ed7dc54c9e8689acd7b3a67b9712b79874624d5a2bdab53ecb7006bc7422dff1e?=
+ =?utf-8?q?c3c3e2e65682939721c783d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-UBH: 63ec2eb9bd06ecf795bc418e391e91d8870cbdb1b9a9e43b05f7fb9b0a03883d
+X-Gaggle-Unblocked-By:
+ Marvin __, userid [39389336], at Thu Dec 21 05:59:59 PST 2023
+X-Gaggle-Bypass-Filter: unblocked message by Marvin __, userid [39389336], at
+ Thu Dec 21 06:00:00 PST 2023
+ [passVerify=783a105cd1c3a379a79ff70044a1689c9f3c85f2b3f2044223b3b18a4b9d6ec3]
+ [reason=1]
+X-Virus-Checked: Checked by ClamAV on mx55.gaggle.net
+
+--000000000000c7816a060d0583d3
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+are you ok?- olivia
+
+On Wed, Dec 20, 2023 at 6:56=E2=80=AFPM Brandon Nova <4804241180@students.o=
+cps.net>
+wrote:
+
+> Are you kidding ??? Why the **** is my score the so trush ? i are a
+> biggest looser i ever seen in my life ! You was doing PIPI in your pamper=
+s
+> when i was fill the form! i are not proffesional, because proffesionals
+> knew how to lose and congratulate opponents, i are like a babe crying aft=
+er
+> you beat me! Be brave, be honest to yourself and stop this trush
+> talkings!!! Everybody know that i am very good guesser, i can guess any
+> social of the correct in any situation! And "m"artin "c"ivoe is nobody fo=
+r
+> me, just a player who are crying every single time when loosing, ( rememb=
+er
+> what he say about szydlo (who is always right)) Stop playing with my name=
+,
+> i deserve to have a good name during my whole carrier, I am Officially
+> inviting you to OTB sudden death social chess edition with the Prize fund=
+!
+> Both of us will invest 0.01$ and winner takes it all!!! I suggest all oth=
+er
+> people who's interest in this situation, just take a look at my results i=
+n
+> predicting who likes who 2022 and 2023, and that should be enough... No
+> need to listen for every crying babe, Brandon is always play Fair ! And i=
+f
+> someone will continue Officially talk about me like that, we will meet in
+> (pickleball) Court! God bless with true! True will never die ! Liers will
+> kicked off... I am one of the game of all time!!
+>
+> On Wed, Dec 20, 2023 at 5:16=E2=80=AFPM Natalie Miesak (via Google Forms)=
+ <
+> drive-shares-dm-noreply@google.com> wrote:
+>
+>> Natalie Miesak shared a form
+>> [image: Unknown profile photo]
+>> Natalie Miesak (4804135947@students.ocps.net) has invited you to *edit*
+>> the following form:
+>> you can see the results if youd like
+>> detectives pt2
+>>
+>> <https://docs.google.com/forms/d/1ABlAwcx4JNy6oxUhDDlgZt3u3FPdOnqG8gw78U=
+U4iME/edit?usp=3Dsharing_eil_m&ts=3D658367d2>
+>>
+>> Open
+>> <https://docs.google.com/forms/d/1ABlAwcx4JNy6oxUhDDlgZt3u3FPdOnqG8gw78U=
+U4iME/edit?usp=3Dsharing_eip_m&ts=3D658367d2>
+>> Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+>> You have received this email because 4804135947@students.ocps.net shared
+>> a file or folder located in Google Drive with you. [image: Google]
+>> <https://workspace.google.com/>
+>>
+>
+
+--000000000000c7816a060d0583d3
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">are you ok?- olivia</div><br><div class=3D"gmail_quote"><d=
+iv dir=3D"ltr" class=3D"gmail_attr">On Wed, Dec 20, 2023 at 6:56=E2=80=AFPM=
+ Brandon Nova &lt;<a href=3D"mailto:4804241180@students.ocps.net">480424118=
+0@students.ocps.net</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quot=
+e" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204)=
+;padding-left:1ex"><div dir=3D"ltr">Are you kidding ??? Why the **** is my =
+score the so trush ? i are a biggest looser i ever seen in my life ! You wa=
+s doing PIPI in your pampers when i was fill the form! i are not proffesion=
+al, because proffesionals knew how to lose and congratulate opponents, i ar=
+e like a babe crying after you beat me! Be brave, be honest to yourself and=
+ stop this trush talkings!!! Everybody know that i am very good guesser, i =
+can guess any social of the correct in any situation! And &quot;m&quot;arti=
+n &quot;c&quot;ivoe is nobody for me, just a player who are crying every si=
+ngle time when loosing, ( remember what he say about szydlo (who is always =
+right)) Stop playing with my name, i deserve to have a good name during my =
+whole carrier, I am Officially inviting you to OTB sudden death social ches=
+s edition with the Prize fund! Both of us will invest 0.01$ and winner take=
+s it all!!! I suggest all other people who&#39;s interest in this situation=
+, just take a look at my results in predicting who likes who 2022 and 2023,=
+ and that should be enough... No need to listen for every crying babe, Bran=
+don is always play Fair ! And if someone will continue Officially talk abou=
+t me like that, we will meet in (pickleball) Court! God bless with true! Tr=
+ue will never die ! Liers will kicked off... I am one of the game of all ti=
+me!!<br></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmai=
+l_attr">On Wed, Dec 20, 2023 at 5:16=E2=80=AFPM Natalie Miesak (via Google =
+Forms) &lt;<a href=3D"mailto:drive-shares-dm-noreply@google.com" target=3D"=
+_blank">drive-shares-dm-noreply@google.com</a>&gt; wrote:<br></div><blockqu=
+ote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px=
+ solid rgb(204,204,204);padding-left:1ex"><div><table style=3D"border-colla=
+pse:collapse;width:100%;background-color:white;text-align:center" role=3D"p=
+resentation"><tbody><tr><td style=3D"padding:24px 0px 16px"><table style=3D=
+"border-collapse:collapse;font-family:Roboto,Arial,Helvetica,sans-serif;wor=
+d-break:break-word;width:90%;margin:auto;max-width:700px;min-width:280px;te=
+xt-align:left" role=3D"presentation"><tbody><tr><td style=3D"padding:0px"><=
+table style=3D"width:100%;border:1px solid rgb(218,220,224);border-radius:8=
+px;border-spacing:0px;table-layout:fixed;border-collapse:separate" role=3D"=
+presentation"><tbody><tr><td style=3D"padding:4.5%" dir=3D"ltr"><div style=
+=3D"margin-bottom:32px;font-family:&quot;Google Sans&quot;,Roboto,Arial,Hel=
+vetica,sans-serif;font-style:normal;font-size:28px;line-height:36px;color:r=
+gb(60,64,67)">Natalie Miesak shared a form</div><table style=3D"border-coll=
+apse:collapse;font-family:Roboto,Arial,Helvetica,sans-serif;font-size:16px;=
+line-height:24px;color:rgb(32,33,36);letter-spacing:0.1px;table-layout:fixe=
+d;width:100%" role=3D"presentation"><tbody><tr><td style=3D"padding:0px;ver=
+tical-align:top;width:50px"><div><img style=3D"border-radius: 50%; display:=
+ block;" width=3D"50" height=3D"50" src=3D"https://ssl.gstatic.com/s2/profi=
+les/images/silhouette64.png" alt=3D"Unknown profile photo"></div></td><td s=
+tyle=3D"padding:0px 0px 0px 12px;vertical-align:top"><div style=3D"padding-=
+top:12px">Natalie Miesak (<a href=3D"mailto:4804135947@students.ocps.net" s=
+tyle=3D"color:inherit;text-decoration:none" target=3D"_blank">4804135947@st=
+udents.ocps.net</a>) has invited you to <b>edit</b> the following form:</di=
+v><div style=3D"margin-top:24px;color:rgb(95,99,104)">you can see the resul=
+ts if youd like</div></td></tr></tbody></table><table style=3D"border-spaci=
+ng:0px 4px;table-layout:fixed;width:100%" role=3D"presentation"><tbody><tr =
+style=3D"height:28px"></tr><tr><td style=3D"padding:0px"><a href=3D"https:/=
+/docs.google.com/forms/d/1ABlAwcx4JNy6oxUhDDlgZt3u3FPdOnqG8gw78UU4iME/edit?=
+usp=3Dsharing_eil_m&amp;ts=3D658367d2" style=3D"color:rgb(60,64,67);display=
+:inline-block;max-width:100%;text-decoration:none;vertical-align:top;border=
+:1px solid rgb(218,220,224);border-radius:16px;white-space:nowrap" target=
+=3D"_blank"><div style=3D"line-height:18px;overflow:hidden;text-overflow:el=
+lipsis;padding:6px 12px"><span style=3D"display:inline-block;vertical-align=
+:top;min-width:26px;width:26px"><img src=3D"https://ssl.gstatic.com/docs/do=
+clist/images/mediatype/icon_2_form_x64.png" width=3D"18" height=3D"18" styl=
+e=3D"vertical-align: top;" role=3D"presentation"></span><span style=3D"font=
+:500 14px/18px &quot;Google Sans&quot;,Roboto,Arial,Helvetica,sans-serif;di=
+splay:inline;letter-spacing:0.2px">detectives pt2</span></div></a></td></tr=
+></tbody></table><table style=3D"border-collapse:collapse" role=3D"presenta=
+tion"><tbody><tr style=3D"height:32px"><td></td></tr></tbody></table><div><=
+a href=3D"https://docs.google.com/forms/d/1ABlAwcx4JNy6oxUhDDlgZt3u3FPdOnqG=
+8gw78UU4iME/edit?usp=3Dsharing_eip_m&amp;ts=3D658367d2" role=3D"button" sty=
+le=3D"padding:0px 24px;font:500 14px/36px &quot;Google Sans&quot;,Roboto,Ar=
+ial,Helvetica,sans-serif;border:none;border-radius:18px;box-sizing:border-b=
+ox;display:inline-block;letter-spacing:0.25px;min-height:36px;text-align:ce=
+nter;text-decoration:none;background-color:rgb(26,115,232);color:rgb(255,25=
+5,255)" target=3D"_blank">Open</a></div></td></tr></tbody></table><table st=
+yle=3D"border-collapse:collapse;width:100%" role=3D"presentation"><tbody><t=
+r><td style=3D"padding:24px 4.5%"><table style=3D"border-collapse:collapse;=
+width:100%" dir=3D"ltr"><tbody><tr><td style=3D"padding:0px;font-family:Rob=
+oto,Arial,Helvetica,sans-serif;color:rgb(95,99,104);width:100%;font-size:12=
+px;line-height:16px;min-height:40px;letter-spacing:0.3px">Google LLC, 1600 =
+Amphitheatre Parkway, Mountain View, CA 94043, USA<br> You have received th=
+is email because <a href=3D"mailto:4804135947@students.ocps.net" style=3D"c=
+olor:inherit;text-decoration:none" target=3D"_blank">4804135947@students.oc=
+ps.net</a> shared a file or folder located in Google Drive with you.</td><t=
+d style=3D"padding:0px 0px 0px 20px;min-width:96px"><a href=3D"https://work=
+space.google.com/" style=3D"text-decoration:none" target=3D"_blank"><img sr=
+c=3D"https://www.gstatic.com/docs/documents/share/images/googleworkspace_lo=
+go_192x80.png" width=3D"96" height=3D"40" alt=3D"Google" style=3D"font-size=
+: 16px; font-weight: 500; color: rgb(95, 99, 104);"></a></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table></div></blockquote></div>
+</blockquote></div>
+
+--000000000000c7816a060d0583d3--

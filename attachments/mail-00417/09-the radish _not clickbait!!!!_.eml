@@ -1,0 +1,157 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:11a2:b0:4f:53ad:54dc with SMTP id ch34csp720227lab;
+        Tue, 5 Mar 2024 16:54:08 -0800 (PST)
+X-Forwarded-Encrypted: i=2; =?utf-8?q?AJvYcCUHzJXd0LQHHscc3QKZCu2TYBt4C9UixN?=
+ =?utf-8?q?RaegOTFH5xxfF7KnXR4/DXnLmLAHkDT5TXlBePs8JyS/R4TspuG6gxKo/VUHGWqav?=
+ =?utf-8?q?vzAL+?=
+X-Google-Smtp-Source:
+ AGHT+IEGE/r+601LUQbkHSMQl+pDNQg+8JulrWFGIpE9VgtAiMwx4sYRhaA3mwX8ODM3sI1JH812
+X-Received: by 2002:a4a:8512:0:b0:5a1:1b94:2f3f with SMTP id
+ k18-20020a4a8512000000b005a11b942f3fmr3575150ooh.4.1709686447976;        Tue,
+ 05 Mar 2024 16:54:07 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1709686447; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zItA8q6we5lmAlu5rpMj0E0RA8F07kkj1WhJWNTUIOvxkysar5RlTJM86bND9t/4Na
+         ov0hnbm973NIqAHBW6TDV60+Ekx8byAh38p9UXxS1NwR/JPgOqAwB6U5XfhXfy08yPCQ
+         W23SLD3jJycg9dUkLR3EGMftm8j+uPcY9Fz8Ax09mAEHJs+tXthBE0SLDNnP2X2Awc0Z
+         rtXs7wCY9n5O3TD6TIygCequ9ozHVLSvPbFagcC3/mzgCtLjRPMrUcvm7/xW3d4xp44A
+         k1lb6cOOn1xFEg/b+R63KQNa1C/t9+xXJzUQSZ2i5GpookTYpXX/zv47HYQops03GlYz
+         6pfA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=cc:to:subject:message-id:date:from:in-reply-to:references        
+ :mime-version:delivered-to;       
+ bh=UDveUBrD00vL0PZdER5mEh/mU/uB+/08H6rt4xjvPcA=;       
+ fh=dn21dIdswp7N7Hbb91gu4u/DVXi9M2pK9R6EE5X3gzY=;       
+ b=aLokzZogVKvhyTdBe3jj6sDSBIB5XVNzbIgDZ+kvXpIvYIQxNpfR0LW+blAGqVyxWV        
+ m+unkJhB89mH4w9SlgIudFt6Bm/s9+u7DBAJTGRQ5CWV6n/qMWQSK/39UrJ32VIADxT/        
+ bukhUzD/HUI/+1/8igwhQKFAn6NY4PSj29tLZk30L/lhMC6PXtpzojIAaSRT7UAXx/Pb        
+ 3tZ4gH4JtfShDEbYHlejB7eyuBRp9Nka8HZdfA8oJt07tDSvgqodXR/1+cm6gqGdfLHx        
+ pRPyjWf/E5t78c0TxD/9KIECJHZpFIhyZ2oPi4Zduk6FNM1iybE0TVOcACUB3GuRQCgh        
+ e6Lg==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804089800@students.ocps.net designates 209.85.218.71 as permitted
+ sender) smtp.mailfrom=4804089800@students.ocps.net
+Return-Path: <4804089800@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-171.gaggle.net. [162.216.127.171])
+        by mx.google.com with ESMTPS id
+ g13-20020a056830160d00b006e4f2cb382esi942980otr.133.2024.03.05.16.54.07
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Tue, 05 Mar 2024
+ 16:54:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804089800@students.ocps.net
+ designates 209.85.218.71 as permitted sender) client-ip=209.85.218.71;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804089800@students.ocps.net designates 209.85.218.71 as permitted sender)
+ smtp.mailfrom=4804089800@students.ocps.net
+Received: from mx11.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex03.lax.gaggle.net (Postfix) with ESMTP id 20E02200068
+	for <4804241180@students.ocps.net>; Tue,  5 Mar 2024 16:54:07 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx11.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Tue, 05 Mar 2024 16:54:06 -0800
+Received: from mx17.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx2.gaggle.net (Postfix) with ESMTP id EFCE32E0055
+	for <4804241180@students.ocps.net>; Tue,  5 Mar 2024 16:54:05 -0800 (PST)
+Received: from [209.85.218.71] (HELO mail-ej1-f71.google.com) (209.85.218.71)
+    by mx17.gaggle.net (qpsmtpd/0.83) with ESMTP; Tue, 05 Mar 2024 16:54:05
+ -0800
+Received: by mail-ej1-f71.google.com with SMTP id
+ a640c23a62f3a-a45a90eb1bbso71580666b.0        for
+ <4804241180@students.ocps.net>; Tue, 05 Mar 2024 16:54:04 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709686442; x=1710291242;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=UDveUBrD00vL0PZdER5mEh/mU/uB+/08H6rt4xjvPcA=;
+        b=nZRCnwQRf3gLKzlpampv9/16oHFhZaFe88wJTa2kKhtNj2cXst+syiXGiNLPCtBCFU
+         8PUJILu4kPvSf83o2GLO728nmL6coehXYfbCNR2bnDNt4cGCQbFg+hmWe3i0j0stRLbK
+         6TCyLzYFLNnjvV8plJ1mhGBjACxRoZkF5AO/Rh5JutUJNpYamqRDZFoSZvnR4eeiTU3u
+         B89db3ohZsD3iRj7rqTg7uX7WzQzwVnuwdbcoizMELZcjFcokOJX3rEE4LsK8U1Jmo7V
+         TvyjebwCB7Nj5zSaODw+aBlwB50BkLUM+zotlqq5rBxxZ1tY3XOLMvY/eVWqTEzcvjOR
+         PtNg==
+X-Forwarded-Encrypted: i=1; =?utf-8?q?AJvYcCVADhSVyF5okdK7I1+9+8tbywWlZUVP6x?=
+ =?utf-8?q?2ui6maz7j6QS4FlH5mh+jV5CppbtZTBIsrBx5PDZ5yJ1+oMNFEeJAQybOVo4a3jhQ?=
+ =?utf-8?q?eZ8mk?=
+X-Gm-Message-State: AOJu0YzLXyMSBzMxQlZzac0ihqW/7WMRirSsRWp2wCaOPJGxtzNyuGKJ
+	6vTdQ0Ip9baU7Zvjow82XF6JZSZUtdfGRw2Dgy33wfHh1b3D8uS0iwHGWhxgWWhyVOGDvcmV13Y
+	oixUeTD2jZO/IYuYIYeLUxP5PXyhWswrHRkNpUsr5BEycHiIyoKyz+ZalhSSGhma5/Qydb4xc/R
+	/LJcKTzJ05rS/BsYjrzzrl4j3w+Ag+RR+H7y5Y7i4WII8VBZAS
+X-Received: by 2002:a17:907:1186:b0:a3e:9def:5ed5 with SMTP id
+ uz6-20020a170907118600b00a3e9def5ed5mr9198732ejb.33.1709686442342;       
+ Tue, 05 Mar 2024 16:54:02 -0800 (PST)
+X-Received: by 2002:a17:907:1186:b0:a3e:9def:5ed5 with SMTP id
+ uz6-20020a170907118600b00a3e9def5ed5mr9198726ejb.33.1709686442093; Tue, 05
+ Mar 2024 16:54:02 -0800 (PST)
+MIME-Version: 1.0
+References:
+ <CAGZ_XgA5PaaE_FVyE2wjW_X3MUpR1BzhpJbRss6LX=sg4M3x0A@mail.gmail.com>
+In-Reply-To:
+ <CAGZ_XgA5PaaE_FVyE2wjW_X3MUpR1BzhpJbRss6LX=sg4M3x0A@mail.gmail.com>
+From: Lauren Willman <4804089800@students.ocps.net>
+Date: Tue, 5 Mar 2024 19:53:51 -0500
+Message-ID:
+ <CAOXA50UwgbbApxPMT_NLEsS9-sPz-07byzJs4ZQxVPimJV0c=g@mail.gmail.com>
+Subject: Re: the radish *not clickbait!!!!*
+To: Natalie Miesak <4804135947@students.ocps.net>
+Cc: Tyler Szydlo <4804136151@students.ocps.net>,
+ 	Brandon Nova <4804241180@students.ocps.net>,
+ Olivia Yip <4804085190@students.ocps.net>,
+ 	Gianna Kim <4804135863@students.ocps.net>,
+ Pari Vyas <4804150017@students.ocps.net>
+Content-Type: multipart/alternative; boundary="0000000000000f079b0612f365e0"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx17.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?a531ae093a8bdb494e00566b0038fed3fa81eb456b?=
+ =?utf-8?q?82f1ee9397e5f774c6589c0733f88199730b7a9c6aa4d0de22b0c1d1d2db78d6f?=
+ =?utf-8?q?98d2df90800446a5100e43d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 233129752
+X-Virus-Checked: Checked by ClamAV on mx11.gaggle.net
+
+--0000000000000f079b0612f365e0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+I will never be the same again after reading that =F0=9F=AB=A8
+
+On Tue, Mar 5, 2024 at 12:21=E2=80=AFPM Natalie Miesak <4804135947@students=
+.ocps.net>
+wrote:
+
+> wide field fills the eye
+> the wind blows around
+> small plants in the ground
+> leaves reach to the sky
+>
+> plump fruits in the tree
+> fuzzy green grass
+> the ignorant pass
+> unsuspecting of thee
+>
+> vibrant red radish
+> hiding in the dirt
+>
+
+--0000000000000f079b0612f365e0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">I will never be the same again after reading that=C2=A0=F0=
+=9F=AB=A8</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gma=
+il_attr">On Tue, Mar 5, 2024 at 12:21=E2=80=AFPM Natalie Miesak &lt;<a href=
+=3D"mailto:4804135947@students.ocps.net">4804135947@students.ocps.net</a>&g=
+t; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0p=
+x 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div d=
+ir=3D"ltr"><div>wide field fills the eye</div><div>the wind blows around</d=
+iv><div>small plants in the ground</div><div>leaves reach to the sky</div><=
+div><br></div><div>plump fruits in the tree</div><div>fuzzy green grass</di=
+v><div>the ignorant=C2=A0pass</div><div>unsuspecting of thee</div><div><br>=
+</div>vibrant red radish<div>hiding in the dirt</div></div>
+</blockquote></div>
+
+--0000000000000f079b0612f365e0--

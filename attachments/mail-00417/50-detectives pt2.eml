@@ -1,0 +1,192 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:422b:b0:4c:f15:70be with SMTP id r43csp1016083laa;
+        Mon, 18 Dec 2023 15:48:46 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IEiaF6AUewxdMQu6U22sYj1eqM57Cegerpf27AptYN6sMlUnCok7MnFb+FSToeo23XAyWwh
+X-Received: by 2002:a05:6e02:1a46:b0:35d:6759:93fc with SMTP id
+ u6-20020a056e021a4600b0035d675993fcmr22519049ilv.6.1702943326064;        Mon,
+ 18 Dec 2023 15:48:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1702943326; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EAy2E9bENjMDACC0Mr01C9bfZaASH9UwnDYn35/MquCnGGcLltNc2D5O5mrwk/1mXb
+         hUNUVq8RmhUgm1NDQEMeM8BdMeMZxOtlmrN7NLPQbX+Uo0OTG8hFQwPn0pclgPtj0tlx
+         q66tMJ1mQKUQ5mq6uoMFArW+EulQgu7DBgX/3f2wqQNqdS0h631tg8ae9FA/m/vZazKb
+         87LemJ42JnK3xrcrU1ovlOME6/zw8s9AoIXglirr+CMcFXPTbSXUdG2kavkokA+PWs6r
+         JLauZZU06heTqbOjYnCKF74tVRCPM/T/JL9x/9rqP9JLA8r/2Fc6ZBdsvb7LnlPedoR4
+         sZFw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version        
+ :delivered-to;        bh=uwH/ubuhJsou0b2+t3PT6pT35Eds1iXO0Ooe7GWoUEw=;
+        fh=9d+nZJUVr8hD3ScTKsIdo25yDwVsu4+cBMvGPHNXIlU=;       
+ b=z5EnaT3CBafiNMxA0IxtanHfN8+RSVbK9DvXLJpyOA1pNZr5NrDZJdEKGa3NwfBE+a        
+ lquIQFDudcI55fzmNKSmiJ5hMD3rgyf4snpHYGlk8j6S7JVNdLbxuCMQPv8cYMR8r1SJ        
+ GVEnMsdNielpesBJkhgozq+JZPkcrZYjCN027cKO+dLfkSLPjPREBOVZvG7KwFt136nX        
+ gPsm1xzO/vw3SB/9726JDUx/dfSHytlrRdKr0AEzaso7PIWBWeDVzQB/kDbcSLos4lbw        
+ X1sUX9sIxCIFYC2U574qXi+6tBvMKbrPiOsGboiHfA+N9Sj4TOacM0TTOsdVjz+vzC3C        
+ hDJw==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.128.198 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-172.gaggle.net. [162.216.127.172])
+        by mx.google.com with ESMTPS id
+ v6-20020ab06786000000b007c5a4d4b45asi4367702uar.148.2023.12.18.15.48.45
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Mon, 18 Dec 2023
+ 15:48:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.128.198 as permitted sender) client-ip=209.85.128.198;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.128.198 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx12.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex01.lax.gaggle.net (Postfix) with ESMTP id F20051C0513
+	for <4804241180@students.ocps.net>; Mon, 18 Dec 2023 15:48:44 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx12.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Mon, 18 Dec 2023 15:48:43 -0800
+Received: from mx37.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx3.gaggle.net (Postfix) with ESMTP id E4E6C2202E6
+	for <4804241180@students.ocps.net>; Mon, 18 Dec 2023 15:48:43 -0800 (PST)
+Received: from [209.85.128.198] (HELO mail-yw1-f198.google.com)
+ (209.85.128.198)    by mx37.gaggle.net (qpsmtpd/0.83) with ESMTP; Mon, 18 Dec
+ 2023 15:48:43 -0800
+Received: by mail-yw1-f198.google.com with SMTP id
+ 00721157ae682-5e73bd9079eso13774297b3.2        for
+ <4804241180@students.ocps.net>; Mon, 18 Dec 2023 15:48:43 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1702943322; x=1703548122;
+        h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=uwH/ubuhJsou0b2+t3PT6pT35Eds1iXO0Ooe7GWoUEw=;
+        b=BeLARi/RFsCogizfZggxhkVM3E4HhA/hnohy60O5tnry2ABL0gwOoxIU7VsFBhOrA4
+         4BrXs5aMnN3Yj83LHZdXD0Pclqge2pYJbGkeP4xGTpwVNbxV2lw4QOs1mk/zPxyo5P2F
+         SQyptK0CplveQGbpow74cK62K2LTEt7YzcqpkdJUPHQc5d4Tsf6UEktEVcbsoQXDdqPl
+         JuPOi0KgEY7Xhl+qMN6GBXnPELglNEnNFCCNBfxZRaK2rh7qN/sU/C5sVjFbv3NmA0FC
+         NFpPVhCTYhF6dd21In7trVjD6BgyMj+pS06+eoNjgXCxIiQgbNqWTMvqBPJsVgFOYaBo
+         GcGg==
+X-Gm-Message-State: AOJu0YyKXfYcGrxNEnUbEmgkAsZx2hlazw7XMRp2j/+UNgB6RJKhpUNu
+	ptC8g015MhfzSk04xLGCavAN7gFZ/Oh0dG5EjgIGcIV0fvZUh6YGqOLtoifRMI2h24xlzFJNZjC
+	ErjKPMSQB8bFz/PWypEk4qC2ItosbHkvRdOU8i/6HO0TrWMefVA24b8bVVxv6yV8=
+X-Received: by 2002:a81:d550:0:b0:5ca:4b49:48a7 with SMTP id
+ l16-20020a81d550000000b005ca4b4948a7mr14119518ywj.43.1702943322778;       
+ Mon, 18 Dec 2023 15:48:42 -0800 (PST)
+MIME-Version: 1.0
+X-Received: by 2002:a81:d550:0:b0:5ca:4b49:48a7 with SMTP id
+ l16-20020a81d550000000b005ca4b4948a7mr14119510ywj.43.1702943322514; Mon, 18
+ Dec 2023 15:48:42 -0800 (PST)
+Reply-To: 4804135947@students.ocps.net
+X-No-Auto-Attachment: 1
+Feedback-ID: MailTypeSendForm:GoogleForms
+X-GoogleForms-FormId:
+ e/1FAIpQLSeCDV9oeq2lc0v-zmmP5W7OhUHRuh2S_OS3t2fl5R1cVcMIKg
+X-GoogleForms-CustomerDisplayName: Orange County Public Schools
+Message-ID: <autogen-java-f30bd32a-d75e-47ae-86b0-25a96c83e8cb@google.com>
+Date: Mon, 18 Dec 2023 23:48:42 +0000
+Subject: detectives pt2
+From: 4804135947@students.ocps.net
+To: 4804241180@students.ocps.net
+Content-Type: multipart/alternative; boundary="000000000000cfc069060cd16310"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx37.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d6560c5706d4742bbf65ca15d9?=
+ =?utf-8?q?7fe455950e2e1f417f0f994ac43124fcdeaf59d8f2dd5208b7b92c90b0c916f43?=
+ =?utf-8?q?ec546eba34c9a896aeac202d487ea06101c75?=
+X-Gaggle-Message-Info: 165912614
+X-Virus-Checked: Checked by ClamAV on mx12.gaggle.net
+X-Gaggle-APS-Scores: false 0.0010150671005249023 0 0 5 =?utf-8?q?https=253A?=
+ =?utf-8?q?=252F=252Fwww=2Egstatic=2Ecom=252Fdocs=252Fforms=252Fgoogle=5Ffor?=
+ =?utf-8?q?ms=5Flogo=5Flockup=5Fblack=5F2x=2Epng?=  false 200 0
+X-Gaggle-APS-Scores: false 8.660247112857178E-5 0 0 2
+ http://schema.org%2FViewAction  false 200 56101
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fd=252Fe=252F1FAIpQLSeCDV9oeq2lc0v-zmmP5W?=
+ =?utf-8?q?7OhUHRuh2S=5FOS3t2fl5R1cVcMIKg=252Fviewform=253Fvc=253D0=2526amp?=
+ =?utf-8?b?JTNCYyUzRDAlMjZhbXAlM0J3JTNEMSUyNmFtcCUzQmZsciUzRDAlMjZhbXAl?=
+ =?utf-8?q?3Busp=253Dmail=5Fform=5Flink?=  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 =?utf-8?q?https=253A=252F=252Fdocs=2Ego?=
+ =?utf-8?q?ogle=2Ecom=252Fforms=252Fd=252Fe=252F1FAIpQLSeCDV9oeq2lc0v-zmmP5W?=
+ =?utf-8?q?7OhUHRuh2S=5FOS3t2fl5R1cVcMIKg=252Fviewform=253Fvc=253D0=2526amp?=
+ =?utf-8?b?JTNCYyUzRDAlMjZhbXAlM0J3JTNEMSUyNmFtcCUzQmZsciUzRDAlMjZhbXAl?=
+ =?utf-8?q?3Busp=253Dmail=5Fgoto=5Fform?=  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9
+ https%3A%2F%2Fdocs.google.com%2Fforms%3Fusp%3Dmail_form_link  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9
+ http://docs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSeCDV9oeq2lc0v  false 0 0
+X-Gaggle-APS-Scores: false 0.0 0 0 9 http://docs.google.com%2Fforms  false 0 0
+
+--000000000000cfc069060cd16310
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+I've invited you to fill out the following form:
+detectives pt2
+
+To fill it out, visit:
+https://docs.google.com/forms/d/e/1FAIpQLSeCDV9oeq2lc0v-zmmP5W7OhUHRuh2S_OS3t2fl5R1cVcMIKg/viewform?vc=0&amp;c=0&amp;w=1&amp;flr=0&amp;usp=mail_form_link
+
+I&#39;ve invited you to fill out a form:
+
+Google Forms: Create and analyze surveys.
+
+--000000000000cfc069060cd16310
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; margin=
+: 0; padding: 0; height: 100%; width: 100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"background-color:rgb(203,199,170);" widt=
+h=3D"100%" role=3D"presentation"><tbody><tr height=3D"64px"><td style=3D"pa=
+dding: 0 24px;"><img alt=3D"Google Forms" height=3D"26px" style=3D"display:=
+ inline-block; margin: 0; vertical-align: middle;" width=3D"143px" src=3D"h=
+ttps://www.gstatic.com/docs/forms/google_forms_logo_lockup_black_2x.png"></=
+td></tr></tbody></table><div style=3D"padding: 24px; background-color:rgb(2=
+45,244,238)"><div align=3D"center" style=3D"background-color: #fff; border-=
+bottom: 1px solid #e0e0e0;margin: 0 auto; max-width: 624px; min-width: 154p=
+x;padding: 0 24px;"><table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"background-color: #fff;" width=3D"100%" role=3D"presentatio=
+n"><tbody><tr height=3D"24px"><td></td></tr><tr><td><span style=3D"display:=
+ table-cell; vertical-align: top; font-size: 13px; line-height: 18px; color=
+: #424242;" dir=3D"auto">I&#39;ve invited you to fill out a form:</span></t=
+d></tr><tr height=3D"20px"><td></tr><tr style=3D"font-size: 20px; line-heig=
+ht: 24px;"><td dir=3D"auto"><a href=3D"https://docs.google.com/forms/d/e/1F=
+AIpQLSeCDV9oeq2lc0v-zmmP5W7OhUHRuh2S_OS3t2fl5R1cVcMIKg/viewform?vc=3D0&amp;=
+c=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_form_link" style=3D"color: rgb(2=
+03,199,170); text-decoration: none; vertical-align: middle; font-weight: 50=
+0">detectives pt2</a><div itemprop=3D"action" itemscope itemtype=3D"http://=
+schema.org/ViewAction"><meta itemprop=3D"url" content=3D"https://docs.googl=
+e.com/forms/d/e/1FAIpQLSeCDV9oeq2lc0v-zmmP5W7OhUHRuh2S_OS3t2fl5R1cVcMIKg/vi=
+ewform?vc=3D0&amp;c=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_goto_form"><me=
+ta itemprop=3D"name" content=3D"Fill out form"></div></td></tr><tr height=
+=3D"16px"></tr><tr><td style=3D"display: table-cell; vertical-align: top; f=
+ont-size: 13px; line-height: 18px; color: #424242;" dir=3D"auto">The rules =
+are simple: vote on who you think wrote the response! Recall the point syst=
+em:<div><ul><li>+3 for every person you trick (e.g. Olivia wrote the respon=
+se but Lauren guessed that Gianna wrote it, so Olivia gets 3 points)</li><l=
+i>+2 for every response you guess correctly</li><li>+0 for guessing wrong</=
+li><li>-1 if someone correctly chooses you (e.g. Olivia wrote the response =
+and Lauren guessed that Olivia wrote it, so Oliva gets -1 point)</li></ul><=
+div>Also <i style=3D"font-weight:bold">do not vote on your own response!!!<=
+/i>=C2=A0There will be an option on every response so you can indicate that=
+ the response is your own and you will not vote on that one.</div></div></t=
+d></tr><tr height=3D"24px"></tr><tr><td><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td><a href=3D"https://docs.=
+google.com/forms/d/e/1FAIpQLSeCDV9oeq2lc0v-zmmP5W7OhUHRuh2S_OS3t2fl5R1cVcMI=
+Kg/viewform?vc=3D0&amp;c=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_form_link=
+" style=3D"border-radius: 3px; box-sizing: border-box; display: inline-bloc=
+k; font-size: 13px; font-weight: 700; height: 40px; line-height: 40px; padd=
+ing: 0 24px; text-align: center; text-decoration: none; text-transform: upp=
+ercase; vertical-align: middle; color: #000; background-color: rgb(203,199,=
+170);" target=3D"_blank" rel=3D"noopener">Fill out form</a></td></tr></tbod=
+y></table></td></tr><tr height=3D"24px"></tr></tbody></table></div><table a=
+lign=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 672=
+px; min-width: 154px; border-collapse: separate; border-spacing: 0 0.2em;" =
+width=3D"100%" role=3D"presentation"><tbody><tr height=3D"24px"><td></td></=
+tr><tr><td><a href=3D"https://docs.google.com/forms?usp=3Dmail_form_link" s=
+tyle=3D"color: #424242; font-size: 13px;">Create your own Google Form</a></=
+td></tr></tbody></table></div></body></html>
+--000000000000cfc069060cd16310--

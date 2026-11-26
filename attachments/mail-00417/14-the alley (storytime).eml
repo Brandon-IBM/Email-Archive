@@ -1,0 +1,253 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:3285:b0:4e:489b:447 with SMTP id bw5csp610553lab;
+        Thu, 29 Feb 2024 06:14:55 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IFhXxALZ1JzWbck2yv4z2JKSDSaYYoeKZ7JIefduwCcFhVj5YttVeqfwx5lPZqWVjHsGt08
+X-Received: by 2002:a4a:ee8e:0:b0:5a0:c170:9623 with SMTP id
+ dk14-20020a4aee8e000000b005a0c1709623mr2100839oob.8.1709216095192;       
+ Thu, 29 Feb 2024 06:14:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1709216095; cv=none;
+        d=google.com; s=arc-20160816;
+        b=uC/TY3UId4xid1lsxWT+hQwmbHMkWzlzn1Yv1qKjP5GLdLAwnYHfs/3fp2DCLpGfzH
+         oQihzWHAVgze1TSfNUzVXaW6wKCQ4ASSrM2XuRfj7wujFwdJ8ypmbIcQ0YVNcCqroXcw
+         UFxiyxBzZiFIzVlrbzzvM8CiGbj/lrDSL9VAxKDmDcOYgSbCaAEBSDPSc0AdjwAaTSr7
+         jGtdvU1heFQ8ygF1VxvwscAfm2aCGpwGPGhCjA/anf4z3FdHPOW9cd/3RBFkBxNhr7wm
+         ldYBmDgo2I9guXc6P2TRs1vcaWg6+mm0g45KjYM9UyGUY6k7EnpeSj/sBBQmyUiMHcrW
+         AbwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :delivered-to;       
+ bh=Y7zuNLPXeh9hRDhMESehPMLzFvW1mkIBg/rG7OTiYZs=;       
+ fh=z0mgbEvBr+ZzBA+sOjDyNqwbQVDJkOfLKjxH8z6WtxY=;       
+ b=nr3Ab5oxedoJJk/wtgGD1vufdRq9+QjsTHwN517YNr2cB189hF7LIKSQtYcq7LAFGc        
+ hrwFc3g754WTG38uVPfyNIkZCSoNOk7Y/xAvT8CCuQQfF9xQ2nqBnrVcOBGSNhGznFdi        
+ 6x0tG1oj+7L6qpm7kc4fw4BaEtw2g+tkcFk/DU66sE25x1ToaOnA9bXMRtLnaQi4dWYF        
+ z9dl5U0DPyr2gxoYN5vm0BKpS2KGNCEIVTWo1CtbwfPEnlrEBcXD3zgxTgmczQW4qbcq        
+ NxnO3ge8P4kuU6buoHZray5XGndX/hvm+tOWhNy+c7PeBrV+tHw/rVCkEp/sha1uTsLU        
+ 2tFA==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.215.200 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-165.gaggle.net. [162.216.127.165])
+        by mx.google.com with ESMTPS id
+ y14-20020a4aea2e000000b005a0ca120615si356287ood.10.2024.02.29.06.14.54
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 29 Feb 2024
+ 06:14:55 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.215.200 as permitted sender) client-ip=209.85.215.200;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.215.200 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx02.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex04.lax.gaggle.net (Postfix) with ESMTP id 4015080082
+	for <4804241180@students.ocps.net>; Thu, 29 Feb 2024 06:14:54 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx02.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Thu, 29 Feb 2024 06:14:53 -0800
+Received: from mx35.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx06.lax.gaggle.net (Postfix) with ESMTP id EF94414001B
+	for <4804241180@students.ocps.net>; Thu, 29 Feb 2024 06:14:52 -0800 (PST)
+Received: from [209.85.215.200] (HELO mail-pg1-f200.google.com)
+ (209.85.215.200)    by mx35.gaggle.net (qpsmtpd/0.83) with ESMTP; Thu, 29 Feb
+ 2024 06:14:52 -0800
+Received: by mail-pg1-f200.google.com with SMTP id
+ 41be03b00d2f7-5dc90074016so804613a12.0        for
+ <4804241180@students.ocps.net>; Thu, 29 Feb 2024 06:14:52 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709216092; x=1709820892;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Y7zuNLPXeh9hRDhMESehPMLzFvW1mkIBg/rG7OTiYZs=;
+        b=Zmg+Kvw2KNcddF60V5QIwfzXKm0h3vWS6HT8iSp9nnPbYmPWgmQxRJokJIRUc6kQCV
+         SvZIEEHvaFPR7jaRzg/z/K416mnhfQ8ZMsG7tr5BUaciBtWYRjlBba/XcdJWsphTOAF9
+         ZvJQxNDmundcUvqazFayXvvRv0RTc/f3wBiETlN1OeZfOb3UmlN7kgawjoMC8eGpxX/C
+         GxzkNgYa6q9zYOCdxe62ba+E0E9NsNaNdFVz6ysXKpS35d0xp2wznBVEI0COBMXFTOZs
+         TDyqRPnX8lwTxqNiUl7t4Q1XGoSOTK5Aw22Y4VeZunTfOkBixxQWdFuBQ4YLr4gUm3kN
+         ZIYw==
+X-Gm-Message-State: AOJu0YwOwmysUsoqNelRoYnPc0vqHNAtb/hwskXY10l9qjR8sKCs5Ukx
+	tYT9DEwHJAf/NpXu44QxaNG3v9z4nk7JIoZTHqVdrJd2PB+KlR6MpuPK+KSbLGZMRNs+X/3PscO
+	kMnYZ3NU4k/gCIWxDtBtv/97XGE/zCrji6PhbCMDV9Z0U5/MexktHLHwsWieShnSg9qXZaqsxF/
+	d/p6AD7IgylwK88mKVurWqE0tJmmuybyxeW2EJmrwgoiLQrqUqa+XylELZ
+X-Received: by 2002:a17:90a:9c7:b0:296:416e:ce88 with SMTP id
+ 65-20020a17090a09c700b00296416ece88mr2090510pjo.49.1709216091819;        Thu,
+ 29 Feb 2024 06:14:51 -0800 (PST)
+X-Received: by 2002:a17:90a:9c7:b0:296:416e:ce88 with SMTP id
+ 65-20020a17090a09c700b00296416ece88mr2090488pjo.49.1709216091453; Thu, 29 Feb
+ 2024 06:14:51 -0800 (PST)
+MIME-Version: 1.0
+References:
+ <CAGZ_XgDU8NQXygigPS1WkcT66P2es4bJcwY9V7uk3OvVRO3rpg@mail.gmail.com>
+ <CANuu65EwVDVMHMKiJHAet6wCv6r6LodmW0foj=2so9hBN3Lzeg@mail.gmail.com>
+ <CAGZ_XgBUsy9xe4ttBkHyu8r0aUdn8DByxzpCvaWN033ynHNiVw@mail.gmail.com>
+ <CANuu65FXqg8Y2r0ZOt6JVxjHvb0aGhrQy0cV0Np80tW-Mm6pTw@mail.gmail.com>
+In-Reply-To:
+ <CANuu65FXqg8Y2r0ZOt6JVxjHvb0aGhrQy0cV0Np80tW-Mm6pTw@mail.gmail.com>
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Thu, 29 Feb 2024 09:14:41 -0500
+Message-ID:
+ <CAGZ_XgBqquZC1KknE4enSagdvO85BSEQ6wTS48SnWBnLZ1vtUA@mail.gmail.com>
+Subject: Re: the alley (storytime)
+To: Brandon Nova <4804241180@students.ocps.net>
+Content-Type: multipart/alternative; boundary="000000000000f9e16b061285e117"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx35.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdab525252f158?=
+ =?utf-8?q?756648946c17427f1e469503c186982c654c3bbe304255f9fd56a8456ea8b394b?=
+ =?utf-8?q?d7ab542926a18ee6581283d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 232604126
+X-Virus-Checked: Checked by ClamAV on mx02.gaggle.net
+
+--000000000000f9e16b061285e117
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+sure lol but no it was lucas drone
+
+On Thu, Feb 29, 2024 at 7:58=E2=80=AFAM Brandon Nova <4804241180@students.o=
+cps.net>
+wrote:
+
+> (Jozef)
+>
+> On Wednesday, February 28, 2024, Natalie Miesak <
+> 4804135947@students.ocps.net> wrote:
+>
+>> Thank you lol oh yeah it was based on this guy in my bio class but i too=
+k
+>> inspiration from you too
+>>
+>> On Wed, Feb 28, 2024 at 5:58=E2=80=AFAM Brandon Nova <
+>> 4804241180@students.ocps.net> wrote:
+>>
+>>> This is a good one. I swear it's about me (I also swear I'm not full of
+>>> myself, well sometimes, but here not, perhaps, if only). There's great
+>>> buildup
+>>>
+>>> On Tue, Feb 27, 2024 at 10:38=E2=80=AFAM Natalie Miesak <
+>>> 4804135947@students.ocps.net> wrote:
+>>>
+>>>> he holds a pencil the size of a baseball bat. he writes in his little
+>>>> notebook, but who knows what he writes? if anyone tries to see, he tur=
+ns
+>>>> away. he hides his writing. *no, this is private.* no one can know
+>>>> what goes on in his head.
+>>>>
+>>>> he is dressed completely in black- a black long-sleeve turtleneck with
+>>>> black pants. he sits in the back corner of the library, a small table =
+and
+>>>> chair, hidden among the aisles of bookshelves. he is writing with his
+>>>> prized giant pencil and tiny notebook. it is well past sundown- a blac=
+k
+>>>> void beyond the windows, dimly lit light inside the library. the clock
+>>>> strikes 10. the library is closed. it's time to go. he slips his noteb=
+ook
+>>>> in his pocket and pulls on his long, black trenchcoat. he places a bla=
+ck
+>>>> fedora on his head and slings his pencil over his shoulder, strapped t=
+o his
+>>>> back.
+>>>>
+>>>> he swiftly leaves the library, making no sound. his movements are
+>>>> smooth as a ghost as he makes his way down the street. pedestrians giv=
+e him
+>>>> space as he passes by, emitting an unsettling aura. he discretely chec=
+ks
+>>>> his surroundings before turning into an inconspicuous alleyway.
+>>>>
+>>>> a chihuahua slowly emerges from behind a dumpster. "you're late."
+>>>> "i am aware. but i will no longer be doing business with you." he
+>>>> responds.
+>>>> the chihuahua is not pleased with this statement.
+>>>> "very well, then. i guess this is the end." the chihuahua goes back
+>>>> behind the dumpster. 4.367 seconds later, the chihuahua reappears hold=
+ing a
+>>>> 4ft sword. "you were nothing but a poor writer anyway. ill be better o=
+ff
+>>>> with someone else."
+>>>>
+>>>> he unstraps his pencil from his back and holds it at the ready. "the
+>>>> pen is mightier than the sword!" he exclaims. the chihuahua lunges for=
+ward
+>>>> and he blocks. a duel has ensued. a true test of the power of the pen[=
+cil]
+>>>> versus the power of the sword.
+>>>>
+>>>> heard from the alleyway, the distinct sound of wood against metal.
+>>>> quick, quiet shuffling sounds. a short audible gasp. impaled. a final
+>>>> breath.
+>>>>
+>>>> only one leaves the alley alive.
+>>>>
+>>>
+
+--000000000000f9e16b061285e117
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">sure lol but no it was lucas drone</div><br><div class=3D"=
+gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Thu, Feb 29, 2024 at =
+7:58=E2=80=AFAM Brandon Nova &lt;<a href=3D"mailto:4804241180@students.ocps=
+.net">4804241180@students.ocps.net</a>&gt; wrote:<br></div><blockquote clas=
+s=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid r=
+gb(204,204,204);padding-left:1ex">(Jozef)<br><br>On Wednesday, February 28,=
+ 2024, Natalie Miesak &lt;<a href=3D"mailto:4804135947@students.ocps.net" t=
+arget=3D"_blank">4804135947@students.ocps.net</a>&gt; wrote:<br><blockquote=
+ class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px so=
+lid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Thank you lol oh ye=
+ah it was based on this guy in my bio class but i took inspiration from you=
+ too</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_at=
+tr">On Wed, Feb 28, 2024 at 5:58=E2=80=AFAM Brandon Nova &lt;<a href=3D"mai=
+lto:4804241180@students.ocps.net" target=3D"_blank">4804241180@students.ocp=
+s.net</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"ma=
+rgin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:=
+1ex"><div dir=3D"ltr">This is a good one. I swear it&#39;s about me (I also=
+ swear I&#39;m not full of myself, well sometimes, but here not, perhaps, i=
+f only). There&#39;s great buildup=C2=A0<br></div><br><div class=3D"gmail_q=
+uote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, Feb 27, 2024 at 10:38=
+=E2=80=AFAM Natalie Miesak &lt;<a href=3D"mailto:4804135947@students.ocps.n=
+et" target=3D"_blank">4804135947@students.ocps.net</a>&gt; wrote:<br></div>=
+<blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-=
+left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">he holds=
+ a pencil the size of a baseball bat. he writes in his little notebook, but=
+ who knows what he writes? if anyone tries to see, he turns away. he hides =
+his writing.=C2=A0<i>no, this is private.</i>=C2=A0no one can know what goe=
+s on in his head.<div><br></div><div>he is dressed completely in black- a b=
+lack long-sleeve turtleneck with black pants. he sits in the back corner of=
+ the library, a small table and chair, hidden among the aisles of bookshelv=
+es. he is writing with his prized giant pencil and tiny notebook. it is wel=
+l past sundown- a black void beyond the windows, dimly lit light inside the=
+ library. the clock strikes 10. the library is closed. it&#39;s time to go.=
+ he slips his notebook in his pocket and pulls on his long, black trenchcoa=
+t. he places a black fedora on his head and slings his pencil over his shou=
+lder, strapped to his back.</div><div><br></div><div>he swiftly leaves the =
+library, making no sound. his movements are smooth as a ghost as he makes h=
+is way down the street. pedestrians give him space as he passes by, emittin=
+g an unsettling aura. he discretely checks his surroundings before turning =
+into an inconspicuous alleyway.=C2=A0</div><div><br></div><div>a chihuahua =
+slowly emerges from behind a dumpster. &quot;you&#39;re late.&quot;</div><d=
+iv>&quot;i am aware. but i will no longer be doing business with you.&quot;=
+ he responds.=C2=A0</div><div>the chihuahua is not pleased with this statem=
+ent.=C2=A0</div><div>&quot;very well, then. i guess this is the end.&quot; =
+the chihuahua goes back behind the dumpster. 4.367 seconds later, the chihu=
+ahua reappears holding a 4ft sword. &quot;you were nothing but a poor write=
+r anyway. ill be better off with someone else.&quot;</div><div><br></div><d=
+iv>he unstraps his pencil from his back and holds it at the ready. &quot;th=
+e pen is mightier than the sword!&quot; he exclaims. the chihuahua lunges f=
+orward and he blocks. a duel has ensued. a true test of the power of the pe=
+n[cil] versus the power of the sword.=C2=A0</div><div><br></div><div>heard =
+from the alleyway, the distinct sound of wood against metal. quick, quiet s=
+huffling sounds. a short audible gasp. impaled. a final breath.</div><div><=
+br></div><div>only one leaves the alley alive.</div></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote>
+</blockquote></div>
+
+--000000000000f9e16b061285e117--

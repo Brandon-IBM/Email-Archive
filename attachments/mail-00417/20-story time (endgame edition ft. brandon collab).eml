@@ -1,0 +1,481 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:43a6:b0:4e:489b:447 with SMTP id cu38csp864637lab;
+        Thu, 15 Feb 2024 18:57:22 -0800 (PST)
+X-Forwarded-Encrypted: i=2; =?utf-8?q?AJvYcCX9jihpHdFvnTdi1kqSfYf3wMWzogVQ+o?=
+ =?utf-8?q?H7wfTpyxyurPebwpGcWmmMg6JLKEjP7CBSFs4t9bTzXttL6t3nIY+BhQMK4yUU5rM?=
+ =?utf-8?q?cLuLk?=
+X-Google-Smtp-Source:
+ AGHT+IFc9yH2T0Xv3Z5O++pwxm0HGsfBc/U4dBlEhgItBxWuufnHtP5eBQEZuoMVBX3WatOY2LN6
+X-Received: by 2002:a9d:7983:0:b0:6e2:f0f9:eb77 with SMTP id
+ h3-20020a9d7983000000b006e2f0f9eb77mr3821353otm.12.1708052242500;        Thu,
+ 15 Feb 2024 18:57:22 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1708052242; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hqUioUyQi5lE7nI1DD25m1SIzHliXvu7FxLMLf4NFq2DIOFtKu7QrkL5dYuUjO9DLt
+         7SzRqQPy68RNb6cL8R/5FmAdFPYTigxz2pOhSO29v3Uav09W5ytLOdDfytBOF4f6wS3W
+         ibDTKkO5exVmDsxk57tBTzdouezjBwAi1BDyghgSkBKs1IY1slHqmOsYdO50kDh347/4
+         4H+sP2gVUu4azhFqmm3uUcJXeCLx+YbG8Sj8n6Fcz1nvASDQEqGtp9yQamfYhnAVyh2h
+         ZomWaR2nkVOJYcYdl8uG3DcyuoT0WGIUpLVKw5da2DDfCMS1y0Ya2bnAYxiMkmhcbnlE
+         Euug==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:mime-version:delivered-to;       
+ bh=EIU+a5ODu6EZAUGoPhvE1lRSLjFYg75l1Y3U3i1+hdo=;       
+ fh=Q6vPe+nowvu7y7iGq25p2347yikb187fL0ZFxXaux6w=;       
+ b=tV55U21eJ0/g2gOb+qGMESE1a7PH2aQglT6vuFEuBc/HDLkBfNo062j0U6sk0BgShZ        
+ ZCI0cmAzJchanXHmlKgBGO0qEa08EVy2YrQRqMIo0RT4uFdcRqS40vnYyIlWx7o61O5g        
+ o6GxT+DzNeanBqPmfXQ4zgt0EoIiR/lsxXHC3HqUfcC1ok8C40/ye9RohnlXXs/fBsys        
+ MtkuzqCFveSkL0AEBsRXxawDSA1MQiMxgORp8N8HBS09K5va4lePrqkImMOzBpv6j4uh        
+ uUSSLc33XK60F9NmG58oCRZjeMDi1ss7puEILzSJ2ambWIi7mSQn2AXCfcDySgVHBd/S        
+ PVJA==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.167.200 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-189.gaggle.net. [162.216.127.189])
+        by mx.google.com with ESMTPS id
+ eu12-20020a0568303d0c00b006e2df3d6ff7si810239otb.337.2024.02.15.18.57.21
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 15 Feb 2024
+ 18:57:22 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.167.200 as permitted sender) client-ip=209.85.167.200;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.167.200 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx51.lax.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex05.lax.gaggle.net (Postfix) with ESMTP id 9198D400A3
+	for <4804241180@students.ocps.net>; Thu, 15 Feb 2024 18:57:21 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx51.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Thu, 15 Feb 2024 18:57:20 -0800
+Received: from mx06.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx09.lax.gaggle.net (Postfix) with ESMTP id 58655260041
+	for <4804241180@students.ocps.net>; Thu, 15 Feb 2024 18:57:19 -0800 (PST)
+Received: from [209.85.167.200] (HELO mail-oi1-f200.google.com)
+ (209.85.167.200)    by mx06.gaggle.net (qpsmtpd/0.83) with ESMTP; Thu, 15 Feb
+ 2024 18:57:18 -0800
+Received: by mail-oi1-f200.google.com with SMTP id
+ 5614622812f47-3c04681f3b8so266588b6e.1        for
+ <4804241180@students.ocps.net>; Thu, 15 Feb 2024 18:57:18 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1708052237; x=1708657037;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=EIU+a5ODu6EZAUGoPhvE1lRSLjFYg75l1Y3U3i1+hdo=;
+        b=KkS2mNzR2vX4muqNspa8wq08MluCq5a7cphPxftDCZhNt6LAoNNzWxv6GCVHoc7BsG
+         BkQwygVXjsAsiUOR+l2/8xP7v2x8tQEATiSgyQB6idG6rim9KHVDA6mK5YY6v14YMqA6
+         HgIgQ6nVTOjHsK38LTPjuoMXxIC06JNHQc50V8i9ym970udqetjf9rW66eiN/AUdZLl7
+         V2UIvrKpfM8PJp1fZ2y6fr4HaMA4/t5AKV7kdEGDIFDFZWOMhINUq3EfveXfOA0pCiRE
+         diM/GneoXRNkuOYQysbb815dHb3YM2X9IbZ3LjikhzzWgWnaTi+DeuQIghfxEcIo3w2w
+         cl8Q==
+X-Forwarded-Encrypted: i=1; =?utf-8?q?AJvYcCWHzrpxvu2dMXKb9nSMLp2qvD3kW7963n?=
+ =?utf-8?q?3QtL4PcNYYEAewUor7yYBOo6GWtz/fbF2ZyljthFGK4RVTI/kQ/rRjUM7Wzr1gu9G?=
+ =?utf-8?q?rinMZ?=
+X-Gm-Message-State: AOJu0Yw8FSIlcGnnQkE2Nj3WPa0rsDkk8akWa/m/uMWjOoqGKkvNnfdb
+	/47UPebApvC6CrjWuN2LnDiT0sCFZBVgWXdwdZbMjGAtfgiuITUBG7KPgMztfHA6Pjm/xf85AqY
+	tL9nOkMutO6KbEF+fwn09pVrOTrBj9lo74tjBeA80TqFwkOMn8fOB/UsUe2wYwEfzvO8hbRW1d6
+	AM0cEs+PJkz17drAuwcAmK52rhmKfhXieejam86GYt6ezhiKgY
+X-Received: by 2002:a05:6808:10c6:b0:3c0:4816:52d0 with SMTP id
+ s6-20020a05680810c600b003c0481652d0mr4450650ois.11.1708052237410;        Thu,
+ 15 Feb 2024 18:57:17 -0800 (PST)
+X-Received: by 2002:a05:6808:10c6:b0:3c0:4816:52d0 with SMTP id
+ s6-20020a05680810c600b003c0481652d0mr4450627ois.11.1708052237003; Thu, 15 Feb
+ 2024 18:57:17 -0800 (PST)
+MIME-Version: 1.0
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Thu, 15 Feb 2024 21:57:05 -0500
+Message-ID:
+ <CAGZ_XgBGUeCJ7Nef2pSQDL_cgXvOz_Yf_v39Ehz4V2Z4QQjOtg@mail.gmail.com>
+Subject: story time (endgame edition ft. brandon collab)
+To: Lauren Willman <4804089800@students.ocps.net>,
+ 	Tyler Szydlo <4804136151@students.ocps.net>,
+ Gianna Kim <4804135863@students.ocps.net>,
+ 	Olivia Yip <4804085190@students.ocps.net>,
+ Brandon Nova <4804241180@students.ocps.net>,
+ 	Pari Vyas <4804150017@students.ocps.net>
+Content-Type: multipart/alternative; boundary="000000000000d84363061176e636"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx06.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdabf57a1ff36d?=
+ =?utf-8?q?c5afcc4aa2a406e206189af4b03a1405cff6132b45b0e16ca6eea59a4a1bd51fe?=
+ =?utf-8?q?eb0761fab02ff59ba97b23d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 219403066
+X-Virus-Checked: Checked by ClamAV on mx51.gaggle.net
+
+--000000000000d84363061176e636
+Content-Type: text/plain; charset="UTF-8"
+
+The soothing breeze, whispers of leaves, and an eerily comfortable silence.
+A flash of someone's eyes, and then none.
+
+>From a towering stone building comes Lauren, having left after subduing
+Olivia and outwitting Brandon. The rain is now a gentle pour, as she
+continues her journey back home. Gianna rides on her shoulders as they
+venture away from the prison, Natalie a fading memory.
+
+In Tyler's house sits a beautiful dress- it's blue, as is representative of
+his persona as indicated by the 2014 Erikson book. The clock strikes
+midnight, and suddenly Tyler appears normally again. The dress is nowhere
+to be seen. As it's another 4 hours until his bedtime, Tyler resumes
+watching videos on how to fold hoodies.
+
+On her way home Lauren is passing by a neighborhood. She deposits Gianna to
+her home in a worm hole. Gianna shrinks down to the size of a beetle and
+enters her worm hole. Lauren continues walking through the neighborhood.
+The rain has slowed to a slight drizzle. Silence fills the air except for
+the rustling of grass and the damp steps from Lauren's shoes. She notices a
+slight movement from the corner of her eye. From a certain house out comes
+Tyler, doing his daily walk at 3am.
+"What are *you* doing here?" says Tyler. "This is my turf!"
+"No, this is God's turf!" replies Lauren.
+
+Lauren unsheathes her 24ft 14 karat gold sword. She uses the power of her
+brain to materialize a wide 99.999% platinum shield. She lets out a sharp
+shriek, and a lightning bolt bolts down from the sky, encasing her in a
+blinding light. The light retreats, and Lauren is encased in full golden
+body armor. She is literally on fire. Lauren is prepared to fight Tyler to
+the death.
+
+Tyler has no weapon.
+
+Lauren raises her shield, points her sword at Tyler, and advances towards
+him full force. She raises her sword to strike, and Tyler barely dives out
+of the way. In the corner of his eye, Tyler sees a very long stick. The
+perfect weapon. He just has to get to it first. Lauren swipes her sword
+again, aiming for Tyler's head. Tyler rolls out of the way and quickly gets
+on his feet. Lauren is blocking the way to the stick. How will he get
+there? Tyler has an idea.
+"Look! Natalie escaped from the prison!"
+Lauren looks back. She is confused.
+"What? No she didn't. I left her there."
+Tyler sees his chance. He runs past Lauren, the stick just within reach.
+But Lauren is too fast. She sees the stick and immediately sees what he is
+trying to do. She throws her shield at Tyler and knocks him to the ground.
+Lauren slowly approaches, sword raised. She swings her sword and strikes,
+but the sword makes contact with the ground. Tyler has turned into a
+beautiful blue dress. Lauren missed.
+
+The dress transforms back into Tyler and he grabs the stick and swiftly
+backs away. Lauren, enraged, is prepared to strike again. But just as she
+raises her sword, it disappears. The fire around her swiftly fades away.
+Her shield and armor dissolve into thin air.
+Lauren is very confused. She looks at Tyler. "What happened?"
+"This is some dark magic. It must be the work of a witch!" exclaims Tyler.
+Immediately Lauren thinks of 1 person. She very dramatically turns to
+Tyler, a serious look in her eye.
+"Olivia." she says very seriously. "We need to find her and destroy her!"
+
+Lauren and Tyler venture off into the forest. They go back to the worm hole
+to search for Gianna. They call for Gianna, but nothing emerges from the
+hole. Lauren has a brilliant idea, and pulls a piece of kimchi out of her
+pocket. She lays the kimchi in front of the hole, planning to lure Gianna
+out of the hole. It doesn't take long for Gianna to take the bait. A cute
+little small beetle crawls out of the hole and turns into Gianna. They
+explain their situation with the dark magic witch Olivia, and Gianna agrees
+to help defeat her. But this isn't enough. They need more manpower, more
+firepower, more willpower. Lauren has the perfect idea.
+
+The heroic trio sprint their way through the forest, hurdling over fallen
+tree trunks and dodging pesky bugs. Gianna occasionally stops to take a
+nap, and Lauren has to lay a trail of kimchi so Gianna can catch up after
+napping. After traveling for 3 days and 5 nights, the trio decides to make
+camp. The sun is beginning to set, and soon darkness will be among them.
+Gianna digs a nice hole for herself and nibbles on her last piece of
+kimchi. She feels sleepy again, so she turns into a beetle and retreats
+deeper into the hole. Tyler climbs a tree and rests on one of the branches.
+He turns into a beautiful blue dress and hangs peacefully in the breeze.
+Lauren reaches for her sword so she can cut down some fresh branches and
+build shelter, but remembers that Olivia the Evil Sorcerer has dissolved
+her sword. Lauren slowly lays down on the cold, hard ground and tries to
+fall asleep.
+
+A sweet, fruity smell fills the air as the sun's rays begin to peek through
+the trees. Music dances past Lauren's ears as she hears the songs of birds
+alongside the crisp crackling of a campfire. She looks over to see Tyler
+and Gianna resting beside the fire, cooking mysterious red berries.
+"Are you sure we can eat those?" questioned Lauren.
+Tyler gives her a quizzical look as if this is common knowledge. "Yes, all
+mysterious berries are safe to eat."
+Lauren does not question Tyler's judgement. Gianna has already eaten
+several berries (in beetle form). Lauren grabs a berry off the fire and
+plops it in her mouth. The taste is immaculate. She takes possession of all
+the berries and downs them all in no more than 5 seconds.
+"Alright, let's continue!" exclaims Lauren. The three get up and continue
+their journey through the forest. Tyler is sad because he didn't get to eat
+any mysterious berries.
+
+The triumphant trio find themselves back at the large stone prison. The
+serious guard stands in front, performing his job very seriously. Lauren
+makes her way across the moat and confidently approaches the guard.
+"We need your help!" Lauren exclaims.
+"Sure, I will help!" responds Brandon the Guard. Brandon closes the gate to
+the prison, fully prepared to leave his post and help the group. They
+desperately need him and he knows it. Brandon will provide the best
+willpower to the group. The ferocious four run into the distance, prepared
+to bring Olivia down once and for all.
+
+~~ intermission ~~
+
+The four reach the edges of the forest, seeing a large metropolis on the
+horizon. A massive cloud looms over the whole city. It is moving slowly,
+ominously, in a large spiral. In the center of the spiral, a large
+skyscraper reaches up. That is Olivia's fortress. This is where the four
+must venture.
+Gianna has an undying urge to eat chicken wings. The city is so close- all
+they have to do is make a pit stop. Gianna voices her concerns to the
+group. "I'm hungry :(" Everyone turns to Gianna and thinks for a bit. They
+decide that they need someone to scout out the area anyway, otherwise
+they'll be going into the battlefield blind. Tyler volunteers to go map out
+the tower and the area around it so he can formulate a plan while the
+others get chicken wings. He is very hungry, but he is also still salty
+about Lauren eating all the berries. He needs time to cool down.
+Tyler turns into a dress and moves like a flying carpet off into the
+distance. He is a very stealthy scout. The others venture to another part
+of the city in search of chicken wings.
+
+
+7 hours later, the four regroup at the chicken wing place. Gianna, Lauren,
+and Brandon are very satisfied and full with chicken wings. Tyler is
+satisfied with a job well done in scouting out Olivia's palace, but he
+comes with urgent news. Natalie is being held prisoner in Olivia's tower.
+They must formulate a plan to save her!
+"What?! Do we have to?" exclaimed Lauren. "She'll be fine."
+The others disagree. They must rescue her! They swiftly head out, ready to
+stop Olivia once and for all.
+
+The big city skyline looms over everyone. A tense uneasiness over the
+population, rumors of some pending crisis, the uneasiness of the current
+calm. Natalie is held hostage at the top of 200 Park Ave 10166, and Tyler,
+Lauren, and Gianna stand at the bottom, on the road leading from Grand
+central station. Brandon quickly goes to the top to try to free Natalie,
+but is stopped suddenly. Olivia stands in front of him. "Stop",  she says.
+Brandon stops, then immediately runs to save Natalie, "You didn't say how
+long". Olivia tackles him violently and puts him in a cage seperate to
+Natalie (covid 19 social distancing). Unable to see because it's far away
+and two thirds of them are borderline blind Tyler, Lauren, and Gianna stand
+at the bottom trying to figure out what to do next.
+
+The tremendous trio bolt up the stairs. They stand face to face with
+Olivia, her sorceress staff at the ready. Lauren runs around in circles,
+aiming to distract Olivia. Tyler turns into a flying dress and also travels
+in circles, also aiming to distract Olivia. Gianna transforms into a
+beetle, swiftly enters Brandon's cage, and unlocks it. Brandon begins
+shouting words of encouragement as Lauren and Olivia engage in hand-to-hand
+combat.
+"Give me back my 24ft 14 karat gold sword!" demanded Lauren.
+"Never!" politely responded Olivia.
+
+Gianna (still in beetle form) stealthily and swiftly approaches Olivia as
+she continues to 1-on-1 battle Lauren. Brandon continues to provide
+excellent willpower, and Tyler continues to fly in circles, creating giant
+gusts of wind. Lauren kicks Olivia, then grabs Olivia's arm and judo-flips
+her over her shoulder. Lauren pins Olivia's shoulders to the ground. She is
+trapped. Olivia slowly grabs her staff, ready to unleash a powerful spell.
+But just then- SWOOSH! Gianna the Beetle flies through the air and lands in
+Olivia's eye.
+"AAAHH! A BEETLE!!!" Olivia calmly proclaimed. "Fine! I surrender!"
+
+Lauren helps Olivia up. "SIKE!" Olivia suddenly whips out her staff and
+smacks Lauren in the stomach. The battle continues. Brandon is now shouting
+even more encouraging words of encouragement, and Tyler speeds up his
+circles. Gianna turns back into human form.
+"Stop! Can't we all be friends?"
+Olivia and Lauren stop fighting for a second. They ponder this for a moment.
+"Yes, we should be friends," Olivia says.
+Everyone stops fighting and groups together in the center of the room.
+Tyler turns back into human form, the winds still blowing in circles.
+Lauren, Gianna, Brandon, Tyler, and Olivia all do a group hug. Their issue
+is resolved, and Olivia will no longer be an evil sorceress. Hurrah!
+
+Just then Brandon looks back and sees something frightening. A giant
+tornado has formed in the room during their group hug. Tyler flew too fast!
+The ground begins to rumble, the ceiling cracking and shaking. The building
+is going to collapse! The ferocious four quickly make their way out of the
+tower. As soon as they reach the ground, pieces of the tower begin hitting
+the ground. A sinkhole forms as the tower caves in on itself. Luckily, all
+the main characters made it out safely.
+
+*Final scene where olivia is a good guy*
+
+*Everyone hugs and is friends*
+
+The end. Remember to Never Eat Soggy Waffles.
+
+--000000000000d84363061176e636
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">The soothing breeze, whispers of leaves, and an eerily com=
+fortable silence. A flash of someone&#39;s eyes, and then none.=C2=A0<br><d=
+iv><br></div><div>From a towering stone building comes Lauren, having left =
+after subduing Olivia and outwitting Brandon. The rain is now a gentle pour=
+, as she continues her journey back home. Gianna rides on her shoulders as =
+they venture away from the prison, Natalie a fading memory.</div><div><br><=
+/div><div>In Tyler&#39;s house sits a beautiful dress- it&#39;s blue, as is=
+ representative of his persona as indicated by the 2014 Erikson book. The c=
+lock strikes midnight, and suddenly Tyler appears normally again. The dress=
+ is nowhere to be seen. As it&#39;s another 4 hours until his bedtime, Tyle=
+r resumes watching videos on how to fold hoodies.=C2=A0</div><div><br></div=
+><div>On her way home Lauren is passing by a neighborhood. She deposits Gia=
+nna to her home in a worm hole. Gianna shrinks down to the size of a beetle=
+ and enters her worm hole. Lauren continues walking through the neighborhoo=
+d. The rain has slowed to a slight drizzle. Silence fills the air except fo=
+r the rustling of grass and the damp steps from Lauren&#39;s shoes. She not=
+ices a slight movement from the corner of her eye. From a certain house out=
+ comes Tyler, doing his daily walk at 3am.=C2=A0</div><div>&quot;What are <=
+i>you</i>=C2=A0doing here?&quot; says Tyler. &quot;This is my turf!&quot;</=
+div><div>&quot;No, this is God&#39;s turf!&quot; replies Lauren.</div><div>=
+<br></div><div>Lauren unsheathes her 24ft 14 karat gold sword. She uses the=
+ power of her brain to materialize a wide 99.999% platinum shield. She lets=
+ out a sharp shriek, and a lightning bolt bolts down from the=C2=A0sky, enc=
+asing her in a blinding light. The light retreats, and Lauren is encased in=
+ full golden body armor. She is literally on fire. Lauren is prepared to fi=
+ght Tyler to the death.=C2=A0</div><div><br></div><div>Tyler has no weapon.=
+</div><div><br></div><div>Lauren raises her shield, points her sword at Tyl=
+er, and advances towards him full force. She raises her sword to strike, an=
+d Tyler barely dives out of the way. In the corner of his eye, Tyler sees a=
+ very long stick. The perfect weapon. He just has to get to it first. Laure=
+n swipes her sword again, aiming for Tyler&#39;s head. Tyler rolls out of t=
+he way and quickly gets on his feet. Lauren is blocking the way to the stic=
+k. How will he get there? Tyler has an idea.</div><div>&quot;Look! Natalie =
+escaped from the prison!&quot;=C2=A0</div><div>Lauren looks back. She is co=
+nfused.</div><div>&quot;What? No she didn&#39;t. I left her there.&quot;</d=
+iv><div>Tyler sees his chance. He runs past Lauren, the stick just within r=
+each. But Lauren is too fast. She sees the stick and immediately sees what =
+he is trying to do. She throws her shield at Tyler and knocks him to the gr=
+ound. Lauren slowly approaches, sword raised. She swings her sword and stri=
+kes, but the sword makes contact with the ground. Tyler has turned into a b=
+eautiful blue dress. Lauren missed.</div><div><br></div><div>The dress tran=
+sforms back into Tyler and he grabs the stick and swiftly backs away. Laure=
+n, enraged, is prepared to strike again. But just as she raises her sword, =
+it disappears. The fire around her swiftly fades away. Her shield and armor=
+ dissolve into thin air.=C2=A0</div><div>Lauren is very confused. She looks=
+ at Tyler. &quot;What happened?&quot;</div><div>&quot;This is some dark mag=
+ic. It must be the work of a witch!&quot; exclaims Tyler.</div><div>Immedia=
+tely Lauren thinks of 1 person. She very dramatically turns to Tyler, a ser=
+ious look in her eye.</div><div>&quot;Olivia.&quot; she says very seriously=
+. &quot;We need to find her and destroy her!&quot;</div><div><br></div><div=
+>Lauren and Tyler venture off into the forest. They go back to the worm hol=
+e to search for Gianna. They call for Gianna, but nothing emerges from the =
+hole. Lauren has a brilliant idea, and pulls a piece of kimchi out of her p=
+ocket. She lays the kimchi in front of the hole, planning to lure Gianna ou=
+t of the hole. It doesn&#39;t take long for Gianna to take the bait. A cute=
+ little small beetle crawls out of the hole and turns into Gianna. They exp=
+lain their situation with the dark magic witch Olivia, and Gianna agrees to=
+ help defeat her. But this isn&#39;t enough. They need more manpower, more =
+firepower, more willpower. Lauren has the perfect idea.=C2=A0</div><div><br=
+></div><div>The heroic trio sprint their way through the forest, hurdling o=
+ver fallen tree trunks and dodging pesky bugs. Gianna occasionally stops to=
+ take a nap, and Lauren has to lay a trail of kimchi so Gianna can catch up=
+ after napping. After traveling for 3 days and=C2=A05 nights, the trio deci=
+des to make camp. The sun is beginning to set, and soon darkness will be am=
+ong them. Gianna digs a nice hole for herself and nibbles on her last piece=
+ of kimchi. She feels sleepy again, so she turns into a beetle and retreats=
+ deeper into the hole. Tyler climbs a tree and rests on one of the branches=
+. He turns into a beautiful blue dress and hangs peacefully in the breeze. =
+Lauren reaches for her sword so she can cut down some fresh branches and bu=
+ild shelter, but remembers that Olivia the Evil Sorcerer has dissolved her =
+sword. Lauren slowly lays down on the cold, hard ground and tries to fall a=
+sleep.</div><div><br></div><div>A sweet, fruity smell fills the air as the =
+sun&#39;s rays begin to peek through the trees. Music dances past Lauren&#3=
+9;s ears as she hears the songs of birds alongside the crisp crackling of a=
+ campfire. She looks over to see Tyler and Gianna resting beside the fire, =
+cooking mysterious red berries.=C2=A0</div><div>&quot;Are you sure we can e=
+at those?&quot; questioned Lauren.=C2=A0</div><div>Tyler gives her a quizzi=
+cal look as if this is common knowledge. &quot;Yes, all mysterious berries =
+are safe to eat.&quot;</div><div>Lauren does not question Tyler&#39;s judge=
+ment. Gianna has already eaten several berries (in beetle form). Lauren gra=
+bs a berry off the fire and plops it in her mouth. The taste is immaculate.=
+ She takes possession of all the berries and downs them all in no more than=
+ 5 seconds.=C2=A0</div><div>&quot;Alright, let&#39;s continue!&quot; exclai=
+ms Lauren. The three get up and continue their journey through the forest. =
+Tyler is sad because he didn&#39;t get to eat any mysterious berries.</div>=
+<div><br></div><div>The triumphant trio find themselves back at the large s=
+tone prison. The serious guard stands in front, performing his job very ser=
+iously. Lauren makes her way across the moat and confidently approaches the=
+ guard.</div><div>&quot;We need your help!&quot; Lauren exclaims.</div><div=
+>&quot;Sure, I will help!&quot; responds Brandon the Guard. Brandon closes =
+the gate to the prison, fully prepared to leave his post and help the group=
+. They desperately need him and he knows it. Brandon will provide the best =
+willpower to the group. The ferocious four run into the distance, prepared =
+to bring Olivia down once and for all.</div><div><br></div><div>~~ intermis=
+sion ~~</div><div><br></div><div>The four reach the edges of the forest, se=
+eing a large metropolis on the horizon. A massive cloud looms over the whol=
+e city. It is moving slowly, ominously, in a large spiral. In the center of=
+ the spiral, a large skyscraper reaches up. That is Olivia&#39;s fortress. =
+This is where the four must venture.=C2=A0</div><div>Gianna has an undying =
+urge to eat chicken wings. The city is so close- all they=C2=A0have to do i=
+s make a=C2=A0pit stop. Gianna voices her concerns to the group. &quot;I&#3=
+9;m hungry :(&quot; Everyone turns to Gianna and thinks for a bit. They dec=
+ide that they need someone to=C2=A0scout out the area anyway, otherwise the=
+y&#39;ll be going into the battlefield blind. Tyler volunteers to go map ou=
+t the tower and the area around it so he can formulate a plan while the oth=
+ers get chicken wings. He is very hungry, but he is=C2=A0also still salty a=
+bout Lauren eating all the berries. He needs time to cool down.</div><div>T=
+yler turns into a dress and moves like a flying carpet off into the distanc=
+e. He is a very=C2=A0stealthy scout. The others venture to another part of =
+the city in search of chicken wings.</div><div><br></div><div><br></div><di=
+v>7 hours later, the four regroup at the chicken wing place. Gianna, Lauren=
+, and Brandon are very satisfied and full with chicken wings. Tyler is sati=
+sfied with a job well done in scouting out Olivia&#39;s palace, but he come=
+s with urgent news. Natalie is being held prisoner in Olivia&#39;s tower. T=
+hey must formulate a plan to save her!</div><div>&quot;What?! Do we have to=
+?&quot; exclaimed Lauren. &quot;She&#39;ll be fine.&quot;=C2=A0</div><div>T=
+he others disagree. They must rescue her! They swiftly head out, ready to s=
+top Olivia once and for all.</div><div><br></div><div>The big city skyline =
+looms over everyone. A tense uneasiness over the population, rumors of some=
+ pending crisis, the uneasiness of the current calm. Natalie is held hostag=
+e at the top of=C2=A0200 Park Ave 10166, and Tyler, Lauren, and Gianna stan=
+d at the bottom, on the road leading from Grand central station. Brandon qu=
+ickly goes to the top to try to free Natalie, but is stopped suddenly. Oliv=
+ia stands in front of him. &quot;Stop&quot;,=C2=A0 she says. Brandon stops,=
+ then immediately=C2=A0runs to save Natalie, &quot;You didn&#39;t say how l=
+ong&quot;. Olivia tackles him violently and puts him in a cage seperate to =
+Natalie (covid 19 social distancing). Unable to see because it&#39;s far aw=
+ay and two thirds of them are borderline blind Tyler, Lauren, and Gianna st=
+and at the bottom trying to figure out what to do next.=C2=A0<br></div><div=
+><br></div><div>The tremendous trio bolt up the stairs. They stand face to =
+face with Olivia, her sorceress staff at the ready. Lauren runs around in c=
+ircles, aiming to distract Olivia. Tyler turns into a flying dress and also=
+ travels in circles, also aiming to distract Olivia. Gianna transforms into=
+ a beetle, swiftly enters Brandon&#39;s cage, and unlocks it. Brandon begin=
+s shouting words of encouragement as Lauren and Olivia engage in hand-to-ha=
+nd combat.=C2=A0</div><div>&quot;Give me back my 24ft 14 karat gold sword!&=
+quot; demanded Lauren.</div><div>&quot;Never!&quot; politely responded Oliv=
+ia.</div><div><br></div><div>Gianna (still in beetle form) stealthily and s=
+wiftly approaches Olivia as she continues to 1-on-1 battle Lauren. Brandon =
+continues to provide excellent willpower, and Tyler continues to fly in cir=
+cles, creating giant gusts of wind. Lauren kicks Olivia, then grabs Olivia&=
+#39;s arm and judo-flips her over her shoulder. Lauren pins Olivia&#39;s sh=
+oulders to the ground. She is trapped. Olivia slowly grabs her staff, ready=
+ to unleash a powerful spell. But just then- SWOOSH! Gianna the Beetle flie=
+s through the air and lands in Olivia&#39;s eye.</div><div>&quot;AAAHH! A B=
+EETLE!!!&quot; Olivia calmly proclaimed. &quot;Fine! I surrender!&quot;</di=
+v><div><br></div><div>Lauren helps Olivia up. &quot;SIKE!&quot; Olivia sudd=
+enly whips out her staff and smacks Lauren in the stomach. The battle conti=
+nues. Brandon is now shouting even more encouraging words of encouragement,=
+ and Tyler speeds up his circles. Gianna turns back into human form.</div><=
+div>&quot;Stop! Can&#39;t we all be friends?&quot;</div><div>Olivia and Lau=
+ren stop fighting for a second. They ponder this for a moment.</div><div>&q=
+uot;Yes, we should be friends,&quot; Olivia says.=C2=A0</div><div>Everyone =
+stops fighting and groups together in the center of the room. Tyler turns b=
+ack into human form, the winds still blowing in circles. Lauren, Gianna, Br=
+andon, Tyler, and Olivia all do a group hug. Their issue is resolved, and O=
+livia will no longer be an evil sorceress. Hurrah!=C2=A0</div><div><br></di=
+v><div>Just then Brandon looks back and sees something frightening. A giant=
+ tornado has formed in the room during their group hug. Tyler flew too fast=
+! The ground begins to rumble, the ceiling cracking and shaking. The buildi=
+ng is going to collapse! The ferocious four quickly make their way out of t=
+he tower. As soon as they reach the ground, pieces of the tower begin hitti=
+ng the ground. A sinkhole forms as the tower caves in on itself. Luckily, a=
+ll the main characters made it out safely.=C2=A0</div><div><br></div><div>*=
+Final scene where olivia is a good guy*</div><div><br></div><div>*Everyone =
+hugs and is friends*</div><div><br></div><div>The end. Remember to Never Ea=
+t Soggy Waffles.</div></div>
+
+--000000000000d84363061176e636--

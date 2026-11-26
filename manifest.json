@@ -1,0 +1,32 @@
+{
+  "source": "All mail Including Spam and Trash.mbox",
+  "messageCount": 480,
+  "senderCount": 37,
+  "attachmentCount": 271,
+  "attachmentBytes": 134297425,
+  "dateRange": [
+    "2022-07-28",
+    "2024-05-14"
+  ],
+  "labels": {
+    "Archived": 456,
+    "Scheduled Send": 1,
+    "Important Inforation": 85,
+    "Important": 291,
+    "Opened": 445,
+    "Category Personal": 283,
+    "MEMORIES ARCHIVE": 213,
+    "Inbox": 4,
+    "Trash": 18,
+    "Category Updates": 27,
+    "Sent": 171,
+    "Unread": 3,
+    "College/AP": 39,
+    "Clubs": 42,
+    "Starred": 1,
+    "Absences": 9,
+    "College": 38,
+    "Assignment Grades": 7
+  },
+  "warnings": []
+}

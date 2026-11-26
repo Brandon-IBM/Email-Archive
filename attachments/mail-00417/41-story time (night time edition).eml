@@ -1,0 +1,233 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:b097:b0:4c:3d7d:f121 with SMTP id m23csp307236laa;
+        Thu, 18 Jan 2024 02:51:37 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IFiRwWy14lNNAj0VyaJ4A1Pj3YrrF4Dx9VrH+wyKPV+PWsBloTBojIlKY8Pl5NFBKwaKtt+
+X-Received: by 2002:a05:6808:1526:b0:3bd:9a8a:7edb with SMTP id
+ u38-20020a056808152600b003bd9a8a7edbmr865710oiw.9.1705575097042;        Thu,
+ 18 Jan 2024 02:51:37 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705575097; cv=none;
+        d=google.com; s=arc-20160816;
+        b=GmKK2uEOjhfWMDhOmraH/5z1glvPqc/q1DUDOqjv582Kf7DFPQsRjGadVVLHs8YX6e
+         yAQym+dXgWqt6hIwCxks3ouORqw2EkP8j0aARfcdZQCHmWITdnE00CelXuf3pnGJAAt6
+         Pg1z+Pij9exfCKEi2rN8pz/ZDDmxRFImStpONggZ7gd8aIVgxNq8rRDdth6OMepJjuCX
+         CnRESGWGw3t4b6BWWdT/Vpf3DZQTwA7MTDH+1Lbyg36wdxBWpPwuenuR9y28ilNBmiv1
+         RQ77PxT5S4/JaD5qWIZZOLtDHHULgNP45wSp1JLwxy207AXLInw+pF75EDQCPinIGtqP
+         UmWQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:mime-version:delivered-to;       
+ bh=mXoZr7RNAWHKLdYFGSsrTEnHeohpuBd4eB30oiBflCY=;       
+ fh=7C8Vm2c6tQLvRz/euFGsF0A0hmHaWARa/p5V3c2Yn/4=;       
+ b=nkK1d5peoMgGARBKjuYUzmIsykgyFJfRCBsRDk15jHnjP1UXyOwXEfmG1KaZrdmMgS        
+ MDWXMIQ1zFtARSKdkkTorMNuwUZyT5kj3TjiytkxaAz2i6Su72+qtKTecI45AA/JXBBD        
+ UuBaqY6Bp6Nb0Vczyp5ttdsylI9py04rxks0GMJIyj89YvSvQzYNrx4kVWO8e1ECaKmv        
+ IfjHEDxjW757nog5aGrXrILtDqjBd8fclYnuzAjSZHVXTtKjRddNve2lPHh6Oz1JgW+t        
+ OPMLq4XXwVlG7nWgBrjxw+Fm29AflAEY3651aU8QsTo4j6AOD9x6QLoKvCXaJcFboBzE        
+ 03NQ==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.215.198 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-189.gaggle.net. [162.216.127.189])
+        by mx.google.com with ESMTPS id
+ d10-20020a05680813ca00b003bd9dabbac6si187596oiw.101.2024.01.18.02.51.36
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 18 Jan 2024
+ 02:51:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.215.198 as permitted sender) client-ip=209.85.215.198;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.215.198 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx30.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex05.lax.gaggle.net (Postfix) with ESMTP id 676A940052
+	for <4804241180@students.ocps.net>; Thu, 18 Jan 2024 02:51:36 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx30.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Thu, 18 Jan 2024 02:51:35 -0800
+Received: from mx55.lax.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx05.lax.gaggle.net (Postfix) with ESMTP id 02E434003D
+	for <4804241180@students.ocps.net>; Thu, 18 Jan 2024 02:51:34 -0800 (PST)
+Received: from [209.85.215.198] (HELO mail-pg1-f198.google.com)
+ (209.85.215.198)    by mx55.gaggle.net (qpsmtpd/0.83) with ESMTP; Thu, 18 Jan
+ 2024 02:51:32 -0800
+Received: by mail-pg1-f198.google.com with SMTP id
+ 41be03b00d2f7-5cdf9a354a0so7289220a12.3        for
+ <4804241180@students.ocps.net>; Thu, 18 Jan 2024 02:51:32 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1705575091; x=1706179891;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=mXoZr7RNAWHKLdYFGSsrTEnHeohpuBd4eB30oiBflCY=;
+        b=ojT/U4OugsFUGGHKOVLdySVy7UBaC2ClFigK1xhBiIxoDazJOzSF5ESJewO7TvcgeQ
+         XMXBoEkmy3hnC2ltJCdwssFYFUR9VSlyuBr221EjeT7FBVqBcCN4lXmtm6gMdK43dQKj
+         1O2bgQKpuzWMUcN/RwalM9UaXp6gqq7e7h6IR/b/DTm+rAPiV3lSJtnTBOdmHC6W6KH6
+         O6OA0qIOCIjWBTSjEU0eUIRBvgqnnHn1FvpFfW8csMLTk5drKfAbc/Yg00RI7/NZ+cFs
+         BIx8p94Gs6mIK0tu7oKCEhCTpQhKVW3PrGStdYyZ6JbT4kpNcIbc4vFEohGpzzPnPNfE
+         sZrA==
+X-Gm-Message-State: AOJu0YxgvhlebM+KokFtDJxGlTynhaOsVG7qQrexWJPazNYscy02c64q
+	36j5tvpd6WZAxsf4EXtCJzW6nH0QCkZABafI2TfSlpF+p0Um4r+T0W6qC0lXabu10ADmscdBGK2
+	iZ1J18KcnCDdsr85ry/PzcysH0ixYF+I/M65m0af4gzrH3OEHr0on0Xli5dvkundlm+iAFQqa3A
+	orKyXa1oTh6qD/2SavOS1SXFK3/d6ptcHL4mN/GxBixNKgW6AgjJMx+UInvAM=
+X-Received: by 2002:a05:6a20:2585:b0:199:40c4:5908 with SMTP id
+ k5-20020a056a20258500b0019940c45908mr478279pzd.84.1705575090785;        Thu,
+ 18 Jan 2024 02:51:30 -0800 (PST)
+X-Received: by 2002:a05:6a20:2585:b0:199:40c4:5908 with SMTP id
+ k5-20020a056a20258500b0019940c45908mr478270pzd.84.1705575090433; Thu, 18 Jan
+ 2024 02:51:30 -0800 (PST)
+MIME-Version: 1.0
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Thu, 18 Jan 2024 05:51:19 -0500
+Message-ID:
+ <CAGZ_XgCr-W+mn93B-x5i-WRB-z53bCKrOEGdKtucfRFELK+7tA@mail.gmail.com>
+Subject: story time (night time edition)
+To: Brandon Nova <4804241180@students.ocps.net>,
+ Gianna Kim <4804135863@students.ocps.net>,
+ 	Lauren Willman <4804089800@students.ocps.net>,
+ Olivia Yip <4804085190@students.ocps.net>,
+ 	Tyler Szydlo <4804136151@students.ocps.net>
+Content-Type: multipart/alternative; boundary="0000000000006741f4060f3625d9"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx55.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdab43fe35c9df?=
+ =?utf-8?q?c16ec1368331bb284d80fce5fbf6be44b004ae0063bbeec2ee97e1366717a6e1e?=
+ =?utf-8?q?778cd997859b5040a5cf33d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 186121592
+X-Virus-Checked: Checked by ClamAV on mx30.gaggle.net
+
+--0000000000006741f4060f3625d9
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+The silence is hauntingly peaceful. Darkness cloaks him like a warm
+blanket. Tyler is sitting in his house at 3 am, studying intently on how to
+perfectly fold a hoodie. Dozens of tabs open, running 2 videos at the same
+time, reading articles, Tyler is working so hard to master this craft.
+
+ EERRRREEEECCCHH!
+
+ Tyler looks up and surveys the room. Where did that sound come from? Oh
+well. Maybe he=E2=80=99s stayed up too late and is hallucinating. Whatever-=
+ he must
+continue his studies. Tyler pulls up another video on how to fold hoodies.
+
+
+=E2=80=9CI wouldn=E2=80=99t do that if I were you.=E2=80=9D
+
+ Tyler looks around again. Who said that? Where did it come from? The voice
+sounds eerily like Lauren, but Lauren is nowhere to be seen. Just then, a
+floating hoodie drifts into the room.
+
+ =E2=80=9CYou can=E2=80=99t learn how to fold hoodies. They deserve to be f=
+ree, not
+constricted as so!=E2=80=9D said the hoodie.
+=E2=80=9CLauren, is that you?=E2=80=9D questioned Tyler.
+=E2=80=9CYes. I have been trapped inside this hoodie. You have to save me!=
+=E2=80=9D
+
+ Tyler feels a sudden sense of urgency. He must save Lauren from the
+clutches of the hoodie! He knows just where to start. Tyler opens his
+window and jumps out, running towards the lake.
+
+ The cold air brushes past his face as he runs faster and faster towards
+the lake. But he is suddenly stopped by Gianna. She has a look of pure
+horror on her face.
+=E2=80=9CYou can=E2=80=99t go there! I=E2=80=99ve already tried to save Lau=
+ren. There is no point=E2=80=9D
+exclaimed Gianna. Tyler, confused, tries to figure out why. Gianna swiftly
+turns into a hat. This is not good.
+
+ Tyler is determined to save the day, so he continues towards the Lake.
+Finally he makes it to the lake, and feels the cool mist blowing against
+his face. In the middle of the lake sits Olivia, floating and meditating
+over the surface of the water. She warns Tyler not to come any closer, but
+Tyler has to save his friends.
+=E2=80=9CTurn them back into people!=E2=80=9D demanded Tyler. =E2=80=9Cno=
+=E2=80=9D proclaimed Olivia very
+seriously.
+
+ Tyler begins running on the water. He will do whatever it takes to stop
+this madness. Suddenly, Olivia pulls out a magic wand and points it at
+Tyler. He realizes too late that he is her next target.
+
+ =E2=80=9CNOOOOOOO!=E2=80=9D Brandon flies across the water, blocking the h=
+it from the
+magic wand.
+=E2=80=9CBrandon, you sacrificed yourself for me?=E2=80=9D asked Tyler. Bra=
+ndon lies on the
+surface of the water, barely breathing.
+=E2=80=9CI know you would do the same for me=E2=80=9D replied Brandon very =
+dramatically.
+ =E2=80=9CNo Brandon! Stay with me!=E2=80=9D
+
+ Brandon swiftly transforms into a pair of shoes. Before Tyler can fully
+register the weight of this sacrifice, Olivia points the wand at him again.
+Tyler, still in shock, has no time to react. He faces the magic of her
+wand, and is turned into a beautiful dress. Olivia has won again.
+
+The end.
+
+--0000000000006741f4060f3625d9
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div>The silence is hauntingly peaceful. Darkness cloaks him like a warm bl=
+anket. Tyler is sitting in his house at 3 am, studying intently on how to p=
+erfectly fold a hoodie. Dozens of tabs open, running 2 videos at the same t=
+ime, reading articles, Tyler is working so hard to master this craft.=C2=A0=
+</div><div dir=3D"auto"><br></div><div dir=3D"auto">=C2=A0EERRRREEEECCCHH!=
+=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">=C2=A0Tyler looks=
+ up and surveys the room. Where did that sound come from? Oh well. Maybe he=
+=E2=80=99s stayed up too late and is hallucinating. Whatever- he must conti=
+nue his studies. Tyler pulls up another video on how to fold hoodies. =C2=
+=A0
+</div><div dir=3D"auto"><br></div><div dir=3D"auto">=E2=80=9CI wouldn=E2=80=
+=99t do that if I were you.=E2=80=9D=C2=A0</div><div dir=3D"auto"><br></div=
+><div dir=3D"auto">=C2=A0Tyler looks around again. Who said that? Where did=
+ it come from? The voice sounds eerily like Lauren, but Lauren is nowhere t=
+o be seen. Just then, a floating hoodie drifts into the room.=C2=A0</div><d=
+iv dir=3D"auto"><br></div><div dir=3D"auto">=C2=A0=E2=80=9CYou can=E2=80=99=
+t learn how to fold hoodies. They deserve to be free, not constricted as so=
+!=E2=80=9D said the hoodie.=C2=A0</div><div dir=3D"auto">=E2=80=9CLauren, i=
+s that you?=E2=80=9D questioned Tyler.=C2=A0</div><div dir=3D"auto">=E2=80=
+=9CYes. I have been trapped inside this hoodie. You have to save me!=E2=80=
+=9D=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">=C2=A0Tyler fe=
+els a sudden sense of urgency. He must save Lauren from the clutches of the=
+ hoodie! He knows just where to start. Tyler opens his window and jumps out=
+, running towards the lake.=C2=A0</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">=C2=A0The cold air brushes past his face as he runs faster and fa=
+ster towards the lake. But he is suddenly stopped by Gianna. She has a look=
+ of pure horror on her face.=C2=A0</div><div dir=3D"auto">=E2=80=9CYou can=
+=E2=80=99t go there! I=E2=80=99ve already tried to save Lauren. There is no=
+ point=E2=80=9D exclaimed Gianna. Tyler, confused, tries to figure out why.=
+ Gianna swiftly turns into a hat. This is not good.=C2=A0</div><div dir=3D"=
+auto"><br></div><div dir=3D"auto">=C2=A0Tyler is determined to save the day=
+, so he continues towards the Lake. Finally he makes it to the lake, and fe=
+els the cool mist blowing against his face. In the middle of the lake sits =
+Olivia, floating and meditating over the surface of the water. She warns Ty=
+ler not to come any closer, but Tyler has to save his friends.=C2=A0</div><=
+div dir=3D"auto">=E2=80=9CTurn them back into people!=E2=80=9D demanded Tyl=
+er. =E2=80=9Cno=E2=80=9D proclaimed Olivia very seriously.=C2=A0</div><div =
+dir=3D"auto"><br></div><div dir=3D"auto">=C2=A0Tyler begins running on the =
+water. He will do whatever it takes to stop this madness. Suddenly, Olivia =
+pulls out a magic wand and points it at Tyler. He realizes too late that he=
+ is her next target.=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"aut=
+o">=C2=A0=E2=80=9CNOOOOOOO!=E2=80=9D Brandon flies across the water, blocki=
+ng the hit from the magic wand.=C2=A0</div><div dir=3D"auto">=E2=80=9CBrand=
+on, you sacrificed yourself for me?=E2=80=9D asked Tyler. Brandon lies on t=
+he surface of the water, barely breathing.=C2=A0</div><div dir=3D"auto">=E2=
+=80=9CI know you would do the same for me=E2=80=9D replied Brandon very dra=
+matically.</div><div dir=3D"auto">=C2=A0=E2=80=9CNo Brandon! Stay with me!=
+=E2=80=9D=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">=C2=A0Br=
+andon swiftly transforms into a pair of shoes.  Before Tyler can fully regi=
+ster the weight of this sacrifice, Olivia points the wand at him again. Tyl=
+er, still in shock, has no time to react. He faces the magic of her wand, a=
+nd is turned into a beautiful dress. Olivia has won again. =C2=A0</div><div=
+ dir=3D"auto"><br></div><div dir=3D"auto">The end.</div>
+
+--0000000000006741f4060f3625d9--

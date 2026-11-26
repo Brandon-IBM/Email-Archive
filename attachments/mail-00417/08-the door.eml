@@ -1,0 +1,160 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:34d5:b0:50:156:32b1 with SMTP id cc21csp691160lab;
+        Thu, 7 Mar 2024 08:46:37 -0800 (PST)
+X-Forwarded-Encrypted: i=2; =?utf-8?q?AJvYcCVkVxh3rTJd7QuJK/7vCS9gmXwn2miem7?=
+ =?utf-8?q?bczCoSGIIrc5mdqiL0sDCboFBWfzANd92KUq6JnzG53bNidjLMLcZg8ubPUZPH9oN?=
+ =?utf-8?q?HFPv0?=
+X-Google-Smtp-Source:
+ AGHT+IH8htXnttL9x4ySGgFaCxAuYlF/NIsWXSudO2Yibmw0VaMbRLyA+np0zBp4qyOQaTNFHR0E
+X-Received: by 2002:a05:6830:11:b0:6e5:39b:357b with SMTP id
+ c17-20020a056830001100b006e5039b357bmr708808otp.5.1709829996899;        Thu,
+ 07 Mar 2024 08:46:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1709829996; cv=none;
+        d=google.com; s=arc-20160816;
+        b=CD3HCbKwobVMy+puN1MSPatOW22QFJNW4kCopFEynFKDTTuhq1oN83PA+IhUdvDaCM
+         dXTWdJPP8Pt55QmmwO0juOtk3Mt/sVeHoT0jejXVAAV9nT0duzOg8+NauRgUW+QEKyKm
+         mefmD7g65K4JdVVSB3291yUm+T5dugnrnLYUdGIa/nICfuU5pBy9p4P93/7BHHFPaX7X
+         bFJuOLLjZxRc+Xau0KtZpaMcDifwvraF7ZBE9Ro41IVeIi0mKLEozzFqEhTjAXSY2gfh
+         Vm9phu6+H1EcGSIKjS+o4fndEeOjRYZKmDFr3nMJOuBnPHghmsvWoqA4shdYGrg+Mxf6
+         DNOQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:mime-version:delivered-to;       
+ bh=Gb/Vt+sPRi8WEOaLzVAUf+PYcTN2iVjtiV3ROVyE7WA=;       
+ fh=w5RBMCSQC3K4e6IFjwvaLwnOMy2M+03n+f/RdN2/at8=;       
+ b=SpB8lvw9SgDX6LMeHefD0KBWU4zL+rRDBxN9W4VgsDViC8+cqg89qze4gaWSp3Hcaz        
+ 5yGMCXLfa4fmb5P12bcTR3c5GVbm4FH0HSYbM8Z059u6WLgAPRy/zokHagVtoBL8p3ZH        
+ 3W/CCf8EFptz4w3dwaktMmjuW5JIdAefWwRvrC/UQR/3Dml1ma2pxnL1ty4KAE2iiMZA        
+ CCuwF77gETWs0nMQOP3oDpdRUmZ86YQEPG8X8lNk6HYljrXXmYKi0yOO2A/8WQClo/EE        
+ 8yfP8/PxTNbhBwAk/2i/uvkrghiRS4OGOVyd3VAQaBM/A+cs9YEuWpq40AnV9mQDusej        
+ VCoA==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.214.200 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-165.gaggle.net. [162.216.127.165])
+        by mx.google.com with ESMTPS id
+ ns10-20020a056870ac8a00b0022190d2fc40si14821oab.101.2024.03.07.08.46.36
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 07 Mar 2024
+ 08:46:36 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.214.200 as permitted sender) client-ip=209.85.214.200;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.214.200 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx16.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex03.lax.gaggle.net (Postfix) with ESMTP id 3A10D2000CB
+	for <4804241180@students.ocps.net>; Thu,  7 Mar 2024 08:46:36 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx16.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Thu, 07 Mar 2024 08:46:35 -0800
+Received: from mx56.lax.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx2.gaggle.net (Postfix) with ESMTP id B55322E0054
+	for <4804241180@students.ocps.net>; Thu,  7 Mar 2024 08:46:35 -0800 (PST)
+Received: from [209.85.214.200] (HELO mail-pl1-f200.google.com)
+ (209.85.214.200)    by mx56.gaggle.net (qpsmtpd/0.83) with ESMTP; Thu, 07 Mar
+ 2024 08:46:34 -0800
+Received: by mail-pl1-f200.google.com with SMTP id
+ d9443c01a7336-1dcb989a738so10202615ad.1        for
+ <4804241180@students.ocps.net>; Thu, 07 Mar 2024 08:46:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709829994; x=1710434794;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Gb/Vt+sPRi8WEOaLzVAUf+PYcTN2iVjtiV3ROVyE7WA=;
+        b=fa5RgRKHYAvEZwSLmPtTXoP6VdaXVaME8m23SFCXuIjeAg98QVe0+LGI3f808ROkF7
+         AWl4vOXvOSD38LgkZkTFkYvhfGU1hKVKjAj2R1a+nwnGzYUQSi8631Pi8Ydc1S3Xc6iU
+         ZJ3Y9YHDa5urDGgM4Ov7l+hwHG07anAqTyEiYyvgcMD28EPdfBECS7Covi3CYZmOURms
+         sC7mAGQBbkfqVEDeQLwzTpNRfpPHzym9PSDTm1X8YACfoNc6nV+uvJcUHK2qBO6em1OT
+         J+nwkDszjqmdBUewcG9kWOEFnJLciZo5pKBXSJYd6qf3OSVYMvlroYwS1YvBYZDFiRYZ
+         6uNw==
+X-Forwarded-Encrypted: i=1; =?utf-8?q?AJvYcCViURcro7CwtAFNTM6HVvoBriVqGun0Gf?=
+ =?utf-8?q?pZHz18nbk+3wom5MixHSdBQrpQMqqnW5t5pymmwCwP/046BaiHgv8pXAACHPy5yq1?=
+ =?utf-8?q?1SVyJ?=
+X-Gm-Message-State: AOJu0Yz4oxTy9OmAksSmbLaHxNwAntl85S/a5jg5Z41wUl6A9RTDbP3v
+	AfRDww8v4123qe4OvGviIdFgIk5A8fiY5jMlOUDa/Nj5wlM6d1AAUHnEzurGABrB7xB1O4wBYJt
+	es9n+NJ2FPk744ZybEkulPSDfGrqXBxkd9rNlN6YR8l7lDrnd53h0r3tRdUboXL4QDi2f5vPGGl
+	+Kdxb38eKKG7UyHT+R/ZE+XsoetVSxAU/Kizj80b04x9AJ1UKR
+X-Received: by 2002:a17:902:fa90:b0:1dc:c161:bce6 with SMTP id
+ lc16-20020a170902fa9000b001dcc161bce6mr2259009plb.15.1709829994146;       
+ Thu, 07 Mar 2024 08:46:34 -0800 (PST)
+X-Received: by 2002:a17:902:fa90:b0:1dc:c161:bce6 with SMTP id
+ lc16-20020a170902fa9000b001dcc161bce6mr2258995plb.15.1709829993854; Thu, 07
+ Mar 2024 08:46:33 -0800 (PST)
+MIME-Version: 1.0
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Thu, 7 Mar 2024 11:46:22 -0500
+Message-ID:
+ <CAGZ_XgA6n2+zUj-Y00ZWF2LE+E6Ds-N3fKFqcuukq6f4nFbMRQ@mail.gmail.com>
+Subject: the door
+To: Tyler Szydlo <4804136151@students.ocps.net>,
+ 	Brandon Nova <4804241180@students.ocps.net>,
+ 	Lauren Willman <4804089800@students.ocps.net>,
+ Olivia Yip <4804085190@students.ocps.net>,
+ 	Gianna Kim <4804135863@students.ocps.net>,
+ Pari Vyas <4804150017@students.ocps.net>
+Content-Type: multipart/alternative; boundary="000000000000691263061314d12e"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx56.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdab2de6f256ae?=
+ =?utf-8?q?19256b0cb4dd647110d4541e939865e3180ac4802920b5d0e0bcf2e666a7b66c3?=
+ =?utf-8?q?f2fbfebe7116f04bc6da43d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 241120894
+X-Virus-Checked: Checked by ClamAV on mx16.gaggle.net
+
+--000000000000691263061314d12e
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+the funky fish flops on the floor
+using all its energy
+to get to the door.
+
+the door.
+the door.
+
+what lies beyond the door?
+
+perhaps the fish could explore
+and learn so much more.
+inch by inch
+the fish
+approaches the door.
+
+no water
+no food
+no air
+only the floor
+
+if only the fish
+could get to the door.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+p.s. lol i left the subject blank and finished writing so when i went to
+write the subject gmail suggested the subject be "What the heck" =F0=9F=98=
+=AD i think
+"the door" is a much more suitable subject lol
+
+--000000000000691263061314d12e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">the funky fish flops on the floor<div>using all its energy=
+</div><div>to get to the door.</div><div><br></div><div>the door.</div><div=
+>the door.</div><div><br></div><div>what lies beyond the door?</div><div><b=
+r></div><div>perhaps the fish could explore</div><div>and learn so much mor=
+e.</div><div>inch by inch</div><div>the fish</div><div>approaches the door.=
+</div><div><br></div><div>no water</div><div>no food</div><div>no air</div>=
+<div>only the floor</div><div><br></div><div>if only the fish=C2=A0</div><d=
+iv>could get to the door.</div><div><br></div><div>~~~~~~~~~~~~~~~~~~~~~~~~=
+~~~~~~~~~~~~~~~~~~~</div><div>p.s. lol i left the subject blank and finishe=
+d writing so when i went to write the subject gmail suggested the subject b=
+e &quot;What the heck&quot;=C2=A0=F0=9F=98=AD=C2=A0i think &quot;the door&q=
+uot; is a much more suitable subject lol</div></div>
+
+--000000000000691263061314d12e--

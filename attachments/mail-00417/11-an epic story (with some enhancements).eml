@@ -1,0 +1,217 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:3285:b0:4e:489b:447 with SMTP id bw5csp1002256lab;
+        Thu, 29 Feb 2024 19:06:31 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IECegw0F4AVZW2Jt11cD+z53zFoAahwg3Y8AaDBH9scVfeTWPOOwnetH3XFfq2PFcnqCBLa
+X-Received: by 2002:a05:6870:b288:b0:21e:e476:9170 with SMTP id
+ c8-20020a056870b28800b0021ee4769170mr420213oao.43.1709262391651;        Thu,
+ 29 Feb 2024 19:06:31 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1709262391; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EasbdpHkIsWlmB6TsGOsKILP+YnQ8nkc6gJunVqd6oH6yreaskjaEeASkq4YcAKvRQ
+         UsLHwKlTw9mIu5TmUDEvxoP1ieJTWRrLCylzUN+TvcyWCgFLa/MKWsubveal+4HPhZfV
+         ykIhSbyK85cXNRjUSSXlJk0sXWvng3wBuafjFEFa6YV4G5iPTOjgElUQTktkyk4gea/J
+         i2/kVUoHkmZfkNU6f+Ki3y31wOfxfkYJbsqiDSQ24+yPk773KGJTZrLRXNLe+ju+0Qpf
+         J/p7u2z4m5FkNdeQL5QzLEcdaN8doATircO7fTXUyszwYTQw/SC/kSNYt5yIRmeKMI9K
+         1aug==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=cc:to:subject:message-id:date:from:in-reply-to:references        
+ :mime-version:delivered-to;       
+ bh=EWHbwKQ5+Fz8SwXMCIPYRgBdaLBwojg+H8G5O+lyp/g=;       
+ fh=LRSofmd13HROYfVdqlI8mo8w/Kmmy0U0PUtHOqB9ClA=;       
+ b=Xw3h4qufkpq9jyrfSdjh4ZL/NX7MM/zZqxKUDf0hH0/Uih246CbJE0w1c3r3j7XgUy        
+ PkhEb3YWbaakj/7S41lewkk3NYanejjjZmosHWFoJEDeO8twMBbcQ5/ZsNoRA/kzlIW6        
+ ovyqfkbk0iSc3cPdOkjeimI/oVJacMudAWXxwt3jPiZWNu/OCaVQY8s6gmm3uhM75F5M        
+ YiOMWlDyHMxB4vW5FfUWANl+D+Det968cxEagWEspKAW1Mrld+ioHGPekkTq1f1AUquX        
+ 9x73npLW9GGUBooCDB6WAxfC3x1gHRL1YtE03kuq58gSycd1xGkA5TiokyNsxnX8HChi        
+ UrcQ==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.216.70 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-188.gaggle.net. [162.216.127.188])
+        by mx.google.com with ESMTPS id
+ e17-20020a056870451100b00220387f26efsi816763oao.127.2024.02.29.19.06.31
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 29 Feb 2024
+ 19:06:31 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.216.70 as permitted sender) client-ip=209.85.216.70;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.216.70 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx38.lax.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex01.lax.gaggle.net (Postfix) with ESMTP id C46F71C0153
+	for <4804241180@students.ocps.net>; Thu, 29 Feb 2024 19:06:30 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx38.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Thu, 29 Feb 2024 19:06:30 -0800
+Received: from mx30.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx4.gaggle.net (Postfix) with ESMTP id 106B112007B
+	for <4804241180@students.ocps.net>; Thu, 29 Feb 2024 19:06:29 -0800 (PST)
+Received: from [209.85.216.70] (HELO mail-pj1-f70.google.com) (209.85.216.70)
+    by mx30.gaggle.net (qpsmtpd/0.83) with ESMTP; Thu, 29 Feb 2024 19:06:28
+ -0800
+Received: by mail-pj1-f70.google.com with SMTP id
+ 98e67ed59e1d1-29b245bcf84so145476a91.0        for
+ <4804241180@students.ocps.net>; Thu, 29 Feb 2024 19:06:28 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709262387; x=1709867187;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=EWHbwKQ5+Fz8SwXMCIPYRgBdaLBwojg+H8G5O+lyp/g=;
+        b=ugwx95QGIb2r+wXBBnu3XviQtwkX+/s92WB+PderNDvLGruxb0lFLeyOVIo0JEUleJ
+         ybukgd4drt8nuP7zI+jf2vcxD7M3KuWkgo2dMuaDxHgCuH1R1mK0rfykg1XXHHW/xAEr
+         /Wf8OEPTGaQQ5b0VDVgDgox1b4jjMW1PYt6TkYRwCdeLj+K/vSs7NrTTu6a6+d++Kf3v
+         9lfG0dFKN3nPgWQ/E1MhQ3XXmBWvBtRtW2geoTCFhCln3ooAsnZEOKxLykP22mGuQOtf
+         phP8nngK6LPndYy5bjXcCpfM99VNKXytKpSf7ejIXFxxkQ7Pojkb1nWDUo/nMLdcLODy
+         t4dg==
+X-Gm-Message-State: AOJu0YzH9sWsFUmIb+eHPeEvntFy2mOBatk9ApfWC04C2HCBT+ENTHTU
+	hsOGSCam5Z8Ma9WOqjQXaHS6oqQgfztzMSVDcqbfvr3CqyE/OLrYG+UdiNnptKsf40b3hjmK5hk
+	yC+XiIEOycydmOQsXQifFJa538HkV71OB3KIeJ245ratysFfvF+peeQB5/lTc5tkMJZvkFcrh+S
+	BAPUmFNyWuZcyrzd6PhN3IerftDj3mHQ9Ef1qAW7FZXmzdUE+EdqdJL51m
+X-Received: by 2002:a17:90a:bb10:b0:29a:9c12:772 with SMTP id
+ u16-20020a17090abb1000b0029a9c120772mr481033pjr.10.1709262387724;        Thu,
+ 29 Feb 2024 19:06:27 -0800 (PST)
+X-Received: by 2002:a17:90a:bb10:b0:29a:9c12:772 with SMTP id
+ u16-20020a17090abb1000b0029a9c120772mr481019pjr.10.1709262387351; Thu, 29 Feb
+ 2024 19:06:27 -0800 (PST)
+MIME-Version: 1.0
+References:
+ <CAGZ_XgB+XAE7i3k-S3AE2R6yy7JmJwJ+qjQ+vyhbozMKXwNJ8A@mail.gmail.com>
+ <CANuu65FdMJbr_P0TvFAKFa9faqgHdLNqzdrYig6xtAOWQEiyzA@mail.gmail.com>
+In-Reply-To:
+ <CANuu65FdMJbr_P0TvFAKFa9faqgHdLNqzdrYig6xtAOWQEiyzA@mail.gmail.com>
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Thu, 29 Feb 2024 22:06:16 -0500
+Message-ID:
+ <CAGZ_XgBEz+VZJzr6-Q5AY4VQPkUJR2Vq75v8d-kpyZ7TNdEZoQ@mail.gmail.com>
+Subject: Re: an epic story (with some enhancements)
+To: Brandon Nova <4804241180@students.ocps.net>
+Cc: Tyler Szydlo <4804136151@students.ocps.net>,
+ 	Lauren Willman <4804089800@students.ocps.net>,
+ Olivia Yip <4804085190@students.ocps.net>,
+ 	Gianna Kim <4804135863@students.ocps.net>,
+ Pari Vyas <4804150017@students.ocps.net>
+Content-Type: multipart/alternative; boundary="0000000000006d34cb061290a9ff"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx30.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdab07566934e4?=
+ =?utf-8?q?9abf921a60f98177993c510ee0b41d26c5d36bc4a246423e51fac7b9695998883?=
+ =?utf-8?q?135d59aa54cfe25c974f03d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 233708738
+X-Virus-Checked: Checked by ClamAV on mx38.gaggle.net
+X-Gaggle-APS-Scores:
+ false 0.0 0 0 9 https%3A%2F%2Fyoutu.be%2FvJazpys1z6E%3Ft%3D137  false 0 0
+
+--0000000000006d34cb061290a9ff
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+i was about to ask how skitzo relates to this but i get it now lol
+
+On Thu, Feb 29, 2024 at 3:45=E2=80=AFPM Brandon Nova <4804241180@students.o=
+cps.net>
+wrote:
+
+> They're related!!!
+> https://youtu.be/vJazpys1z6E?t=3D137
+>
+> (Amazing story 10/10, also keep going doggo never give up)
+>
+> On Thu, Feb 29, 2024 at 12:15=E2=80=AFPM Natalie Miesak <
+> 4804135947@students.ocps.net> wrote:
+>
+>> *once upon a time...*
+>>
+>> there was a *very cool* dog =F0=9F=90=95 that lived in the *mountains* =
+=E2=9B=B0=EF=B8=8F. every
+>> day, the dog would *TREK* to the bottom of the mountain to collect fresh
+>> water for its swimming pool =F0=9F=8C=8A=F0=9F=9A=BF, then hike back up =
+to the top of the
+>> mountain so it could *enjoy* the swimming pool. the dog was running down
+>> the mountain *very fast*, holding the bucket in its paws =F0=9F=90=BE. h=
+e scooped
+>> up some water from the waterfall at the bottom, then ran back up to the =
+top
+>> of the mountain. he *poured* the water into his swimming hole.
+>>
+>> the dog *ran back down the mountain* and got some more water then
+>> brought it to the top. the dog did this multiple times until the
+>> swimming hole was *nice and full*. by this point, the sun was beginning
+>> to set =F0=9F=8C=84. the dog had a *nice snack* of some fresh green gras=
+s =F0=9F=A5=AC, then
+>> swam in the pool for about* 5 minutes*. the sun had set *now*, so the
+>> dog drained the pool =F0=9F=95=B3=EF=B8=8F.
+>>
+>> the dog *slept* at the bottom of the empty pool, ready to get a good
+>> night's rest and *do it all again tomorrow*. =F0=9F=8E=91
+>>
+>> the end
+>>
+>
+
+--0000000000006d34cb061290a9ff
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">i was about to ask how skitzo relates to this but i get it=
+ now lol</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmai=
+l_attr">On Thu, Feb 29, 2024 at 3:45=E2=80=AFPM Brandon Nova &lt;<a href=3D=
+"mailto:4804241180@students.ocps.net">4804241180@students.ocps.net</a>&gt; =
+wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0=
+px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=
+=3D"ltr"><div>They&#39;re related!!!</div><div dir=3D"ltr"><a href=3D"https=
+://youtu.be/vJazpys1z6E?t=3D137" target=3D"_blank">https://youtu.be/vJazpys=
+1z6E?t=3D137</a><br></div><div dir=3D"ltr"><br></div><div>(Amazing story 10=
+/10, also keep going doggo never give up)=C2=A0</div></div><br><div class=
+=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Thu, Feb 29, 2024=
+ at 12:15=E2=80=AFPM Natalie Miesak &lt;<a href=3D"mailto:4804135947@studen=
+ts.ocps.net" target=3D"_blank">4804135947@students.ocps.net</a>&gt; wrote:<=
+br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8e=
+x;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr"=
+><div><i style=3D"background-color:rgb(255,242,204)"><font face=3D"comic sa=
+ns ms, sans-serif" size=3D"4">once upon a time...</font></i></div><div><i><=
+br></i></div><div>there was a <b>very cool</b>=C2=A0dog=C2=A0=F0=9F=90=95 t=
+hat lived in the <i><font color=3D"#38761d">mountains</font></i> =E2=9B=B0=
+=EF=B8=8F. <font face=3D"garamond, times new roman, serif">every day</font>=
+, the dog would <b>TREK</b> to the <font color=3D"#ff0000">bottom of the mo=
+untain</font> to collect <font face=3D"tahoma, sans-serif">fresh water</fon=
+t> for its <span style=3D"background-color:rgb(207,226,243)">swimming pool =
+</span>=F0=9F=8C=8A=F0=9F=9A=BF, then hike back up to the top of the mounta=
+in so it could <i>enjoy</i> the swimming pool. the dog was<font color=3D"#f=
+f9900"> running down the mountain </font><b>very fast</b>, holding the <fon=
+t face=3D"arial narrow, sans-serif">bucket</font> in its paws =F0=9F=90=BE.=
+ he <font face=3D"georgia, serif">scooped</font> up some water from the <sp=
+an style=3D"background-color:rgb(207,226,243)">waterfall</span> at the bott=
+om, then<font face=3D"trebuchet ms, sans-serif"> ran back up</font> to the =
+<font color=3D"#93c47d">top of the </font><font color=3D"#93c47d">mountain<=
+/font>. he <i>poured</i> the water into his <font color=3D"#0b5394">swimmin=
+g hole</font>.</div><div><br></div><div>the dog <i>ran back down the mounta=
+in</i> and <span style=3D"background-color:rgb(217,210,233)">got some more =
+water</span> then brought it to the top. <font face=3D"arial black, sans-se=
+rif">the dog did this</font> <font color=3D"#ff0000">multiple times</font> =
+until the swimming hole was <i><font color=3D"#741b47">nice and full</font>=
+</i>. by this point, the <span style=3D"background-color:rgb(249,203,156)">=
+sun was beginning to set</span> =F0=9F=8C=84. <font face=3D"georgia, serif"=
+>the dog had</font> a <b>nice snack</b> of some <font color=3D"#38761d">fre=
+sh green grass</font> =F0=9F=A5=AC, then swam in the <span style=3D"backgro=
+und-color:rgb(162,196,201)">pool</span> for about<b><font face=3D"arial bla=
+ck, sans-serif"> 5 minutes</font></b>. the sun had set <b>now</b>, so the d=
+og <font color=3D"#a64d79">drained the pool</font> =F0=9F=95=B3=EF=B8=8F.</=
+div><div><br></div><div>the dog <b>slept</b> at the <font color=3D"#bf9000"=
+>bottom </font>of the <span style=3D"background-color:rgb(234,209,220)">emp=
+ty pool</span>, <font face=3D"comic sans ms, sans-serif">ready to get a goo=
+d night&#39;s rest</font> and <b>do it all again tomorrow</b>.=C2=A0=F0=9F=
+=8E=91</div><div><br></div><div><font face=3D"monospace" size=3D"6">the end=
+</font></div></div>
+</blockquote></div>
+</blockquote></div>
+
+--0000000000006d34cb061290a9ff--

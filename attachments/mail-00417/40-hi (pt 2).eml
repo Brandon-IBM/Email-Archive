@@ -1,0 +1,205 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:231a:b0:4c:3d7d:f121 with SMTP id
+ cr26csp1033676lab;        Sun, 21 Jan 2024 06:54:07 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IEmSnCsqHerxaS2z6w7CQAOrYurJMCrN5b0ec2LN3GUQwD5tZIPWR8hlK6WP5pet2pHfRBx
+X-Received: by 2002:a05:6808:4482:b0:3bd:976d:f6fc with SMTP id
+ eq2-20020a056808448200b003bd976df6fcmr3512445oib.26.1705848847696;       
+ Sun, 21 Jan 2024 06:54:07 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705848847; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QZVS1t2NYf9h8Of2Fb5Jujl0J9e2jSw7hAEUwMG3DBrNZ5RMn2PNsSHLJfWBUdPeUQ
+         veXDA+PKuBOo0IxeRYSAmVraKc+0hskAkhTKg10qFOZq4YjVt9wu1IvxOmO4oMZ7x3Pu
+         4YdVCpnAtLqgHYnCIvuGFB+3ul410jOjubjwU+QX6APrctgs8nBa2ypjGirpSKDSo1xR
+         y+DohM50kcIx1prOnekj4kZFMBD/q0pjBkNpmWCWkTO5+wGNCEARjVRJOmcw3H5sjoae
+         G11ctkipkrmAZx0m7rosb9tta4dVKIt/cU1ALtXzkJL2ufjwFMrq/n4CYPEd57D6xDPh
+         mMkw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :delivered-to;       
+ bh=I8ygYlRJKZodne9UMqYlIyPrlou5sXltbkgAsxRxVh4=;       
+ fh=z0mgbEvBr+ZzBA+sOjDyNqwbQVDJkOfLKjxH8z6WtxY=;       
+ b=LfkycZv0rO6C3VXl4UGkewxg1UW0MI9AbGw+bKhRSsfMp+O6TJG/9wQYgXVg1PlLXM        
+ nRIo4GVgiymRNoL8JP2JdjtCShgYvgCgcQhoLKFqg0diWu6V8CHB8cZ1mM++iRTWV2cv        
+ wcWFrHR89Q1U6AprXM9MefhuLXaQbdQLn1E68Qkpj/JFDh8NWuwmzKefAkfnbQ728wfJ        
+ jgDwx51ytb8z9r7AFZtDuTjZgAX7srEzG7VLJoWbcKsTI9WQAEj9fAOmVmRMWz3RJxe+        
+ Mxf2z9JYDNGVpOKNPhTD2Ig9+AmH2b9YglOkasTOIGdY094FX9Wm1Kl35kp0YEPNTo3S        
+ ZJeQ==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.216.69 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-169.gaggle.net. [162.216.127.169])
+        by mx.google.com with ESMTPS id
+ dq2-20020a056808428200b003bd783c9a16si2510388oib.219.2024.01.21.06.54.07
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Sun, 21 Jan 2024
+ 06:54:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.216.69 as permitted sender) client-ip=209.85.216.69;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.216.69 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx31.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex01.lax.gaggle.net (Postfix) with ESMTP id 13F7A1C015C
+	for <4804241180@students.ocps.net>; Sun, 21 Jan 2024 06:54:07 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx31.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Sun, 21 Jan 2024 06:54:05 -0800
+Received: from mx45.lax.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx3.gaggle.net (Postfix) with ESMTP id 4989D220296
+	for <4804241180@students.ocps.net>; Sun, 21 Jan 2024 06:54:04 -0800 (PST)
+Received: from [209.85.216.69] (HELO mail-pj1-f69.google.com) (209.85.216.69)
+    by mx45.gaggle.net (qpsmtpd/0.83) with ESMTP; Sun, 21 Jan 2024 06:54:03
+ -0800
+Received: by mail-pj1-f69.google.com with SMTP id
+ 98e67ed59e1d1-29014d416d8so2893355a91.3        for
+ <4804241180@students.ocps.net>; Sun, 21 Jan 2024 06:54:03 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1705848843; x=1706453643;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=I8ygYlRJKZodne9UMqYlIyPrlou5sXltbkgAsxRxVh4=;
+        b=Tc+aNKhgw/h8x2NP/ACjlRQoKNreGGo1fdTOBIwcZEftzGf3CKJhKd6m/4hr7r3GAw
+         5sTy2KxmfOa73k3EFYqpNPMljqeWl8o9VnRDhsVntxAE3NKV6kaaQ1Lcmi5AVadp8Aos
+         aBgAIN0hdHgj+TiIuXJP8snaVXO8o0jh1UyznDeXYeBnY6DPEoBdPceK7mtADLRV+qch
+         PeW6A6ruiwUl32h/fY4AIm2w85R5JIhOZPG4cI/JxN0DQxfVGOomZnvUGqMNWakL2Y5S
+         fhTEqlPzunbX3CBxGRpRHNYisKyk7cMh0lKDQRMdbF8IjRAdc8eeNHApMbiL2u7N93tT
+         lBrw==
+X-Gm-Message-State: AOJu0YzQSwKmojCPSDtrXz57iYKubm8gfEa//vJWbGqDgurs40wU6GQt
+	JZryiCbkR/eqCm6JrmtnjzzSBGMX8P4+AuMpmlbJHuwLE+4cYVlaDNWBYFaamjbcM5U7VDqnbE9
+	BWHUB7XWNS0JqXOG9KBe+LUY3lvpNYGaGiINPVsLf0Ny+OYvITNikaOBt/NPul1dBwiPZ22c63R
+	UByUMRIbDy1V0pkrnJZwh0xD4FViE5L40ZWWgqQVx/F+bHS6Z3gb2mNhl2
+X-Received: by 2002:a17:90b:255:b0:290:23f4:a6de with SMTP id
+ fz21-20020a17090b025500b0029023f4a6demr1045599pjb.77.1705848842847;       
+ Sun, 21 Jan 2024 06:54:02 -0800 (PST)
+X-Received: by 2002:a17:90b:255:b0:290:23f4:a6de with SMTP id
+ fz21-20020a17090b025500b0029023f4a6demr1045597pjb.77.1705848842632; Sun, 21
+ Jan 2024 06:54:02 -0800 (PST)
+MIME-Version: 1.0
+References:
+ <CAGZ_XgBMyu2at2eUvTzKhuaVpDodgaDC+g8Qt7-6T6u-TNwBEg@mail.gmail.com>
+ <CANuu65HZMaFm3Q3iQNKKrN+bnKGVQ-_GkLQwFbPUGyi73qcNSA@mail.gmail.com>
+In-Reply-To:
+ <CANuu65HZMaFm3Q3iQNKKrN+bnKGVQ-_GkLQwFbPUGyi73qcNSA@mail.gmail.com>
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Sun, 21 Jan 2024 22:53:51 +0800
+Message-ID:
+ <CAGZ_XgD8XitwNc0uqoequg43HsMOXgzdEMd5rOwrpFqKR2yCMQ@mail.gmail.com>
+Subject: Re: hi (pt 2)
+To: Brandon Nova <4804241180@students.ocps.net>
+Content-Type: multipart/alternative; boundary="0000000000004e5441060f75e241"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx45.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdab4f39675636?=
+ =?utf-8?q?1554fb33cd6f253fb956a23d7fcf5c284e8e4b34314da930c9aa91b8e125cfdb2?=
+ =?utf-8?q?697333f7a2342c79b5cee3d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 189297186
+X-Virus-Checked: Checked by ClamAV on mx31.gaggle.net
+
+--0000000000004e5441060f75e241
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Oh lol thanks Brandon + I didn=E2=80=99t know the text was small on my comp=
+uter =F0=9F=98=AD
+
+=F0=9F=91=8D=F0=9F=91=8D
+
+On Sun, Jan 21, 2024 at 9:52=E2=80=AFPM Brandon Nova <4804241180@students.o=
+cps.net>
+wrote:
+
+> I can work fine in silence but classical music definitely helps (and not
+> commoners classical). Also good job for understanding your grandma we are
+> so proud of you (and yes I agree the text on your computer is too small,
+> but your eyes are way better than mine). And no need to take notes if you
+> know it (unless its a grade) =F0=9F=98=8E=F0=9F=A4=A7
+>
+> On Sun, Jan 21, 2024 at 7:07=E2=80=AFAM Natalie Miesak <
+> 4804135947@students.ocps.net> wrote:
+>
+>> actually it probably is a bad idea for me to be listening to songs too b=
+c
+>> im just vibing to those instead of doing my homework
+>>
+>> ok after i finish writing this email im gonna switch to my classical
+>> playlist so theres no words and i can't sing along but its still good
+>> enough background noise yk
+>>
+>> are you guys able to focus when you work in silence? i feel like if i tr=
+y
+>> to work in silence i zone out/get lost in my own head for too long so i
+>> need to have some kind of background noise so i focus on that instead of=
+ my
+>> thoughts and i can actually do my work
+>>
+>> im trying to read my uf textbook and like its interesting but at the sam=
+e
+>> time its basically biochem and like i already know the basics
+>> theyre teaching so now im like do i even need to take notes
+>>
+>> im waiting for this song to finish before i switch playlists but maybe i
+>> should just end the email now that way if im writing something i wont be
+>> tempted to finish the thought
+>> actually there was no point bc my grandma just came over to see what im
+>> doing and the song finished but i wasnt able to finish the last paragrap=
+h.
+>> she said that i keep my text too small on the computer :(    (hey guys i
+>> was able to understand her are you proud of me)
+>>
+>> ok bye for real this time
+>>
+>
+
+--0000000000004e5441060f75e241
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Oh lol thanks Brandon + I didn=E2=80=99t know the text wa=
+s small on my computer =F0=9F=98=AD</div><div dir=3D"auto"><br></div><div d=
+ir=3D"auto">=F0=9F=91=8D=F0=9F=91=8D</div><div><br><div class=3D"gmail_quot=
+e"><div dir=3D"ltr" class=3D"gmail_attr">On Sun, Jan 21, 2024 at 9:52=E2=80=
+=AFPM Brandon Nova &lt;<a href=3D"mailto:4804241180@students.ocps.net">4804=
+241180@students.ocps.net</a>&gt; wrote:<br></div><blockquote class=3D"gmail=
+_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left=
+-style:solid;padding-left:1ex;border-left-color:rgb(204,204,204)"><div dir=
+=3D"ltr">I can work fine in silence but classical music definitely=C2=A0hel=
+ps (and not commoners classical). Also good job for understanding=C2=A0your=
+ grandma we are so proud of you (and yes I agree the text on your computer =
+is too small, but your eyes are way better than mine). And no need to take =
+notes if you know it (unless its a grade)=C2=A0=F0=9F=98=8E=F0=9F=A4=A7</di=
+v><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On S=
+un, Jan 21, 2024 at 7:07=E2=80=AFAM Natalie Miesak &lt;<a href=3D"mailto:48=
+04135947@students.ocps.net" target=3D"_blank">4804135947@students.ocps.net<=
+/a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0=
+px 0px 0px 0.8ex;border-left-width:1px;border-left-style:solid;padding-left=
+:1ex;border-left-color:rgb(204,204,204)"><div dir=3D"ltr">actually it proba=
+bly is a bad idea for me to be listening to songs too bc im just vibing to =
+those instead=C2=A0of doing my homework<div><br></div><div>ok after i finis=
+h writing this email im gonna switch=C2=A0to my classical playlist so there=
+s=C2=A0no words and i can&#39;t sing along but its still good enough backgr=
+ound noise yk</div><div><br></div><div>are you guys able to focus when you =
+work in silence? i feel like if i try to work in silence i zone out/get los=
+t in my own head for too long so i need to have some kind of background noi=
+se so i focus on that instead of my thoughts and i can actually do my work<=
+/div><div><br></div><div>im trying to read my uf textbook and like its inte=
+resting but at the same time its basically biochem and like i already know =
+the basics theyre=C2=A0teaching so now im like do i even need to take notes=
+</div><div><br></div><div>im waiting=C2=A0for this song to finish before i =
+switch playlists but maybe i should just end the email now that way if im w=
+riting=C2=A0something i wont=C2=A0be tempted to finish the thought</div><di=
+v>actually there was no point bc my grandma just came over to see what im d=
+oing and the song finished but i wasnt able to finish the last paragraph. s=
+he said that i keep my text too small on the computer :(=C2=A0 =C2=A0 (hey =
+guys i was able to understand her are you proud of me)</div><div><br></div>=
+<div>ok bye for real this time</div></div>
+</blockquote></div>
+</blockquote></div></div>
+
+--0000000000004e5441060f75e241--

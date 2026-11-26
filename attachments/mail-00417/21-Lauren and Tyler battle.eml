@@ -1,0 +1,318 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:41c:b0:4e:195:e1b2 with SMTP id 28csp443972lam;
+        Sat, 10 Feb 2024 15:58:19 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IFLuz2z0GCnuGlbhgUF2TUmJGGJPMCdUWiFYk/1Mi5YHJjSqzoZbXayiZg3ViDfQgSid4dB
+X-Received: by 2002:a05:6870:6589:b0:219:442b:abd0 with SMTP id
+ fp9-20020a056870658900b00219442babd0mr3634677oab.49.1707609499272;       
+ Sat, 10 Feb 2024 15:58:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707609499; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ClzYhImVvlbOmUGDmJ8o7WPL+Nwb5xYqGuX/n9sEZmHneTpq5MdoZNS1lpHqvNsGYf
+         GQk4GJh6hpsptPWPe+a/U+ayyWEwFSwfopM8zy+0cQFNzW37Sjg/wyNapnkzhY90HVlG
+         w2HLao6sueNHLPIth6aO8Jzsmr0ZYQWvKYMbxKshNkOU6aw4VCnLho0HKbiSlDoCBwx8
+         43V3wHK4923ckYDpUrS4WvLeZb/FuyIp7PY/NC/X5Q2x3GHS2ugwN6GtHci/vHISvmCB
+         yCso32xb+bK8+vDpwewpHqVXOJx6O4n/FRGfmUtv0PNoBD1Ynwe0HcYrZf7ct/4BlbEL
+         t4tg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :delivered-to;       
+ bh=oVjK4cbTf7gmZazhQbuMsYu7UuRO15xEfEwfmQihtB0=;       
+ fh=z0mgbEvBr+ZzBA+sOjDyNqwbQVDJkOfLKjxH8z6WtxY=;       
+ b=deBTr0yIKCZa3l0IN3P8MOypw2jRl46wk7R//CMZsDLtWuLkczWG7r/r1raVwzuLUJ        
+ GU23u/VPJ6XJD2uKyPftTUFD/d/JDbRzZXvtE+djtt3dNqIHBqQhvxzY3mNHcFjmKDDG        
+ hoiJ98Wm+D2hE8xM6OKWpcOkGir70DZMOdw5SsMNGtLhdyKCHTSfFsaAobThLs6Z3Qzv        
+ jz922y9+GHKGE6kmoSY1SiOi1/GPcpTeGIjHrYQFZdxML3irfmJULUp+rGL8Dk0aEEXN        
+ MMKFoBxJ5x+gzIMg8Eoz60DJw9oIEjN8x28vuLNcCID9ieWXjdsveyo+I5s6BRoIvxiG        
+ 6jfQ==;        darn=students.ocps.net
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.166.198 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-169.gaggle.net. [162.216.127.169])
+        by mx.google.com with ESMTPS id
+ fo6-20020a0568709a0600b00219e927a211si855501oab.97.2024.02.10.15.58.18
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Sat, 10 Feb 2024
+ 15:58:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.166.198 as permitted sender) client-ip=209.85.166.198;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.166.198 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx46.lax.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex03.lax.gaggle.net (Postfix) with ESMTP id 9A29F200086
+	for <4804241180@students.ocps.net>; Sat, 10 Feb 2024 15:58:18 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx46.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Sat, 10 Feb 2024 15:58:17 -0800
+Received: from mx26.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx08.lax.gaggle.net (Postfix) with ESMTP id 6B714120038
+	for <4804241180@students.ocps.net>; Sat, 10 Feb 2024 15:58:16 -0800 (PST)
+Received: from [209.85.166.198] (HELO mail-il1-f198.google.com)
+ (209.85.166.198)    by mx26.gaggle.net (qpsmtpd/0.83) with ESMTP; Sat, 10 Feb
+ 2024 15:58:15 -0800
+Received: by mail-il1-f198.google.com with SMTP id
+ e9e14a558f8ab-363d169c770so25634425ab.0        for
+ <4804241180@students.ocps.net>; Sat, 10 Feb 2024 15:58:15 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707609493; x=1708214293;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=oVjK4cbTf7gmZazhQbuMsYu7UuRO15xEfEwfmQihtB0=;
+        b=fNwjDrHy0N52Op7m1khCGrXn6IHCKQ+WbcWEIB/EEJiCpOmCyu7kWZ1M3Urov8RfYB
+         +SRKzSLNU6PMkeDuCS9a1D0Wu6+fw4wwaIdAgC/Jl34uufYLNkXlNeJkqET5V3Hdluer
+         0ZxEWSUusnoiZo6FYFUdth1OplhKULw2TCVkX6FRS3czS0/okeJqBglBYWP3YqX9n/66
+         tkstYkQz0HshvhfBVF7T9avIOOEBVzoM5u7tY3PSpnS+6EcQTrKC14BS7zzcb/2g2MFX
+         +7Qt4acCDwbyTINhdpx+yDaQSsl6TTc7Q6u+qiwS7149bgZLSiqIXZS2hpblkQ2QSQNs
+         qyTQ==
+X-Gm-Message-State: AOJu0Yw0z0eEos+lAM5d7u3cjz+zAonjlcO9EHjNuLmrZ+IwWrLHbVYx
+	tXrqZAn1HL07zZXu6y1y6Kz3M0tQPZocMMBT9qbfRpHCAoAg8m0aQ8iZQrCyP6hTYryvRSKoQqA
+	/yEYey4ZYVcip8ukYBB+9SBrLoRxWMn32ERy+JedrqBiUxvRGF5DzZA4THyxAVyhr3lSaUm9kKb
+	Zu+WzlvojPG7zEsdux9/jD/f7CO8uRMQ5yjv7Jfcx2bVr2V1ALSL92UGhE
+X-Received: by 2002:a05:6e02:dc3:b0:363:dfc7:acc1 with SMTP id
+ l3-20020a056e020dc300b00363dfc7acc1mr3614469ilj.2.1707609493479;        Sat,
+ 10 Feb 2024 15:58:13 -0800 (PST)
+X-Received: by 2002:a05:6e02:dc3:b0:363:dfc7:acc1 with SMTP id
+ l3-20020a056e020dc300b00363dfc7acc1mr3614460ilj.2.1707609493239; Sat, 10 Feb
+ 2024 15:58:13 -0800 (PST)
+MIME-Version: 1.0
+References:
+ <CAGZ_XgBVz1=QWEUuELvBwKLcAoQz6EYJ0iY3kE-J_QkBvWr7Pg@mail.gmail.com>
+ <CANuu65FJuNDKh+uRCNE_w23u76Z27SZK_+VVZYwGQzUXZj9mpw@mail.gmail.com>
+ <CAGZ_XgD+MY4GurGDpDQzA3ekbJR7FSr0cbYrHshP9J0A51hvEw@mail.gmail.com>
+In-Reply-To:
+ <CAGZ_XgD+MY4GurGDpDQzA3ekbJR7FSr0cbYrHshP9J0A51hvEw@mail.gmail.com>
+From: Natalie Miesak <4804135947@students.ocps.net>
+Date: Sat, 10 Feb 2024 18:58:02 -0500
+Message-ID:
+ <CAGZ_XgBmAPiXZ-SMkNHRN8pwE97dnJ0W4A+bGAoHO1=dbQQmXw@mail.gmail.com>
+Subject: Re: Lauren and Tyler battle
+To: Brandon Nova <4804241180@students.ocps.net>
+Content-Type: multipart/alternative; boundary="00000000000042937406110fd117"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx26.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d2aa006f3e2dcdab8dba30428f?=
+ =?utf-8?q?4500d3d489f4441c1183c79c434a6d282266e7cf11b5d888a64457c1dfa9951c0?=
+ =?utf-8?q?d6ea30663aadcf39eaf3b3d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 213418982
+X-Virus-Checked: Checked by ClamAV on mx46.gaggle.net
+
+--00000000000042937406110fd117
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+(oh hi Tyler)
+
+On Sat, Feb 10, 2024 at 6:57=E2=80=AFPM Natalie Miesak <4804135947@students=
+.ocps.net>
+wrote:
+
+> Yes Tyler performed very well in this fight
+>
+> On Sat, Feb 10, 2024 at 5:59=E2=80=AFPM Brandon Nova <4804241180@students=
+.ocps.net>
+> wrote:
+>
+>> Wowow so well written (I would def beat Lauren in a fight) (this is Tyle=
+r
+>> btw)
+>>
+>> On Friday, February 9, 2024, Natalie Miesak <4804135947@students.ocps.ne=
+t>
+>> wrote:
+>>
+>>> Thought you might want to read the luren and Tyler battle
+>>>
+>>> Lauren continues walking through the neighborhood. From a certain house
+>>> out comes Tyler, doing his daily walk at 3am.
+>>> "What are *you* doing here?" says Tyler. "This is my turf!"
+>>> "No, this is God's turf!" replies Lauren.
+>>>
+>>> Lauren unsheathes her 24ft 14 karat gold sword. She uses the power of
+>>> her brain to materialize a wide 99.999% platinum shield. She lets out a
+>>> sharp shriek, and a lightning bolt bolts down from the sky, encasing he=
+r in
+>>> a blinding light. The light retreats, and Lauren is encased in full gol=
+den
+>>> body armor. She is literally on fire. Lauren is prepared to fight Tyler=
+ to
+>>> the death.
+>>>
+>>> Tyler has no weapon.
+>>>
+>>> Lauren raises her shield, points her sword at Tyler, and advances
+>>> towards him full force. She raises her sword to strike, and Tyler just
+>>> barely dives out of the way. In the corner of his eye, Tyler sees a ver=
+y
+>>> long stick. The perfect weapon. He just has to get to it first. Lauren
+>>> swipes her sword again, aiming for Tyler's head. Tyler rolls out of the=
+ way
+>>> and quickly gets on his feet. Lauren is blocking the way to the stick. =
+How
+>>> will he get there? Tyler has an idea.
+>>> "Look! Natalie escaped from the prison!"
+>>> Lauren looks back. She is confused.
+>>> "What? No she didn't. I left her there."
+>>> Tyler saw his chance. He runs past Lauren, the stick just within reach.
+>>> But Lauren is too fast. She sees the stick and immediately sees what he=
+ is
+>>> trying to do. She throws her shield at Tyler and knocks him to the grou=
+nd.
+>>> Lauren slowly approaches, sword raised. She swings her sword and strike=
+s,
+>>> but the sword makes contact with the ground. Tyler has turned into a
+>>> beautiful blue dress. Lauren missed.
+>>>
+>>> The dress transforms back into Tyler and he grabs the stick and swiftly
+>>> backs away. Lauren, enraged, is prepared to strike again. But just as s=
+he
+>>> raises her sword, it disappears. The fire around her swiftly fades away=
+.
+>>> Her shield and armor dissolve into thin air.
+>>> Lauren is very confused. She looks at Tyler. "What happened?"
+>>> "This is some dark magic. It must be the work of a witch!" exclaims
+>>> Tyler.
+>>> Immediately Lauren thought of 1 person. She very dramatically turns to
+>>> Tyler, a serious look in her eye.
+>>> "Olivia." she says very seriously. "We need to find her and destroy her=
+!"
+>>>
+>>>
+
+--00000000000042937406110fd117
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">(oh hi Tyler)</div><div><br><div class=3D"gmail_quote"><d=
+iv dir=3D"ltr" class=3D"gmail_attr">On Sat, Feb 10, 2024 at 6:57=E2=80=AFPM=
+ Natalie Miesak &lt;<a href=3D"mailto:4804135947@students.ocps.net">4804135=
+947@students.ocps.net</a>&gt; wrote:<br></div><blockquote class=3D"gmail_qu=
+ote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-st=
+yle:solid;padding-left:1ex;border-left-color:rgb(204,204,204)"><div dir=3D"=
+auto">Yes Tyler performed very well in this fight</div><div><br><div class=
+=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Sat, Feb 10, 2024=
+ at 5:59=E2=80=AFPM Brandon Nova &lt;<a href=3D"mailto:4804241180@students.=
+ocps.net" target=3D"_blank">4804241180@students.ocps.net</a>&gt; wrote:<br>=
+</div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;b=
+order-left-width:1px;border-left-style:solid;padding-left:1ex;border-left-c=
+olor:rgb(204,204,204)">Wowow so well written (I would def beat Lauren in a =
+fight) (this is Tyler btw)<br><br>On Friday, February 9, 2024, Natalie Mies=
+ak &lt;<a href=3D"mailto:4804135947@students.ocps.net" target=3D"_blank">48=
+04135947@students.ocps.net</a>&gt; wrote:<br><blockquote class=3D"gmail_quo=
+te" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-sty=
+le:solid;padding-left:1ex;border-left-color:rgb(204,204,204)">Thought you m=
+ight want to read the luren and Tyler battle<div dir=3D"auto"><br></div><di=
+v dir=3D"auto"><div><div style=3D"font-size:16px;font-style:normal;font-wei=
+ght:400;letter-spacing:normal;text-align:start;text-indent:0px;text-transfo=
+rm:none;white-space:normal;word-spacing:0px;text-decoration:none;background=
+-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)">Lauren conti=
+nues walking through the neighborhood. From a certain house out comes Tyler=
+, doing his daily walk at 3am.=C2=A0</div><div style=3D"font-size:16px;font=
+-style:normal;font-weight:400;letter-spacing:normal;text-align:start;text-i=
+ndent:0px;text-transform:none;white-space:normal;word-spacing:0px;text-deco=
+ration:none;background-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rg=
+b(0,0,0)">&quot;What are<span>=C2=A0</span><i style=3D"background-color:rgb=
+a(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)">you</i>=C2=A0doing her=
+e?&quot; says Tyler. &quot;This is my turf!&quot;</div><div style=3D"font-s=
+ize:16px;font-style:normal;font-weight:400;letter-spacing:normal;text-align=
+:start;text-indent:0px;text-transform:none;white-space:normal;word-spacing:=
+0px;text-decoration:none;background-color:rgba(0,0,0,0);border-color:rgb(0,=
+0,0);color:rgb(0,0,0)">&quot;No, this is God&#39;s turf!&quot; replies Laur=
+en.</div><div style=3D"font-size:16px;font-style:normal;font-weight:400;let=
+ter-spacing:normal;text-align:start;text-indent:0px;text-transform:none;whi=
+te-space:normal;word-spacing:0px;text-decoration:none;background-color:rgba=
+(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)"><br></div><div style=3D=
+"font-size:16px;font-style:normal;font-weight:400;letter-spacing:normal;tex=
+t-align:start;text-indent:0px;text-transform:none;white-space:normal;word-s=
+pacing:0px;text-decoration:none;background-color:rgba(0,0,0,0);border-color=
+:rgb(0,0,0);color:rgb(0,0,0)">Lauren unsheathes her 24ft 14 karat gold swor=
+d. She uses the power of her brain to materialize a wide 99.999% platinum s=
+hield. She lets out a sharp shriek, and a lightning bolt bolts down from th=
+e=C2=A0sky, encasing her in a blinding light. The light retreats, and Laure=
+n is encased in full golden body armor. She is literally on fire. Lauren is=
+ prepared to fight Tyler to the death.=C2=A0</div><div style=3D"font-size:1=
+6px;font-style:normal;font-weight:400;letter-spacing:normal;text-align:star=
+t;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;t=
+ext-decoration:none;background-color:rgba(0,0,0,0);border-color:rgb(0,0,0);=
+color:rgb(0,0,0)"><br></div><div style=3D"font-size:16px;font-style:normal;=
+font-weight:400;letter-spacing:normal;text-align:start;text-indent:0px;text=
+-transform:none;white-space:normal;word-spacing:0px;text-decoration:none;ba=
+ckground-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)">Tyle=
+r has no weapon.</div><div style=3D"font-size:16px;font-style:normal;font-w=
+eight:400;letter-spacing:normal;text-align:start;text-indent:0px;text-trans=
+form:none;white-space:normal;word-spacing:0px;text-decoration:none;backgrou=
+nd-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)"><br></div>=
+<div style=3D"font-size:16px;font-style:normal;font-weight:400;letter-spaci=
+ng:normal;text-align:start;text-indent:0px;text-transform:none;white-space:=
+normal;word-spacing:0px;text-decoration:none;background-color:rgba(0,0,0,0)=
+;border-color:rgb(0,0,0);color:rgb(0,0,0)">Lauren raises her shield, points=
+ her sword at Tyler, and advances towards him full force. She raises her sw=
+ord to strike, and Tyler just barely dives out of the way. In the corner of=
+ his eye, Tyler sees a very long stick. The perfect weapon. He just has to =
+get to it first. Lauren swipes her sword again, aiming for Tyler&#39;s head=
+. Tyler rolls out of the way and quickly gets on his feet. Lauren is blocki=
+ng the way to the stick. How will he get there? Tyler has an idea.</div><di=
+v style=3D"font-size:16px;font-style:normal;font-weight:400;letter-spacing:=
+normal;text-align:start;text-indent:0px;text-transform:none;white-space:nor=
+mal;word-spacing:0px;text-decoration:none;background-color:rgba(0,0,0,0);bo=
+rder-color:rgb(0,0,0);color:rgb(0,0,0)">&quot;Look! Natalie escaped from th=
+e prison!&quot;=C2=A0</div><div style=3D"font-size:16px;font-style:normal;f=
+ont-weight:400;letter-spacing:normal;text-align:start;text-indent:0px;text-=
+transform:none;white-space:normal;word-spacing:0px;text-decoration:none;bac=
+kground-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)">Laure=
+n looks back. She is confused.</div><div style=3D"font-size:16px;font-style=
+:normal;font-weight:400;letter-spacing:normal;text-align:start;text-indent:=
+0px;text-transform:none;white-space:normal;word-spacing:0px;text-decoration=
+:none;background-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,=
+0)">&quot;What? No she didn&#39;t. I left her there.&quot;</div><div style=
+=3D"font-size:16px;font-style:normal;font-weight:400;letter-spacing:normal;=
+text-align:start;text-indent:0px;text-transform:none;white-space:normal;wor=
+d-spacing:0px;text-decoration:none;background-color:rgba(0,0,0,0);border-co=
+lor:rgb(0,0,0);color:rgb(0,0,0)">Tyler saw his chance. He runs past Lauren,=
+ the stick just within reach. But Lauren is too fast. She sees the stick an=
+d immediately sees what he is trying to do. She throws her shield at Tyler =
+and knocks him to the ground. Lauren slowly approaches, sword raised. She s=
+wings her sword and strikes, but the sword makes contact with the ground. T=
+yler has turned into a beautiful blue dress. Lauren missed.</div><div style=
+=3D"font-size:16px;font-style:normal;font-weight:400;letter-spacing:normal;=
+text-align:start;text-indent:0px;text-transform:none;white-space:normal;wor=
+d-spacing:0px;text-decoration:none;background-color:rgba(0,0,0,0);border-co=
+lor:rgb(0,0,0);color:rgb(0,0,0)"><br></div><div style=3D"font-size:16px;fon=
+t-style:normal;font-weight:400;letter-spacing:normal;text-align:start;text-=
+indent:0px;text-transform:none;white-space:normal;word-spacing:0px;text-dec=
+oration:none;background-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:r=
+gb(0,0,0)">The dress transforms back into Tyler and he grabs the stick and =
+swiftly backs away. Lauren, enraged, is prepared to strike again. But just =
+as she raises her sword, it disappears. The fire around her swiftly fades a=
+way. Her shield and armor dissolve into thin air.=C2=A0</div><div style=3D"=
+font-size:16px;font-style:normal;font-weight:400;letter-spacing:normal;text=
+-align:start;text-indent:0px;text-transform:none;white-space:normal;word-sp=
+acing:0px;text-decoration:none;background-color:rgba(0,0,0,0);border-color:=
+rgb(0,0,0);color:rgb(0,0,0)">Lauren is very confused. She looks at Tyler. &=
+quot;What happened?&quot;</div><div style=3D"font-size:16px;font-style:norm=
+al;font-weight:400;letter-spacing:normal;text-align:start;text-indent:0px;t=
+ext-transform:none;white-space:normal;word-spacing:0px;text-decoration:none=
+;background-color:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)">&=
+quot;This is some dark magic. It must be the work of a witch!&quot; exclaim=
+s Tyler.</div><div style=3D"font-size:16px;font-style:normal;font-weight:40=
+0;letter-spacing:normal;text-align:start;text-indent:0px;text-transform:non=
+e;white-space:normal;word-spacing:0px;text-decoration:none;background-color=
+:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)">Immediately Lauren=
+ thought of 1 person. She very dramatically turns to Tyler, a serious look =
+in her eye.</div><div style=3D"font-size:16px;font-style:normal;font-weight=
+:400;letter-spacing:normal;text-align:start;text-indent:0px;text-transform:=
+none;white-space:normal;word-spacing:0px;text-decoration:none;background-co=
+lor:rgba(0,0,0,0);border-color:rgb(0,0,0);color:rgb(0,0,0)">&quot;Olivia.&q=
+uot; she says very seriously. &quot;We need to find her and destroy her!&qu=
+ot;</div></div><br></div>
+</blockquote>
+</blockquote></div></div>
+</blockquote></div></div>
+
+--00000000000042937406110fd117--

@@ -1,0 +1,167 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:4c1:b0:51:968e:577d with SMTP id t1csp1210231lat;
+        Tue, 26 Mar 2024 07:21:42 -0700 (PDT)
+X-Google-Smtp-Source:
+ AGHT+IFo82VnPeufvcymXapjsUCwnygnL00r9IVZAgAbIw0YTcm6zkzpnv/p2ODhrKWdkwJHta0T
+X-Received: by 2002:a05:6870:51c6:b0:229:f82f:5c36 with SMTP id
+ b6-20020a05687051c600b00229f82f5c36mr688338oaj.16.1711462902025;        Tue,
+ 26 Mar 2024 07:21:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1711462902; cv=none;
+        d=google.com; s=arc-20160816;
+        b=X0FrEydiHqw5FejzTheY6e0TRG2vp/dRnsEmsfz5H1CVEO6Iw/qzAoDyHnHrC2/jw+
+         zNfRq36OOa9csr7JbJ1wjbNAJi3wz2+WEGx0iUa8+iSL5NO69+ppjVTZ2y+9/3+sR3m1
+         AvQ2eL41KU0htBxmI08zGf6v8WMrtmlLU8Rf6YvxGENf9yRJMbBVtrzouUdOOiNOX/GS
+         u28VjroKdrUvp2bkVPQQqYAnH+w1EWf/jhqvJ0/4t9AuFWwGs9hgjuosXJH1CMwcT5PS
+         l9yznENBmBvjd05yggPuE/jVmH3ibPX8OjoK4eCOkp5BRToOicMZSTFyh2+my/jiRr74
+         FCNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version        
+ :delivered-to;        bh=1gR8h6+fVzMFyTOtf+C2IQaR29HlyAUmw6TDBujI13M=;
+        fh=9d+nZJUVr8hD3ScTKsIdo25yDwVsu4+cBMvGPHNXIlU=;       
+ b=BigSXN70fZOhxt8iazqs23vIcPCSFx70eG+WFe9C4Fk52113FYarVfOg1E3i1aS8u4        
+ OR4QhJWwnQCdnGdkDFM/cEQiDYghPj9xFEBoa2dbUqna12x2oQeMv/Snm41rgQlC/mZu        
+ CeDNUNAaJ8CXBGcQBsbntQJoWWQqB1c9YbpnDJf0Es+6PMXM04h0Q/LyUNz+mGX4Qlrs        
+ u7ti3UJ3lb7MMroCZxotN1sWzocs3jvHU6PrGWZHDVuC5xJg5CbLNVmyMLcYj9Fxqb7K        
+ Kkk+YMxqU9KNaF0UFCo+N5BxcSHrsIbKrdvWIefkQJSQcfkhW2xJ9PKr81sFozK+qZo7        
+ qLuw==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804135947@students.ocps.net designates 209.85.128.200 as permitted
+ sender) smtp.mailfrom=4804135947@students.ocps.net
+Return-Path: <4804135947@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-160.gaggle.net. [162.216.127.160])
+        by mx.google.com with ESMTPS id
+ q18-20020a056871081200b00221e0258823si2253298oap.101.2024.03.26.07.21.41
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Tue, 26 Mar 2024
+ 07:21:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 4804135947@students.ocps.net
+ designates 209.85.128.200 as permitted sender) client-ip=209.85.128.200;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804135947@students.ocps.net designates 209.85.128.200 as permitted sender)
+ smtp.mailfrom=4804135947@students.ocps.net
+Received: from mx30.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex01.lax.gaggle.net (Postfix) with ESMTP id 57B3E1C00F6
+	for <4804241180@students.ocps.net>; Tue, 26 Mar 2024 07:21:41 -0700 (PDT)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx30.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Tue, 26 Mar 2024 07:21:39 -0700
+Received: from mx13.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx06.lax.gaggle.net (Postfix) with ESMTP id 9A357140040
+	for <4804241180@students.ocps.net>; Tue, 26 Mar 2024 07:21:39 -0700 (PDT)
+Received: from [209.85.128.200] (HELO mail-yw1-f200.google.com)
+ (209.85.128.200)    by mx13.gaggle.net (qpsmtpd/0.83) with ESMTP; Tue, 26 Mar
+ 2024 07:21:38 -0700
+Received: by mail-yw1-f200.google.com with SMTP id
+ 00721157ae682-60a605154d0so62724447b3.0        for
+ <4804241180@students.ocps.net>; Tue, 26 Mar 2024 07:21:38 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1711462898; x=1712067698;
+        h=to:from:subject:date:message-id:feedback-id:reply-to:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=1gR8h6+fVzMFyTOtf+C2IQaR29HlyAUmw6TDBujI13M=;
+        b=LfDW/VNht28Kbqd6v2/x0l7hOfNTMb8yoGUm3ZNsA3jTWeIMp0AJHdxX2paFD9/tLr
+         0NtTtg/snIpH2mqTtMHEIWKjCAu43WJNqAqVOhKFz+Zy+rjo0R9SsBz0jiAjFrSK+sVH
+         crmKgwPJ5VlgQKCc+izO/MJTBwte/oFB+ejJl7Av4lB7PUcttps/OhZtemGikyXVyCrP
+         J0C/jgwLrLWX1s/vIeUCgWR2L6SCuJmVWORBPz8m7GaSKGyd3LS5JiQ1xmOJ+OwJN999
+         UgDAhbPCDlZsP97O2lly32aD0zrG8dbN9E4I3Wdw64Ti3FTDbYa3WTQEUNTK+a4PM4ab
+         mh+g==
+X-Gm-Message-State: AOJu0YwE2X2fClLqIrwaJpFbl17ddRsrMB1e2c9FqBIhcS1FRayE6xiu
+	oxDe78lhvP9HD/0bBk+RPZhQr0/rf1rvV5Nnj39BXk8D+6qr1+t2JyXaOpNgrIA2JjkH33FS0gh
+	Xp6a1v4p8RawCGMGJcD7y3BMwQekNdp0jxfK3aZbObiDzIKTQWPlw3xmLBool/8sFNBCnkZNBVY
+	7xeSAc8WQNM2JSf3LiFZJmMaD9FstO9Ma0j6YQOAW4RIWO2SDJPy8D0Eh2m8/w
+X-Received: by 2002:a05:690c:7092:b0:60a:4a5c:129a with SMTP id
+ jg18-20020a05690c709200b0060a4a5c129amr1013699ywb.2.1711462898383;       
+ Tue, 26 Mar 2024 07:21:38 -0700 (PDT)
+MIME-Version: 1.0
+X-Received: by 2002:a05:690c:7092:b0:60a:4a5c:129a with SMTP id
+ jg18-20020a05690c709200b0060a4a5c129amr1013693ywb.2.1711462898163; Tue, 26
+ Mar 2024 07:21:38 -0700 (PDT)
+Reply-To: 4804135947@students.ocps.net
+X-No-Auto-Attachment: 1
+Feedback-ID: MailTypeSendForm:GoogleForms
+X-GoogleForms-FormId:
+ e/1FAIpQLSd6iknjO5CMYZmVKirUb-ziibq4XJdQqNbKqU-EoUDEOuMv7g
+X-GoogleForms-CustomerDisplayName: Orange County Public Schools
+Message-ID: <autogen-java-9bb4ffd7-e36a-48f3-915a-d93ac16b2858@google.com>
+Date: Tue, 26 Mar 2024 14:21:38 +0000
+Subject: ANOTHER FORM!!!!!!!!!!!!!!!!!!!!!!
+From: 4804135947@students.ocps.net
+To: 4804241180@students.ocps.net
+Content-Type: multipart/alternative; boundary="000000000000177db40614910217"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx13.gaggle.net
+X-GOMS-Processing-ID: 1711462898.P116209R53e9c7eQ1.mx13.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4df1ea12c53997d7d6560c5706d4742b45176472ca?=
+ =?utf-8?q?dede093865f0c260cd08346bcdf021f56fc6d6b08c21b158fdbec2f0bf4077673?=
+ =?utf-8?q?10b7cff94e364ff510f0302d487ea06101c75?=
+X-Gaggle-Message-Info: 260841420
+X-Virus-Checked: Checked by ClamAV on mx30.gaggle.net
+X-Gaggle-Processing-ID: 1711462900.Vfd02I20022M296432.mx30.gaggle.net
+
+--000000000000177db40614910217
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+I've invited you to fill out the following form:
+ANOTHER FORM!!!!!!!!!!!!!!!!!!!!!!
+
+To fill it out, visit:
+https://docs.google.com/forms/d/e/1FAIpQLSd6iknjO5CMYZmVKirUb-ziibq4XJdQqNbKqU-EoUDEOuMv7g/viewform?vc=0&amp;c=0&amp;w=1&amp;flr=0&amp;usp=mail_form_link
+
+PLEASE DO THE FORM (its not that long i promise)
+
+Google Forms: Create and analyze surveys.
+
+--000000000000177db40614910217
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; margin=
+: 0; padding: 0; height: 100%; width: 100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"background-color:rgb(40,87,118);" width=
+=3D"100%" role=3D"presentation"><tbody><tr height=3D"64px"><td style=3D"pad=
+ding: 0 24px;"><img alt=3D"Google Forms" height=3D"26px" style=3D"display: =
+inline-block; margin: 0; vertical-align: middle;" width=3D"143px" src=3D"ht=
+tps://www.gstatic.com/docs/forms/google_forms_logo_lockup_white_2x.png"></t=
+d></tr></tbody></table><div style=3D"padding: 24px; background-color:rgb(19=
+1,205,214)"><div align=3D"center" style=3D"background-color: #fff; border-b=
+ottom: 1px solid #e0e0e0;margin: 0 auto; max-width: 624px; min-width: 154px=
+;padding: 0 24px;"><table align=3D"center" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"background-color: #fff;" width=3D"100%" role=3D"presentation">=
+<tbody><tr height=3D"24px"><td></td></tr><tr><td><span style=3D"display: ta=
+ble-cell; vertical-align: top; font-size: 13px; line-height: 18px; color: #=
+424242;" dir=3D"auto">PLEASE DO THE FORM (its not that long i promise)</spa=
+n></td></tr><tr height=3D"20px"><td></tr><tr style=3D"font-size: 20px; line=
+-height: 24px;"><td dir=3D"auto"><a href=3D"https://docs.google.com/forms/d=
+/e/1FAIpQLSd6iknjO5CMYZmVKirUb-ziibq4XJdQqNbKqU-EoUDEOuMv7g/viewform?vc=3D0=
+&amp;c=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_form_link" style=3D"color: =
+rgb(40,87,118); text-decoration: none; vertical-align: middle; font-weight:=
+ 500">ANOTHER FORM!!!!!!!!!!!!!!!!!!!!!!</a><div itemprop=3D"action" itemsc=
+ope itemtype=3D"http://schema.org/ViewAction"><meta itemprop=3D"url" conten=
+t=3D"https://docs.google.com/forms/d/e/1FAIpQLSd6iknjO5CMYZmVKirUb-ziibq4XJ=
+dQqNbKqU-EoUDEOuMv7g/viewform?vc=3D0&amp;c=3D0&amp;w=3D1&amp;flr=3D0&amp;us=
+p=3Dmail_goto_form"><meta itemprop=3D"name" content=3D"Fill out form"></div=
+></td></tr><tr height=3D"16px"></tr><tr><td style=3D"display: table-cell; v=
+ertical-align: top; font-size: 13px; line-height: 18px; color: #424242;" di=
+r=3D"auto">please answer the questions to the best of your abilities, thank=
+ you.</td></tr><tr height=3D"24px"></tr><tr><td><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td><a href=3D"https=
+://docs.google.com/forms/d/e/1FAIpQLSd6iknjO5CMYZmVKirUb-ziibq4XJdQqNbKqU-E=
+oUDEOuMv7g/viewform?vc=3D0&amp;c=3D0&amp;w=3D1&amp;flr=3D0&amp;usp=3Dmail_f=
+orm_link" style=3D"border-radius: 3px; box-sizing: border-box; display: inl=
+ine-block; font-size: 13px; font-weight: 700; height: 40px; line-height: 40=
+px; padding: 0 24px; text-align: center; text-decoration: none; text-transf=
+orm: uppercase; vertical-align: middle; color: #fff; background-color: rgb(=
+40,87,118);" target=3D"_blank" rel=3D"noopener">Fill out form</a></td></tr>=
+</tbody></table></td></tr><tr height=3D"24px"></tr></tbody></table></div><t=
+able align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-widt=
+h: 672px; min-width: 154px; border-collapse: separate; border-spacing: 0 0.=
+2em;" width=3D"100%" role=3D"presentation"><tbody><tr height=3D"24px"><td><=
+/td></tr><tr><td><a href=3D"https://docs.google.com/forms?usp=3Dmail_form_l=
+ink" style=3D"color: #424242; font-size: 13px;">Create your own Google Form=
+</a></td></tr></tbody></table></div></body></html>
+--000000000000177db40614910217--

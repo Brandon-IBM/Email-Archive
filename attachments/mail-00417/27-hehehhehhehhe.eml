@@ -1,0 +1,125 @@
+Delivered-To: 4804241180@students.ocps.net
+Received: by 2002:a05:6022:4216:b0:4d:c8b7:537c with SMTP id r22csp3186833laa;
+        Wed, 7 Feb 2024 14:59:00 -0800 (PST)
+X-Forwarded-Encrypted: i=2; =?utf-8?q?AJvYcCX1x1oYHoipENocGEV3EdrY0JkCrgaZHF?=
+ =?utf-8?q?iRcaqdoE+IVE2d9pKgZIqkko2T9KhBhmTL5jf3ykDk9HhK+zfZtq3Q7RSvjcUmzzC?=
+ =?utf-8?q?z0Gjz?=
+X-Google-Smtp-Source:
+ AGHT+IEvqyP+d4361ZtLg0eKmQbpaWeVG3OgWBgGlqi+XyRmscxEDGYcHIJR1W177yDl3s4o+BrT
+X-Received: by 2002:a05:6808:2e99:b0:3bf:e6c5:9b2b with SMTP id
+ gt25-20020a0568082e9900b003bfe6c59b2bmr6872902oib.13.1707346740538;       
+ Wed, 07 Feb 2024 14:59:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707346740; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PM6eoOP+PkF/KeLcIzaUWNRYuBt374Tqos60imI18Irf4h75GXX2XBREw2wrjJYDbv
+         F4T7jxZ4VwSsfuFsAIQrSxBA3DruVyyi/t1PZ8Nccicl7cIbWJXjX3BVMCekNX8yatB7
+         l4vUJWGuGYdKetRwnLRc07aqPkJd1iCwR+6P/wnC6poIo1y/me0BBVeG/JLQ8KF3gW14
+         obyWsuIqrnoEEga76TO/4amHDwz9O0TDkH3N20bBSjQJKB2WFIW7cb3YdgXs9CvOctyH
+         xMAycyrcroGL7/a9xfCQFBJluNOCdAP13dqCmvwUgk1plrdh86sZB2jr1MnAQKl2WQtJ
+         wEtA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:date:from:mime-version:delivered-to;       
+ bh=J+A7QwHNz1svi/O+xRS8qT+RkZXb4vv3VhvRHCFgZRU=;       
+ fh=oCwa6D0p24EOqoNbon/RBEQtWTIVPExCc1Cb9maSJ6A=;       
+ b=ANq3ln31Iv5FjQbSqzmtUnZOOYX/E8vvsznYIjdk2mDmQlArDLh4ZFCX8ijIKXxO4d        
+ a1Q6OTDimvnpNqUQIo8bY1vh+XHRhWz5WHXuCiS16ZU88YFc5d8fGT4Fo+OJbP0PKAcV        
+ ooy6EmdjataV679x7LkcVVVwgunbakqSXouXycrwIXH1aT5Y1ewnCcotJvGwbUjINbYh        
+ PIewsUgx5IG/rO0XHKhjtON4BxWLwa6oVp+M0LL/1sZr5rHWpAGsPUml1DJt2N6kTeXK        
+ iXtoswvBVFLA+dJ6WRyutTSacJwB+0tjbXIgbjknIE2pI3taaRWsjdBoLh5X+F1VTswy        
+ tH/A==;        darn=students.ocps.net
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of 4804085190@students.ocps.net designates 209.85.214.197 as permitted
+ sender) smtp.mailfrom=4804085190@students.ocps.net
+X-Forwarded-Encrypted: i=1; =?utf-8?q?AJvYcCU9qpMmnm9NLfPh9X+1WvheBh/jGI6D10?=
+ =?utf-8?q?7c0zvgU4VlyzTl8px9LrkPtrXTIQmL99FOd8+/faHLeY9h7fe16atd3wVm3KTLYvy?=
+ =?utf-8?q?ZslCf?=
+Return-Path: <4804085190@students.ocps.net>
+Received: from gaggle.net (customerproxy-he-162.gaggle.net. [162.216.127.162])
+        by mx.google.com with ESMTPS id
+ r18-20020a0568080ab200b003bec4d529b2si943846oij.127.2024.02.07.14.59.00
+        for <4804241180@students.ocps.net>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Wed, 07 Feb 2024
+ 14:59:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of 4804085190@students.ocps.net
+ designates 209.85.214.197 as permitted sender) client-ip=209.85.214.197;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ 4804085190@students.ocps.net designates 209.85.214.197 as permitted sender)
+ smtp.mailfrom=4804085190@students.ocps.net
+Received: from mx39.lax.gaggle.net (smtp-external.lax.gaggle.net [10.0.32.48])
+	by smtp-ex04.lax.gaggle.net (Postfix) with ESMTP id DF9C3800C4
+	for <4804241180@students.ocps.net>; Wed,  7 Feb 2024 14:58:59 -0800 (PST)
+X-Original-To: 4804241180@students.ocps.net
+Delivered-To: 4804241180@students.ocps.net
+Received: from [10.0.32.2] (HELO gaggle.net) (10.0.32.2)    by mx39.gaggle.net
+ (qpsmtpd/0.83) with ESMTP; Wed, 07 Feb 2024 14:58:58 -0800
+Received: from mx62.lax.gaggle.net (smtp-out.gaggle [10.0.32.36])
+	by imx1.gaggle.net (Postfix) with ESMTP id 8B29C220041
+	for <4804241180@students.ocps.net>; Wed,  7 Feb 2024 14:58:57 -0800 (PST)
+Received: from [209.85.214.197] (HELO mail-pl1-f197.google.com)
+ (209.85.214.197)    by mx62.gaggle.net (qpsmtpd/0.83) with ESMTP; Wed, 07 Feb
+ 2024 14:58:54 -0800
+Received: by mail-pl1-f197.google.com with SMTP id
+ d9443c01a7336-1d9657c2b71so13113695ad.3        for
+ <4804241180@students.ocps.net>; Wed, 07 Feb 2024 14:58:54 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707346733; x=1707951533;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=J+A7QwHNz1svi/O+xRS8qT+RkZXb4vv3VhvRHCFgZRU=;
+        b=MZLRjHluZv3hKs66B69azwnNhGfo0g+nP/t9n3KXT4CEW7ppRh3Eg/yImYB75iIXov
+         DugjTDh3QDfSbdmBJyhSk72Fa4iz1iYDHlzvJzmWmz/RSQacWCklXXSjuH0S4BUBU4pL
+         aBZkmZDfJ/JU+oGXUgfEfGonAV9oeAUxpVUXNtjil4TcmMt02n8ksImnMkDy8o87nv87
+         sfPJrit6SBITrRdmhhuOxo+t1zIe9AJps9vZjgZSxUPMyf/NANVvE3f1Gbln/M5uh6Hk
+         z52PN77wM42fFVCoB+wbFH0weKesW55rxND2jlT88M9xttpaVmJhnvbYh0uMiyb8UEeB
+         Z8eg==
+X-Forwarded-Encrypted: i=1; =?utf-8?q?AJvYcCWpEIvBTCQ4wpNXi2cy5OV/kHoaF+CMgD?=
+ =?utf-8?q?ibzXC1fPC5ARHWnGjIhVATLcJ3XAQZe1ZAGroVY1dm5TqgSKOBjAsYhMkmh54/5MK?=
+ =?utf-8?q?3nIPr?=
+X-Gm-Message-State: AOJu0Yw/j3lNWSz6XNjxy6zuCedD3w2ZcBNECfuYuGKBMd4JFQI6lwYo
+	U8miWuXs1vcfpgxa0WgZ8biZlMZpAvEbIiWy9H0UMsUPs8dQNQn3qKq8zFRFKys/Q4gGFmuINX9
+	9aZzy4iRuV0mJU0WvYIZXXV1E9fAUtetIhpG2HsBMT0anlw2aoV3nQGnsDw3IDseuzJCFj51ISJ
+	rK7qYQUpcwTWbp6szLxgKyNB89hchH7uIRTP8qiP4doAH5teBN
+X-Received: by 2002:a17:902:e746:b0:1d9:c367:2032 with SMTP id
+ p6-20020a170902e74600b001d9c3672032mr7944517plf.10.1707346733506;        Wed,
+ 07 Feb 2024 14:58:53 -0800 (PST)
+X-Received: by 2002:a17:902:e746:b0:1d9:c367:2032 with SMTP id
+ p6-20020a170902e74600b001d9c3672032mr7944502plf.10.1707346733188; Wed, 07 Feb
+ 2024 14:58:53 -0800 (PST)
+MIME-Version: 1.0
+From: Olivia Yip <4804085190@students.ocps.net>
+Date: Wed, 7 Feb 2024 17:58:26 -0500
+Message-ID:
+ <CAMjpK4VMOW=4zysGfp24QYeO6Juk00RKTp-dFqe_tZkLnN99zw@mail.gmail.com>
+Subject: hehehhehhehhe
+To: Pari Vyas <4804150017@students.ocps.net>,
+ Gianna Kim <4804135863@students.ocps.net>,
+ 	Natalie Miesak <4804135947@students.ocps.net>,
+ 	Lauren Willman <4804089800@students.ocps.net>,
+ Tyler Szydlo <4804136151@students.ocps.net>,
+ 	Brandon Nova <4804241180@students.ocps.net>
+Content-Type: multipart/alternative; boundary="0000000000008a60c90610d2a3ad"
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Virus-Checked: Checked by ClamAV on mx62.gaggle.net
+X-Gaggle-Item-Source: GOOGLE_PASSTHRU
+X-GOMS-Validated-Recipients: 4804241180@students.ocps.net
+X-Gaggle-Sender-Ref-ID: =?utf-8?q?4d37c0f942083d1314b272547ab3c91e84ac0d3702?=
+ =?utf-8?q?4c8f32dd16ffd3a47852e7cdb71c20fc287ede01a38383a8f5b90c18584b17eb1?=
+ =?utf-8?q?6e43b3cd56f89cac082d03d003d9a1493bd9553a1ca1ef1885538?=
+X-Gaggle-Message-Info: 269207226
+X-Virus-Checked: Checked by ClamAV on mx39.gaggle.net
+X-Gaggle-APS-Scores: false 0.02033066749572754 0 0 2
+ https%3A%2F%2Fforms.gle%2FgM8CtiDuDsL2MmcJ8  false 200 66161
+
+--0000000000008a60c90610d2a3ad
+Content-Type: text/plain; charset="UTF-8"
+
+https://forms.gle/gM8CtiDuDsL2MmcJ8
+
+--0000000000008a60c90610d2a3ad
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><a href="https://forms.gle/gM8CtiDuDsL2MmcJ8">https://forms.gle/gM8CtiDuDsL2MmcJ8</a><br></div>
+
+--0000000000008a60c90610d2a3ad--
