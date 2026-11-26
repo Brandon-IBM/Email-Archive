@@ -1,0 +1,8 @@
+# Deployment output.
+/_site/
+
+# Original archives and local files.
+*.mbox
+.DS_Store
+__pycache__/
+*.py[cod]

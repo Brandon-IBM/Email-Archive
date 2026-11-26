@@ -1,0 +1,78 @@
+name: Deploy email archive to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Assemble static website
+        run: |
+          mkdir -p _site
+          cp index.html "All Emails.txt" _site/
+          cp -R attachments _site/attachments
+          touch _site/.nojekyll
+
+      - name: Validate email data and attachment downloads
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          from urllib.parse import unquote
+
+          site = Path("_site").resolve()
+          html = (site / "index.html").read_text(encoding="utf-8")
+          data = json.loads(html.split('<script id="archive-data" type="application/json">', 1)[1].split('</script>', 1)[0])
+          assert len(data["messages"]) == data["meta"]["messageCount"]
+          count = 0
+          for message in data["messages"]:
+              for attachment in message["attachments"]:
+                  path = (site / unquote(attachment["path"])).resolve()
+                  assert path.is_relative_to(site / "attachments"), "Invalid attachment path"
+                  content = path.read_bytes()
+                  assert len(content) == attachment["size"], "Attachment size mismatch"
+                  assert hashlib.sha256(content).hexdigest() == attachment["sha256"], "Attachment checksum mismatch"
+                  count += 1
+          assert count == data["meta"]["attachmentCount"]
+          assert (site / "All Emails.txt").is_file()
+          print(f"Validated {len(data['messages'])} emails and {count} attachments.")
+          PY
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
